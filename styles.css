@@ -975,6 +975,8 @@ button {
 
 .modal__aside img {
   width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
   border-radius: 24px;
   object-fit: cover;
   background: rgba(255, 255, 255, 0.1);
@@ -983,33 +985,41 @@ button {
 .modal__aside h3 {
   margin: 0 0 8px;
   font-size: 1.45rem;
+  text-align: center;
 }
 
 .modal__aside p {
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
+  text-align: center;
 }
 
 .modal__content {
   padding: 28px;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
+  min-height: 0;
 }
 
 .modal__close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 14px;
   background: rgba(17, 95, 156, 0.08);
   color: var(--deep-sea);
   font-size: 1.25rem;
+  z-index: 2;
 }
 
 .modal__content h2 {
-  margin: 4px 56px 18px 0;
+  margin: 10px 0 18px;
   font-size: 2rem;
   line-height: 1.15;
   color: var(--deep-sea);
@@ -1026,6 +1036,67 @@ button {
   border-top: 1px solid rgba(17, 95, 156, 0.12);
   color: var(--deep-sea);
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .modal__dialog {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .modal__aside {
+    padding: 18px 16px 14px;
+    gap: 12px;
+  }
+
+  .modal__aside img {
+    max-width: 120px;
+    border-radius: 18px;
+  }
+
+  .modal__aside h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .modal__aside p {
+    font-size: 0.92rem;
+  }
+
+  .modal__content {
+    padding: 16px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal__close {
+    position: sticky;
+    top: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+  }
+
+  .modal__content h2 {
+    font-size: 1.4rem;
+    margin: 12px 0 14px;
+  }
+
+  .modal__content p,
+  .signature {
+    font-size: 0.96rem;
+  }
 }
 
 /* Back to top */
