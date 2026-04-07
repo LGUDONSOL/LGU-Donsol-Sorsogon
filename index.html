@@ -1,376 +1,856 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LGU Donsol</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="lgu-donsol-logo.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Municipality of Donsol | Official Website</title>
+  <meta
+    name="description"
+    content="Official Website of the Municipality of Donsol, Sorsogon — public information, tourism highlights, citizen's charter, FAQs, announcements, and inquiry form."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    
-  </head>
-  <body>
-    <!-- Top Bar -->
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <span>Municipality of Donsol</span>
-        <span class="topbar-right">Sorsogon, Philippines</span>
-      </div>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#home" aria-label="Municipality of Donsol home">
+        <img src="images/seal.png" alt="Seal of the Municipality of Donsol" />
+        <div class="brand__text">
+          <strong>Municipality of Donsol</strong>
+          <span>Official Website</span>
+        </div>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#news">News</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#announcement">Announcement</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms & Conditions</a></li>
+          <li><a href="#charter">Citizen’s Charter</a></li>
+          <li><a href="#contact">Inquiry</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Header / Navbar -->
-    <header class="header" id="top">
-      <div class="container header-inner">
-        <a class="brand" href="#home">
-          <img src="lgu-donsol-logo.png" alt="LGU Donsol Logo" class="logo" />
-          <div class="brand-text">
-            <strong>Municipality of Donsol</strong>
-            <small>Official Website</small>
-          </div>
-        </a>
-
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
-          ☰
-        </button>
-
-        <nav class="nav" id="nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <!-- Hero -->
-      <section id="home" class="section hero">
-        <div class="hero-image" aria-hidden="true">
-          <img src="./images/doknsoll-hall.jpg" alt="Municipal Hall of Donsol" />
-        </div>
-
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1>Welcome to the Local Government Unit of Donsol</h1>
-            <p>
-              A municipality committed to transparent governance, sustainable development, and responsible eco-tourism. As the home of the world-renowned whale shark interaction program, Donsol balances environmental stewardship with inclusive growth, delivering quality public service while preserving its natural and cultural heritage.
-            </p>
-            <div class="hero-actions">
-              <a class="btn" href="#services">View Services</a>
-              <a class="btn btn-outline" href="#contact">Contact Us</a>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <h2 >Office Hours</h2>
-            <p>Monday–Thursday</p>
-            <p><strong>7:00 AM – 6:00 PM</strong></p>
-            <div class="divider"></div>
-            <p class="muted">For urgent concerns, call any of the hotlines below.</p>
-
-            <div class="hotline-mini">
-            <div class="hotline-item">
-                <span class="hotline-icon" aria-hidden="true">
-                <!-- 911 badge -->
-                
-                </span>
-                <div class="hotline-text">
-                <div class="hotline-name"><strong>MDRRMO</strong></div>
-                <div class="hotline-actions">
-                    <a class="hotline-call" href="tel:09989950870">0998-995-0870</a> <br/>
-                    <a class="hotline-call" href="tel:09994719654">0999-471-9654</a>
-                </div>
-            </div>
-
-            <a class="hotline-more" href="#hotlines"><p>View all hotlines →</p></a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about" class="section">
-        <div class="container">
-          <h2>About Donsol</h2>
-          <p>
-            The Municipality of Donsol, located in Sorsogon Province, Philippines, 
-            is a leading eco-tourism destination internationally known for its sustainable whale shark (butanding) interaction program. 
-            Guided by environmental protection and community participation, Donsol promotes responsible tourism that supports conservation 
-            and local livelihoods.
+  <main id="main-content">
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge">🌊 Public Information • Tourism • Community</div>
+          <h1 class="hero__title">Municipality of Donsol</h1>
+          <p class="hero__subtitle">
+            Official Website
+          </p>
+          <p class="hero__support">
+            Welcome to Donsol, Sorsogon — a municipality where public service, responsible tourism,
+            natural beauty, and warm community life come together in one accessible and easy-to-use website.
           </p>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Mission</h3>
-              <p>We advocate intense implementation of Tourism guidelines and develop world-class tourism facilities, 
-                provide effective delivery of basic services, provide sustainable development, enhance people’s participation, 
-                judicious utilization of resources and committed governance towards the realization of our vision.</p>
-            </article>
-            <article class="card">
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#about">Explore Donsol</a>
+            <button class="btn btn--secondary" id="openMayorMessage" type="button">
+              Mayor’s Message
+            </button>
+          </div>
+
+          <div class="hero__mini-grid" aria-label="Quick facts">
+            <div class="hero-card">
+              <strong>Main Tourism</strong>
+              <span>Butanding eco-tourism and nature-based experiences</span>
+            </div>
+            <div class="hero-card">
+              <strong>Office Hours</strong>
+              <span>7:00 am to 6:00 pm, Monday to Thursday</span>
+            </div>
+            <div class="hero-card">
+              <strong>Public Info</strong>
+              <span>No online transactions — inquiry support only</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__panel" aria-label="Welcome panel">
+          <div class="seal-wrap">
+            <img src="images/seal.png" alt="Seal of Donsol" />
+            <div>
+              <h2>Friendly, clear, and community-centered</h2>
+              <p>
+                Designed for residents, visitors, and anyone looking for official information about Donsol.
+              </p>
+            </div>
+          </div>
+
+          <div class="hero__panel-list">
+            <div class="hero__panel-item">
+              <i>🐋</i>
+              <div>
+                <strong>Butanding Destination</strong>
+                <span>Donsol’s signature tourism identity is built around responsible whale shark encounters.</span>
+              </div>
+            </div>
+            <div class="hero__panel-item">
+              <i>✨</i>
+              <div>
+                <strong>Nature & River Experiences</strong>
+                <span>Discover firefly cruises, mangrove kayaking, beaches, and marine adventures.</span>
+              </div>
+            </div>
+            <div class="hero__panel-item">
+              <i>🏛️</i>
+              <div>
+                <strong>Public Information First</strong>
+                <span>Get office details, FAQs, updates, the Citizen’s Charter, and an inquiry form in one place.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="quick-links">
+      <div class="container quick-links__grid">
+        <a class="quick-link-card" href="#charter">
+          <i>📘</i>
+          <h3>Citizen’s Charter</h3>
+          <p>Access the official document quickly and view service guidance in one click.</p>
+        </a>
+
+        <a class="quick-link-card" href="#announcement">
+          <i>📣</i>
+          <h3>Announcements</h3>
+          <p>Check important notices, schedules, advisories, and public reminders.</p>
+        </a>
+
+        <a class="quick-link-card" href="#faqs">
+          <i>❓</i>
+          <h3>FAQs</h3>
+          <p>Find answers to common questions from residents and visitors.</p>
+        </a>
+
+        <a class="quick-link-card" href="#contact">
+          <i>✉️</i>
+          <h3>Send Inquiry</h3>
+          <p>Reach the municipality through the inquiry box at the bottom of the page.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">About Donsol</div>
+          <h2>A municipality known for eco-tourism, public service, and community pride</h2>
+          <p>
+            Donsol is presented here as a public-information website with a tourism identity that reflects
+            its strongest attraction while staying clear, welcoming, and easy to navigate.
+          </p>
+        </div>
+
+        <div class="about-layout">
+          <div class="card accent-card about-copy">
+            <h3>Municipality Profile</h3>
+            <p>
+              The Municipality of Donsol, located in Sorsogon Province, Philippines, is a leading
+              eco-tourism destination internationally known for its sustainable whale shark
+              (butanding) interaction program.
+            </p>
+            <p>
+              Guided by environmental protection and community participation, Donsol promotes
+              responsible tourism that supports conservation and local livelihoods.
+            </p>
+            <p>
+              Beyond tourism, this website is built to help the public easily access information,
+              understand municipal services, and connect with the local government through a simple,
+              friendly, and informative online experience.
+            </p>
+          </div>
+
+          <div class="governance-stack">
+            <div class="governance-box">
               <h3>Vision</h3>
-              <p>A premiere agri-tourism destination in Bicol where God-loving, disaster resilient and adaptive communities, 
-                thriving in a safe and orderly built and natural environment and a progressive economy under an inclusive governance system</p>
-            </article>
-            <article class="card">
-              <h3>Core Values</h3>
-              <p>• God-Centeredness <br/>• Sustainability <br/>• People's Participation <br/>• Good Governance <br/>• Environmental Stewardship <br/> 
-                • Service Excellence <br/>• Responsible Resource Use</p>
-            </article>
+              <p>
+                A premiere agri-tourism destination in Bicol where God-loving, disaster resilient and
+                adaptive communities, thriving in a safe and orderly built and natural environment and
+                a progressive economy under an inclusive governance system.
+              </p>
+            </div>
+
+            <div class="governance-box">
+              <h3>Mission</h3>
+              <p>
+                We advocate intense implementation of tourism guidelines and develop world-class
+                tourism facilities, provide effective delivery of basic services, promote sustainable
+                development, enhance people’s participation, ensure judicious utilization of resources,
+                and practice committed governance toward the realization of our vision.
+              </p>
+            </div>
+
+            <div class="governance-box">
+              <h3>What this website prioritizes</h3>
+              <div class="value-list">
+                <div class="value-item">Clear public information</div>
+                <div class="value-item">Friendly and readable content</div>
+                <div class="value-item">Responsible tourism presentation</div>
+                <div class="value-item">Accessible contact and inquiry support</div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Services -->
-      <section id="services" class="section alt">
-        <div class="container">
-          <h2>Services</h2>
-          <p class="muted">Quick links</p>
+    <section class="section" id="tourism">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Tourism Highlights</div>
+          <h2>The best of Donsol in one glance</h2>
+          <p>
+            Experience the municipality through its most memorable attractions — from nature and
+            marine life to local culture and community hospitality.
+          </p>
+        </div>
 
-          <div class="grid-2">
-            <article class="card">
-              <h3>Civil Registry</h3>
-              <ul class="list">
-                <li>Birth / Marriage / Death Certificates</li>
-                <li>CENOMAR requests guidance</li>
-                <li>Corrections & endorsements</li>
-              </ul>
-            </article>
+        <div class="grid grid--3">
+          <article class="card tourism-card">
+            <div class="icon">🐋</div>
+            <h3>Butanding Experience</h3>
+            <p>
+              Donsol’s most iconic attraction invites visitors to appreciate whale sharks through a
+              responsible and conservation-centered tourism experience.
+            </p>
+          </article>
 
-            <article class="card">
-              <h3>Business Permits & Licensing</h3>
-              <ul class="list">
-                <li>New / renewal applications</li>
-                <li>Requirements checklist</li>
-                <li>Fees & processing info</li>
-              </ul>
-            </article>
+          <article class="card tourism-card">
+            <div class="icon">✨</div>
+            <h3>Donsol River Firefly Cruise</h3>
+            <p>
+              Evening river cruises offer a calm and magical way to enjoy mangroves lit by
+              thousands of fireflies.
+            </p>
+          </article>
 
-            <article class="card">
-              <h3>Social Welfare</h3>
-              <ul class="list">
-                <li>Assistance programs</li>
-                <li>Senior citizen services</li>
-                <li>Community support</li>
-              </ul>
-            </article>
+          <article class="card tourism-card">
+            <div class="icon">🛶</div>
+            <h3>Mangrove Kayaking</h3>
+            <p>
+              Paddle through serene waterways and enjoy a peaceful encounter with Donsol’s coastal
+              and river ecosystems.
+            </p>
+          </article>
 
-            <article class="card">
-              <h3>Tourism & Visitor Info</h3>
-              <ul class="list">
-                <li>Tourist spots & guidelines</li>
-                <li>Local events</li>
-                <li>Accredited operators</li>
-              </ul>
-            </article>
+          <article class="card tourism-card">
+            <div class="icon">🏖️</div>
+            <h3>Dancalan Beach</h3>
+            <p>
+              Relax by the coast, enjoy the sea breeze, and experience a quieter side of Donsol’s
+              seaside charm.
+            </p>
+          </article>
+
+          <article class="card tourism-card">
+            <div class="icon">🤿</div>
+            <h3>Ticao Pass Marine Adventures</h3>
+            <p>
+              Explore exciting sea-based experiences around the area, known for its impressive
+              marine environment and adventure appeal.
+            </p>
+          </article>
+
+          <article class="card tourism-card">
+            <div class="icon">🍲</div>
+            <h3>Local Food & Culture</h3>
+            <p>
+              Discover warm hospitality, local flavors, and authentic community experiences at the
+              heart of town.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <!-- <section class="section" id="offices">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">LGU Offices</div>
+          <h2>Municipal offices and departments</h2>
+          <p>
+            This section gives the public a clear overview of the offices included in your brief.
+            Descriptions are written in simple public-facing language and can be edited anytime.
+          </p>
+        </div>
+
+        <div class="grid grid--4">
+          <div class="office-card">
+            <strong>Tourism</strong>
+            <p>Visitor information, tourism guidance, destination support, and local tourism promotion.</p>
+          </div>
+          <div class="office-card">
+            <strong>BAC</strong>
+            <p>Bids and Awards Committee information and procurement-related public notices.</p>
+          </div>
+          <div class="office-card">
+            <strong>PESO</strong>
+            <p>Employment assistance, livelihood support, and job-related public information.</p>
+          </div>
+          <div class="office-card">
+            <strong>MSWDO</strong>
+            <p>Social welfare programs, community assistance, and family-centered services.</p>
+          </div>
+          <div class="office-card">
+            <strong>MDRRMO</strong>
+            <p>Preparedness, response information, risk reduction guidance, and public safety coordination.</p>
+          </div>
+          <div class="office-card">
+            <strong>Civil Registry</strong>
+            <p>Civil records information and guidance for public document-related concerns.</p>
+          </div>
+          <div class="office-card">
+            <strong>Mayor’s Office</strong>
+            <p>Executive leadership, public assistance coordination, and official municipal direction.</p>
+          </div>
+          <div class="office-card">
+            <strong>BPLO</strong>
+            <p>Business permit and licensing information for local establishments and entrepreneurs.</p>
+          </div>
+          <div class="office-card">
+            <strong>ICT</strong>
+            <p>Digital services, technology support, and website-related information management.</p>
+          </div>
+          <div class="office-card">
+            <strong>MPDC</strong>
+            <p>Municipal planning, development coordination, and long-term growth support.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section> -->
 
-      <!-- News -->
-      <section id="news" class="section">
-        <div class="container">
-          <h2>Announcements</h2>
-          <p class="muted">Post official advisories and updates here.</p>
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">News</div>
+          <h2>Latest municipal news</h2>
+          <p>
+            These are editable placeholder cards so the live website will not publish unverified or
+            outdated news by default.
+          </p>
+        </div>
 
-          <div class="grid-3">
-            <article class="card">
-              <span class="tag">Advisory</span>
-              <h3>Example: Schedule Interruption</h3>
-              <p>Short summary of the announcement. Replace this with real content.</p>
-              <a class="link" href="#" onclick="return false;">Read more</a>
-            </article>
+        <div class="grid grid--3">
+          <article class="card">
+            <span class="label">Draft Placeholder</span>
+            <h3>Replace this card with the latest official municipal news article</h3>
+            <p>
+              Use this space for community updates, accomplishments, events, or public service stories.
+            </p>
+            <span class="meta">Suggested content: headline, summary, date, and “Read more” link</span>
+          </article>
 
-            <article class="card">
-              <span class="tag">Event</span>
-              <h3>Example: Community Program</h3>
-              <p>Short summary of the announcement. Replace this with real content.</p>
-              <a class="link" href="#" onclick="return false;">Read more</a>
-            </article>
+          <article class="card">
+            <span class="label">Draft Placeholder</span>
+            <h3>Post verified tourism or environmental updates here</h3>
+            <p>
+              Ideal for official advisories related to eco-tourism, site reminders, conservation activities, or local programs.
+            </p>
+            <span class="meta">Suggested content: image, short summary, official posting date</span>
+          </article>
 
-            <article class="card">
-              <span class="tag">Notice</span>
-              <h3>Example: Public Reminder</h3>
-              <p>Short summary of the announcement. Replace this with real content.</p>
-              <a class="link" href="#" onclick="return false;">Read more</a>
-            </article>
+          <article class="card">
+            <span class="label">Draft Placeholder</span>
+            <h3>Share public-interest stories that matter to residents</h3>
+            <p>
+              This can include local initiatives, office accomplishments, or upcoming community events.
+            </p>
+            <span class="meta">Suggested content: title, excerpt, office source, and link</span>
+          </article>
+        </div>
+
+        <div class="placeholder-note">
+          Tip: Update these cards only with officially approved content before publishing the site live.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="announcement">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Announcement</div>
+          <h2>Public announcements and reminders</h2>
+          <p>
+            Use this section for office advisories, service interruptions, holiday schedules, and time-sensitive notices.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <span class="label">Announcement Placeholder</span>
+            <h3>Office advisory</h3>
+            <p>
+              Publish official notices here such as adjusted office hours, weather-related service advisories,
+              or department-specific announcements.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="label">Announcement Placeholder</span>
+            <h3>Community reminder</h3>
+            <p>
+              Share reminders on public meetings, local events, deadline notices, or important community information.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faqs">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">FAQs</div>
+          <h2>Frequently asked questions</h2>
+          <p>
+            A simple FAQ section helps both residents and visitors find answers quickly without searching through multiple pages.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item is-open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>What is this website for?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer" style="max-height: 300px;">
+              <div class="faq-answer__inner">
+                This website is mainly for public information. It shares municipal details, office
+                information, tourism highlights, FAQs, announcements, and access to the Citizen’s Charter.
+                No online transactions or payments are processed on this website.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What is Donsol best known for?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Donsol is best known for its butanding experience and other eco-tourism attractions such as
+                firefly cruises, mangrove kayaking, coastal destinations, and marine adventures.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I access the Citizen’s Charter?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Scroll to the Citizen’s Charter section and click the access button. The document opens in a new tab.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Where is the Municipal Hall located?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                The municipality address provided for this website is Barangay Awaii, Donsol, Sorsogon.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What are the office hours?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Office hours listed on this website are 7:00 am to 6:00 pm, Monday to Thursday,
+                unless otherwise announced through official advisories.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I send an inquiry?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Go to the inquiry form at the bottom of the page, fill in your details, and submit.
+                This version opens your default email app and prepares your message to
+                <strong>admin@donsol.gov.ph</strong>.
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-   
-      <!-- Hotlines -->
-<section id="hotlines" class="section">
-  <div class="container">
-    <h2>Emergency Hotlines</h2>
-    <p class="muted">Tap a number to call (mobile).</p>
+    <section class="section" id="charter">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Citizen’s Charter</div>
+          <h2>Quick access to the official Citizen’s Charter</h2>
+          <p>
+            Give the public a fast route to service guidance, process information, and official reference material.
+          </p>
+        </div>
 
-    <div class="hotlines-grid">
-      <!-- 911 -->
-      <div class="hotline-card">
-        <div class="hotline-head">
-          <img
-            class="hotline-logo"
-            src="./images/hotlines/911.png"
-            alt="National Emergency Hotline 911"
-          />
+        <div class="charter-banner">
           <div>
-            <div class="hotline-title">National Emergency Hotline</div>
-            <div class="hotline-sub">Nationwide emergency response</div>
+            <h3>View the Citizen’s Charter</h3>
+            <p>
+              Open the official document in a new tab for convenient viewing and reference.
+            </p>
+          </div>
+
+          <div class="charter-actions">
+            <a
+              class="btn btn--light"
+              href="https://drive.google.com/file/d/1dAea08Aquertye532bOaUv92dInwsY8B/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Citizen’s Charter
+            </a>
+            <a class="btn btn--secondary" href="#contact">Ask an Inquiry</a>
           </div>
         </div>
-        <div class="hotline-actions">
-          <a class="hotline-call" href="tel:911">Call 911</a>
+      </div>
+    </section>
+
+    <section class="section" id="privacy">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Privacy Policy</div>
+          <h2>Simple privacy information for website visitors</h2>
+          <p>
+            This policy is written in plain language so the public can easily understand how inquiry details are handled.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h3>What information may be collected</h3>
+            <p>
+              This website may collect only the information you choose to provide through the inquiry
+              form, such as your name, email, contact number, subject, and message.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>How inquiry details are used</h3>
+            <p>
+              Inquiry details are intended only for communication and response purposes. This website
+              does not process online payments or public transactions.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>External links</h3>
+            <p>
+              Some sections may link to external platforms such as Google Drive or Facebook. Those
+              platforms may have their own privacy practices and policies.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Public reminder</h3>
+            <p>
+              Please avoid sending sensitive personal, financial, or confidential data through the inquiry form.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="terms">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Terms and Conditions</div>
+          <h2>Website use terms</h2>
+          <p>
+            These terms keep the website easy to understand while making clear that the site is for public information.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h3>Informational use only</h3>
+            <p>
+              This website is intended to provide public information about the Municipality of Donsol,
+              municipal offices, tourism highlights, and official contact details.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>No online transactions</h3>
+            <p>
+              No online payments, permits, applications, or financial transactions are processed through this website.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Updates and accuracy</h3>
+            <p>
+              Information may change as official notices, schedules, or advisories are updated. Users
+              are encouraged to check announcements or contact the municipality for confirmation when needed.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Use of external content</h3>
+            <p>
+              Links to third-party platforms are provided for convenience. Access to those platforms is subject to their own rules and availability.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Contact & Inquiry</div>
+          <h2>Reach the Municipality of Donsol</h2>
+          <p>
+            This website ends with a simple inquiry box for public communication. No transaction is performed on the site.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <aside class="contact-box">
+            <h3>Official contact details</h3>
+            <p>
+              Public information and contact details supplied for this website are shown below.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <i>📍</i>
+                <div>
+                  <strong>Address</strong>
+                  <span>Barangay Awaii, Donsol, Sorsogon</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i>☎️</i>
+                <div>
+                  <strong>Phone</strong>
+                  <span>(056) 411-2544</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i>✉️</i>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:admin@donsol.gov.ph">admin@donsol.gov.ph</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i>🕒</i>
+                <div>
+                  <strong>Office Hours</strong>
+                  <span>7:00 am to 6:00 pm Monday to Thursday</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <i>📘</i>
+                <div>
+                  <strong>Facebook</strong>
+                  <a
+                    href="https://www.fb.com/LGU.Donsol.Sorsogon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    www.fb.com/LGU.Donsol.Sorsogon
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="contact-box">
+            <h3>If you have inquiry</h3>
+            <p class="form-note">
+              Fill out this form and submit. This static version opens your default email app with your inquiry
+              addressed to <strong>admin@donsol.gov.ph</strong>.
+            </p>
+
+            <form id="inquiryForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="fullName">Full Name</label>
+                  <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" placeholder="Enter your email address" required />
+                </div>
+
+                <div class="field">
+                  <label for="contactNumber">Contact Number</label>
+                  <input id="contactNumber" name="contactNumber" type="tel" placeholder="Enter your contact number" />
+                </div>
+
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <input id="subject" name="subject" type="text" placeholder="Enter the subject of your inquiry" required />
+                </div>
+
+                <div class="field field--full">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="7"
+                    placeholder="Write your inquiry here"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <button class="btn btn--primary" type="submit">Send Inquiry</button>
+
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div>
+          <h3>Municipality of Donsol</h3>
+          <p>
+            A public-information website designed to be friendly, easy to use, and easy to understand —
+            reflecting Donsol’s commitment to community service and responsible tourism.
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick links</h3>
+          <ul class="footer-links">
+            <li><a href="#news">News</a></li>
+            <li><a href="#announcement">Announcement</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#charter">Citizen’s Charter</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms and Conditions</a></li>
+          </ul>
         </div>
       </div>
 
-      <!-- MDRRMO -->
-      <div class="hotline-card">
-        <div class="hotline-head">
-          <img
-            class="hotline-logo"
-            src="./images/hotlines/mdrrmo.png"
-            alt="MDRRMO Donsol"
-          />
-          <div>
-            <div class="hotline-title">MDRRMO</div>
-            <div class="hotline-sub">Disaster response & coordination</div>
-          </div>
-        </div>
-        <div class="hotline-actions">
-          <a class="hotline-call" href="tel:09989950870">0998-995-0870</a> <br/>
-          <a class="hotline-call" href="tel:09994719654">0999-471-9654</a>
-        </div>
+      <div class="site-footer__bottom">
+        <span>© <span id="currentYear"></span> Municipality of Donsol. All rights reserved.</span>
+        <span>Designed for public information and inquiry support only.</span>
       </div>
+    </div>
+  </footer>
 
-      <!-- PNP -->
-      <div class="hotline-card">
-        <div class="hotline-head">
-          <img
-            class="hotline-logo"
-            src="./images/hotlines/pnp.png"
-            alt="Philippine National Police"
-          />
-          <div>
-            <div class="hotline-title">PNP</div>
-            <div class="hotline-sub">Police assistance</div>
-          </div>
-        </div>
-        <div class="hotline-actions">
-          <a class="hotline-call" href="tel:09985986069">0998-598-6069</a>
-        </div>
-      </div>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
 
-      <!-- BFP -->
-      <div class="hotline-card">
-        <div class="hotline-head">
-          <img
-            class="hotline-logo"
-            src="./images/hotlines/bfp.png"
-            alt="Bureau of Fire Protection"
-          />
-          <div>
-            <div class="hotline-title">BFP</div>
-            <div class="hotline-sub">Fire & rescue</div>
-          </div>
+  <div class="modal" id="mayorModal" aria-hidden="true" role="dialog" aria-labelledby="mayorModalTitle">
+    <div class="modal__dialog">
+      <aside class="modal__aside">
+        <img src="images/Mayor.png" alt="Hon. Ralph Walter Chuck R. Lubiano" />
+        <div>
+          <h3>Hon. Ralph Walter “Chuck” R. Lubiano</h3>
+          <p>Municipal Mayor<br />LGU Donsol</p>
         </div>
-        <div class="hotline-actions">
-          <a class="hotline-call" href="tel:09477456092">0947-745-6092</a>
-        </div>
-      </div>
+      </aside>
 
-      <!-- Coast Guard -->
-      <div class="hotline-card">
-        <div class="hotline-head">
-          <img
-            class="hotline-logo"
-            src="./images/hotlines/pcg.png"
-            alt="Philippine Coast Guard"
-          />
-          <div>
-            <div class="hotline-title">Philippine Coast Guard</div>
-            <div class="hotline-sub">Maritime safety & response</div>
-          </div>
-        </div>
-        <div class="hotline-actions">
-          <a class="hotline-call" href="tel:09682771250">0968-277-1250</a>
-        </div>
-      </div>
+      <div class="modal__content">
+        <button class="modal__close" id="closeMayorMessage" type="button" aria-label="Close mayor's message">✕</button>
+        <h2 id="mayorModalTitle">Mayor’s Message</h2>
 
-      <!-- SORECO Dos -->
-      <div class="hotline-card">
-        <div class="hotline-head">
-          <img
-            class="hotline-logo"
-            src="./images/hotlines/soreco.png"
-            alt="SORECO Dos"
-          />
-          <div>
-            <div class="hotline-title">SORECO Dos</div>
-            <div class="hotline-sub">Power interruption / electric concerns</div>
-          </div>
-        </div>
-        <div class="hotline-actions">
-          <a class="hotline-call" href="tel:09513627668">0951-362-7668</a>
+        <p>
+          Welcome to Donsol — a place blessed with natural beauty, rich culture, and the warm
+          hospitality of our people.
+        </p>
+
+        <p>
+          It is my honor to invite you to discover our town, a destination known not only for its
+          world-renowned butanding experience, but also for its peaceful communities, beautiful
+          coastal treasures, and the genuine kindness that makes every visit memorable. Donsol is
+          more than a tourist destination — it is a home of proud traditions, hardworking people,
+          and meaningful experiences that connect visitors to nature and community.
+        </p>
+
+        <p>
+          As your Mayor, I believe tourism plays a vital role in the growth of Donsol. It creates
+          opportunities for our local communities, supports livelihoods, promotes our culture, and
+          inspires us to protect the natural resources that make our town truly special. Our vision
+          is to continue building a tourism industry that is sustainable, inclusive, and beneficial
+          to every Donsolanon.
+        </p>
+
+        <p>
+          Through the efforts of our local government, community partners, and tourism stakeholders,
+          we are committed to making Donsol more welcoming, more vibrant, and more prepared for the
+          future. We want every guest who comes here to feel the heart of our town — from the beauty
+          of our environment to the sincerity of our people.
+        </p>
+
+        <p>
+          To our visitors, thank you for choosing Donsol. We welcome you with open arms and invite
+          you to experience the best of what our municipality has to offer. To our fellow
+          Donsolanons, let us continue working together to showcase our town with pride and preserve
+          it for generations to come.
+        </p>
+
+        <p>
+          May this website serve as your guide in exploring the wonders of Donsol.
+        </p>
+
+        <p>Mabuhay and welcome to Donsol!</p>
+
+        <div class="signature">
+          Hon. Ralph Walter “Chuck” R. Lubiano<br />
+          Municipal Mayor<br />
+          LGU Donsol
         </div>
       </div>
     </div>
   </div>
-</section>
 
-
-
-      <!-- Contact -->
-      <section id="contact" class="section alt">
-        <div class="container">
-          <h2>Contact Us</h2>
-          <p class="muted">
-            This form uses a mail app “mailto” fallback.
-          </p>
-
-          <div class="contact-grid">
-            <div class="card">
-              <h3>Municipal Hall</h3>
-              <p class="muted">
-                Barangay Awaii, Donsol, Sorsogon, 4715
-              </p>
-              
-              <p><strong>Email:</strong> admin@donsol.gov.ph</p>
-              <p><strong>Hotline:</strong> (056) 411-2544</p>
-            </div>
-
-            <form class="card form" id="contactForm">
-              <label>
-                Name
-                <input name="name" type="text" required placeholder="Your name" />
-              </label>
-
-              <label>
-                Email
-                <input name="email" type="email" required placeholder="you@example.com" />
-              </label>
-
-              <label>
-                Message
-                <textarea name="message" rows="5" required placeholder="Write your message..."></textarea>
-              </label>
-
-              <button class="btn" type="submit">Send Message</button>
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-inner">
-        <small>© <span id="year"></span> LGU Donsol. All rights reserved.</small>
-        <a class="link" href="#top">Back to top ↑</a>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
