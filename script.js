@@ -242,8 +242,8 @@
         `
         <div class="carousel-item">
           <img src="${imagePath}" alt="SMV ${i}" loading="lazy" data-index="${i - 1}">
-          <a href="${imagePath}" download class="download-btn" aria-label="Download SMV ${i}">
-            ⬇
+          <a href="documents/smv.pdf" target="_blank" class="download-btn">
+            ⬇ Dowload File
           </a>
         </div>
         `
