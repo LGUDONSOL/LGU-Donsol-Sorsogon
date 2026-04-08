@@ -1,81 +1,99 @@
 (function () {
   const body = document.body;
+
   const navToggle = document.getElementById("navToggle");
   const siteNav = document.getElementById("siteNav");
   const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
   const sections = Array.from(document.querySelectorAll("main section[id]"));
+
   const currentYear = document.getElementById("currentYear");
+
   const mayorModal = document.getElementById("mayorModal");
   const openMayorMessage = document.getElementById("openMayorMessage");
-  const closeMayorMessages = Array.from(document.querySelectorAll("#closeMayorMessage, .modal__close--desktop"));
+  const closeMayorMessages = Array.from(
+    document.querySelectorAll("#closeMayorMessage, .modal__close--desktop")
+  );
+
   const faqItems = Array.from(document.querySelectorAll(".faq-item"));
   const inquiryForm = document.getElementById("inquiryForm");
   const formStatus = document.getElementById("formStatus");
   const backToTop = document.getElementById("backToTop");
 
-  currentYear.textContent = new Date().getFullYear().toString();
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear().toString();
+  }
 
   function setNavOpen(isOpen) {
+    if (!siteNav || !navToggle) return;
+
     siteNav.classList.toggle("is-open", isOpen);
     navToggle.classList.toggle("is-active", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
   }
 
-  navToggle.addEventListener("click", function () {
-    const isOpen = !siteNav.classList.contains("is-open");
-    setNavOpen(isOpen);
-  });
+  if (navToggle && siteNav) {
+    navToggle.addEventListener("click", function () {
+      setNavOpen(!siteNav.classList.contains("is-open"));
+    });
 
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      if (window.innerWidth <= 820) {
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.innerWidth <= 820) {
+          setNavOpen(false);
+        }
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      const clickInsideNav = siteNav.contains(event.target);
+      const clickOnToggle = navToggle.contains(event.target);
+
+      if (
+        !clickInsideNav &&
+        !clickOnToggle &&
+        siteNav.classList.contains("is-open") &&
+        window.innerWidth <= 820
+      ) {
         setNavOpen(false);
       }
     });
-  });
-
-  document.addEventListener("click", function (event) {
-    const clickInsideNav = siteNav.contains(event.target);
-    const clickOnToggle = navToggle.contains(event.target);
-
-    if (!clickInsideNav && !clickOnToggle && siteNav.classList.contains("is-open") && window.innerWidth <= 820) {
-      setNavOpen(false);
-    }
-  });
-
-  function openModal() {
-  mayorModal.classList.add("is-open");
-  mayorModal.setAttribute("aria-hidden", "false");
-  body.style.overflow = "hidden";
-}
-
-function closeModal() {
-  mayorModal.classList.remove("is-open");
-  mayorModal.setAttribute("aria-hidden", "true");
-  body.style.overflow = "";
-}
-
-openMayorMessage.addEventListener("click", openModal);
-
-closeMayorMessages.forEach(function (button) {
-  button.addEventListener("click", closeModal);
-});
-
-mayorModal.addEventListener("click", function (event) {
-  if (event.target === mayorModal) {
-    closeModal();
   }
-});
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && mayorModal.classList.contains("is-open")) {
-    closeModal();
+  function openMayorModal() {
+    if (!mayorModal) return;
+
+    mayorModal.classList.add("is-open");
+    mayorModal.setAttribute("aria-hidden", "false");
+    body.style.overflow = "hidden";
   }
-});
+
+  function closeMayorModal() {
+    if (!mayorModal) return;
+
+    mayorModal.classList.remove("is-open");
+    mayorModal.setAttribute("aria-hidden", "true");
+    body.style.overflow = "";
+  }
+
+  if (openMayorMessage && mayorModal) {
+    openMayorMessage.addEventListener("click", openMayorModal);
+
+    closeMayorMessages.forEach(function (button) {
+      button.addEventListener("click", closeMayorModal);
+    });
+
+    mayorModal.addEventListener("click", function (event) {
+      if (event.target === mayorModal) {
+        closeMayorModal();
+      }
+    });
+  }
 
   faqItems.forEach(function (item) {
     const button = item.querySelector(".faq-question");
     const answer = item.querySelector(".faq-answer");
+
+    if (!button || !answer) return;
 
     button.addEventListener("click", function () {
       const isOpen = item.classList.contains("is-open");
@@ -83,6 +101,8 @@ document.addEventListener("keydown", function (event) {
       faqItems.forEach(function (otherItem) {
         const otherButton = otherItem.querySelector(".faq-question");
         const otherAnswer = otherItem.querySelector(".faq-answer");
+
+        if (!otherButton || !otherAnswer) return;
 
         otherItem.classList.remove("is-open");
         otherButton.setAttribute("aria-expanded", "false");
@@ -112,13 +132,16 @@ document.addEventListener("keydown", function (event) {
 
     navLinks.forEach(function (link) {
       const href = link.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+
       link.classList.toggle("is-active", href === "#" + currentSectionId);
     });
   }
 
   function toggleBackToTop() {
-    const shouldShow = window.scrollY > 500;
-    backToTop.classList.toggle("is-visible", shouldShow);
+    if (!backToTop) return;
+
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
   }
 
   window.addEventListener("scroll", function () {
@@ -129,11 +152,15 @@ document.addEventListener("keydown", function (event) {
   setActiveNavLink();
   toggleBackToTop();
 
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
   function showStatus(message, isError) {
+    if (!formStatus) return;
+
     formStatus.textContent = message;
     formStatus.classList.add("is-visible");
     formStatus.style.background = isError
@@ -142,44 +169,238 @@ document.addEventListener("keydown", function (event) {
     formStatus.style.color = isError ? "#b32334" : "#0d8f62";
   }
 
-  inquiryForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+  if (inquiryForm) {
+    inquiryForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    const fullName = document.getElementById("fullName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const contactNumber = document.getElementById("contactNumber").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
+      const fullName = document.getElementById("fullName")?.value.trim() || "";
+      const email = document.getElementById("email")?.value.trim() || "";
+      const contactNumber =
+        document.getElementById("contactNumber")?.value.trim() || "";
+      const subject = document.getElementById("subject")?.value.trim() || "";
+      const message = document.getElementById("message")?.value.trim() || "";
 
-    if (!fullName || !email || !subject || !message) {
-      showStatus("Please complete the required fields before sending your inquiry.", true);
+      if (!fullName || !email || !subject || !message) {
+        showStatus(
+          "Please complete the required fields before sending your inquiry.",
+          true
+        );
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        showStatus("Please enter a valid email address.", true);
+        return;
+      }
+
+      const bodyLines = [
+        "Municipality of Donsol Website Inquiry",
+        "",
+        "Full Name: " + fullName,
+        "Email Address: " + email,
+        "Contact Number: " + (contactNumber || "Not provided"),
+        "",
+        "Message:",
+        message
+      ];
+
+      const mailtoLink =
+        "mailto:admin@donsol.gov.ph" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(bodyLines.join("\n"));
+
+      showStatus(
+        "Your email app is opening with your prepared inquiry. Review it, then click send.",
+        false
+      );
+
+      window.location.href = mailtoLink;
+    });
+  }
+
+  (function () {
+    const carousel = document.getElementById("announcementCarousel");
+    const track = document.getElementById("announcementCarouselTrack");
+    const counter = document.getElementById("carouselCounter");
+
+    if (!carousel || !track || !counter) return;
+
+    const totalImages = 21;
+    const imageFolder = "images/Announcement/MASSO";
+
+    for (let i = 1; i <= totalImages; i++) {
+      const imagePath = `${imageFolder}/smv (${i}).jpg`;
+
+      track.insertAdjacentHTML(
+        "beforeend",
+        `
+        <div class="carousel-item">
+          <img src="${imagePath}" alt="SMV ${i}" loading="lazy" data-index="${i - 1}">
+          <a href="documents/smv.pdf" target="_blank" class="download-btn">
+            ⬇ Download File
+          </a>
+        </div>
+        `
+      );
+    }
+
+    const items = Array.from(track.querySelectorAll(".carousel-item"));
+    const images = Array.from(track.querySelectorAll("img"));
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+
+    if (!items.length || !prevBtn || !nextBtn) return;
+
+    let index = 0;
+    let autoSlideInterval = null;
+
+    function updateCarousel() {
+      const width = carousel.offsetWidth;
+      track.style.transform = `translateX(-${index * width}px)`;
+      counter.textContent = `${index + 1} / ${items.length}`;
+    }
+
+    function showNextSlide() {
+      index = (index + 1) % items.length;
+      updateCarousel();
+    }
+
+    function showPrevSlide() {
+      index = (index - 1 + items.length) % items.length;
+      updateCarousel();
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideInterval = window.setInterval(showNextSlide, 4000);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+      }
+    }
+
+    nextBtn.addEventListener("click", function () {
+      showNextSlide();
+      startAutoSlide();
+    });
+
+    prevBtn.addEventListener("click", function () {
+      showPrevSlide();
+      startAutoSlide();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+
+    carousel.addEventListener("mouseenter", stopAutoSlide);
+    carousel.addEventListener("mouseleave", startAutoSlide);
+    carousel.addEventListener("touchstart", stopAutoSlide, { passive: true });
+    carousel.addEventListener("touchend", startAutoSlide);
+
+    updateCarousel();
+    startAutoSlide();
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+    const lightboxDownload = document.getElementById("lightboxDownload");
+
+    if (
+      !lightbox ||
+      !lightboxImg ||
+      !lightboxClose ||
+      !lightboxPrev ||
+      !lightboxNext ||
+      !lightboxCounter ||
+      !lightboxDownload
+    ) {
       return;
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-      showStatus("Please enter a valid email address.", true);
-      return;
+    let lightboxIndex = 0;
+
+    function updateLightbox() {
+      const currentImg = images[lightboxIndex];
+      if (!currentImg) return;
+
+      lightboxImg.src = currentImg.src;
+      lightboxImg.alt = currentImg.alt;
+      lightboxCounter.textContent = `${lightboxIndex + 1} / ${images.length}`;
+      lightboxDownload.href = currentImg.src;
+      lightboxDownload.setAttribute(
+        "download",
+        currentImg.alt.replace(/\s+/g, "-").toLowerCase() + ".jpg"
+      );
     }
 
-    const bodyLines = [
-      "Municipality of Donsol Website Inquiry",
-      "",
-      "Full Name: " + fullName,
-      "Email Address: " + email,
-      "Contact Number: " + (contactNumber || "Not provided"),
-      "",
-      "Message:",
-      message
-    ];
+    function openLightbox(clickedIndex) {
+      lightboxIndex = clickedIndex;
+      updateLightbox();
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      body.style.overflow = "hidden";
+    }
 
-    const mailtoLink =
-      "mailto:admin@donsol.gov.ph" +
-      "?subject=" + encodeURIComponent(subject) +
-      "&body=" + encodeURIComponent(bodyLines.join("\n"));
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      body.style.overflow = "";
+    }
 
-    showStatus("Your email app is opening with your prepared inquiry. Review it, then click send.", false);
+    function showPrevLightboxImage() {
+      lightboxIndex = (lightboxIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    }
 
-    window.location.href = mailtoLink;
-  });
+    function showNextLightboxImage() {
+      lightboxIndex = (lightboxIndex + 1) % images.length;
+      updateLightbox();
+    }
+
+    images.forEach(function (img, imgIndex) {
+      img.addEventListener("click", function () {
+        openLightbox(imgIndex);
+      });
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxPrev.addEventListener("click", showPrevLightboxImage);
+    lightboxNext.addEventListener("click", showNextLightboxImage);
+
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        if (mayorModal && mayorModal.classList.contains("is-open")) {
+          closeMayorModal();
+        }
+
+        if (lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      }
+
+      if (!lightbox.classList.contains("is-open")) return;
+
+      if (event.key === "ArrowLeft") {
+        showPrevLightboxImage();
+      }
+
+      if (event.key === "ArrowRight") {
+        showNextLightboxImage();
+      }
+    });
+  })();
 })();
