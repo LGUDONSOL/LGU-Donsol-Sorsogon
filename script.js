@@ -15,10 +15,8 @@
   );
 
   const faqItems = Array.from(document.querySelectorAll(".faq-item"));
-
   const inquiryForm = document.getElementById("inquiryForm");
   const formStatus = document.getElementById("formStatus");
-
   const backToTop = document.getElementById("backToTop");
 
   if (currentYear) {
@@ -27,6 +25,7 @@
 
   function setNavOpen(isOpen) {
     if (!siteNav || !navToggle) return;
+
     siteNav.classList.toggle("is-open", isOpen);
     navToggle.classList.toggle("is-active", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -34,8 +33,7 @@
 
   if (navToggle && siteNav) {
     navToggle.addEventListener("click", function () {
-      const isOpen = !siteNav.classList.contains("is-open");
-      setNavOpen(isOpen);
+      setNavOpen(!siteNav.classList.contains("is-open"));
     });
 
     navLinks.forEach(function (link) {
@@ -63,6 +61,7 @@
 
   function openMayorModal() {
     if (!mayorModal) return;
+
     mayorModal.classList.add("is-open");
     mayorModal.setAttribute("aria-hidden", "false");
     body.style.overflow = "hidden";
@@ -70,6 +69,7 @@
 
   function closeMayorModal() {
     if (!mayorModal) return;
+
     mayorModal.classList.remove("is-open");
     mayorModal.setAttribute("aria-hidden", "true");
     body.style.overflow = "";
@@ -133,14 +133,15 @@
     navLinks.forEach(function (link) {
       const href = link.getAttribute("href");
       if (!href || !href.startsWith("#")) return;
+
       link.classList.toggle("is-active", href === "#" + currentSectionId);
     });
   }
 
   function toggleBackToTop() {
     if (!backToTop) return;
-    const shouldShow = window.scrollY > 500;
-    backToTop.classList.toggle("is-visible", shouldShow);
+
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
   }
 
   window.addEventListener("scroll", function () {
@@ -220,7 +221,6 @@
     });
   }
 
-  // Announcement Images of MASSO
   (function () {
     const carousel = document.getElementById("announcementCarousel");
     const track = document.getElementById("announcementCarouselTrack");
@@ -230,12 +230,9 @@
 
     const totalImages = 21;
     const imageFolder = "images/Announcement/MASSO";
-    const useDashedNames = false;
 
     for (let i = 1; i <= totalImages; i++) {
-      const imagePath = useDashedNames
-        ? `${imageFolder}/smv-${i}.jpg`
-        : `${imageFolder}/smv (${i}).jpg`;
+      const imagePath = `${imageFolder}/smv (${i}).jpg`;
 
       track.insertAdjacentHTML(
         "beforeend",
@@ -243,7 +240,7 @@
         <div class="carousel-item">
           <img src="${imagePath}" alt="SMV ${i}" loading="lazy" data-index="${i - 1}">
           <a href="documents/smv.pdf" target="_blank" class="download-btn">
-            ⬇ Dowload File
+            ⬇ Download File
           </a>
         </div>
         `
@@ -278,9 +275,7 @@
 
     function startAutoSlide() {
       stopAutoSlide();
-      autoSlideInterval = window.setInterval(function () {
-        showNextSlide();
-      }, 4000);
+      autoSlideInterval = window.setInterval(showNextSlide, 4000);
     }
 
     function stopAutoSlide() {
