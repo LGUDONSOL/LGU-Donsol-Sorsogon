@@ -40,8 +40,9 @@
       align-items: center;
       justify-content: center;
       padding: 24px;
-      overflow: hidden;
       position: relative;
+      min-height: 100vh;
+      overflow-y: auto; 
     }
 
     .maintenance-shell {
@@ -264,9 +265,10 @@
 
     @media (max-width: 768px) {
       body {
-        padding: 16px;
+        align-items: flex-start;
+        padding: 20px 14px;
       }
-
+    }
       .maintenance-card {
         padding: 28px 18px;
         border-radius: 22px;
