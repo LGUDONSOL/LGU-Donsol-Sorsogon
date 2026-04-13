@@ -34,7 +34,7 @@
       align-items: center;
       padding: 24px;
       min-height: 100vh;
-      overflow-y: auto; /* FIXED scroll */
+      overflow-y: auto;
       position: relative;
     }
 
@@ -132,6 +132,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
     }
 
     .btn--primary {
@@ -143,19 +150,6 @@
       border: 1px solid #ccc;
       color: var(--sky-700);
       background: white;
-    }
-
-    .contact-note {
-      max-width: 560px;
-      margin: 14px auto;
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .contact-note a {
-      color: var(--sky-700);
-      font-weight: bold;
     }
 
     .footer-note {
@@ -220,7 +214,7 @@
     <div class="maintenance-card">
 
       <img src="images/seal.png" class="seal" alt="Seal">
-      <br>
+
       <div class="eyebrow">Official Website Notice</div>
 
       <h1>Website Under Maintenance</h1>
@@ -242,31 +236,18 @@
 
       <div class="actions">
         <a href="https://www.fb.com/LGU.Donsol.Sorsogon" target="_blank" class="btn btn--primary">
-          Visit Official Facebook Page
+          📘 Official Facebook Page
+        </a>
+
+        <a href="https://www.facebook.com/DonsolSorsogonTourism" target="_blank" class="btn btn--outline">
+          ✈️ Tourism Page
         </a>
 
         <a href="mailto:admin@donsol.gov.ph" class="btn btn--outline">
-          Email for Inquiries
+          ✉️ Email Inquiry
         </a>
       </div>
 
-      <p class="contact-note">
-        For official announcements and urgent updates, please visit:
-        <a href="https://www.fb.com/LGU.Donsol.Sorsogon" target="_blank">
-          LGU Donsol Sorsogon
-        </a>
-      </p>
-
-      <p class="contact-note">
-        For tourism information, travel guides, and destination updates, please visit:
-      </p>
-      
-        <div class="actions">
-        <a href="https://www.facebook.com/DonsolSorsogonTourism" target="_blank" class=btn btn--primary">
-          Donsol Sorsogon Tourism
-        </a>
-        <div/>
-      
       <p class="footer-note">
         Municipality of Donsol, Sorsogon<br>
         admin@donsol.gov.ph
