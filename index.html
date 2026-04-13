@@ -14,10 +14,10 @@
       --sky-700: #115f9c;
       --deep-sea: #0b3551;
       --sand-50: #fffaf1;
-      --sand-100: #f5ebd7;
       --muted: #5f7788;
       --white: #ffffff;
       --shadow: 0 16px 40px rgba(17, 64, 95, 0.12);
+      --gold: #e3ba45;
     }
 
     * {
@@ -56,7 +56,7 @@
       border: 1px solid rgba(17, 95, 156, 0.08);
       border-radius: 28px;
       box-shadow: var(--shadow);
-      padding: 34px 30px;
+      padding: 36px 30px;
       text-align: center;
     }
 
@@ -85,18 +85,29 @@
     }
 
     h1 {
-      margin: 0 0 12px;
+      margin: 10px 0 16px;
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.08;
       color: var(--deep-sea);
     }
 
-    .subtitle {
-      max-width: 560px;
-      margin: 0 auto 18px;
+    .subtitle,
+    .notice {
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
       color: var(--muted);
       font-size: 1.02rem;
       line-height: 1.75;
+    }
+
+    .subtitle {
+      margin-bottom: 18px;
+    }
+
+    .notice {
+      margin-top: 0;
+      margin-bottom: 20px;
     }
 
     .divider {
@@ -105,13 +116,6 @@
       border-radius: 999px;
       margin: 18px auto 22px;
       background: linear-gradient(90deg, var(--sky-500), #7fd5ff);
-    }
-
-    .notice {
-      margin: 0 auto 20px;
-      max-width: 570px;
-      color: var(--muted);
-      line-height: 1.75;
     }
 
     .status-box {
@@ -152,7 +156,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .btn {
@@ -173,7 +177,7 @@
     }
 
     .btn--primary {
-      background: linear-gradient(180deg, #f6d56b, #e3ba45);
+      background: linear-gradient(180deg, #f6d56b, var(--gold));
       color: #382400;
     }
 
@@ -184,10 +188,11 @@
     }
 
     .contact-note {
+      max-width: 560px;
+      margin: 16px auto 0;
       font-size: 0.95rem;
       color: var(--muted);
       line-height: 1.7;
-      margin: 0;
     }
 
     .contact-note a {
@@ -201,7 +206,7 @@
     }
 
     .footer-note {
-      margin-top: 18px;
+      margin-top: 22px;
       font-size: 0.9rem;
       color: var(--muted);
     }
@@ -263,7 +268,7 @@
       }
 
       .maintenance-card {
-        padding: 26px 18px;
+        padding: 28px 18px;
         border-radius: 22px;
       }
 
@@ -307,7 +312,7 @@
 <body>
   <div class="whale-stage" aria-hidden="true">
     <div class="whale">
-      <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+      <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fill-rule="evenodd">
           <path d="M41 97c18-43 73-68 142-66 58 2 102 20 127 46 29 2 46 15 51 34-15-8-31-11-49-8-10 17-31 30-63 37-32 7-67 6-104-2-40-9-74-22-104-41z" fill="#8ed7ef"/>
           <path d="M292 58c23-18 53-25 89-20-16 8-28 22-36 41" stroke="#8ed7ef" stroke-width="16" stroke-linecap="round"/>
@@ -331,7 +336,7 @@
     </div>
 
     <div class="whale whale--two">
-      <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+      <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fill-rule="evenodd">
           <path d="M41 97c18-43 73-68 142-66 58 2 102 20 127 46 29 2 46 15 51 34-15-8-31-11-49-8-10 17-31 30-63 37-32 7-67 6-104-2-40-9-74-22-104-41z" fill="#8ed7ef"/>
           <path d="M292 58c23-18 53-25 89-20-16 8-28 22-36 41" stroke="#8ed7ef" stroke-width="16" stroke-linecap="round"/>
