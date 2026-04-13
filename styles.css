@@ -128,6 +128,7 @@ button {
   top: 12px;
 }
 
+/* Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -239,6 +240,7 @@ button {
   color: var(--sky-700);
 }
 
+/* Hero */
 .hero {
   position: relative;
   min-height: calc(100vh - var(--nav-height));
@@ -256,7 +258,7 @@ button {
   position: absolute;
   inset: auto 0 0;
   height: 130px;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(242,249,255,0.98) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(242, 249, 255, 0.98) 100%);
   pointer-events: none;
 }
 
@@ -313,40 +315,6 @@ button {
   gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 28px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 0 20px;
-  border-radius: 14px;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  text-align: center;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 24px rgba(11, 53, 81, 0.18);
-}
-
-.btn--primary {
-  background: linear-gradient(180deg, #f6d56b, var(--gold));
-  color: #382400;
-}
-
-.btn--secondary {
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-}
-
-.btn--light {
-  background: var(--white);
-  color: var(--sky-700);
 }
 
 .hero__mini-grid {
@@ -454,6 +422,52 @@ button {
   font-size: 0.9rem;
 }
 
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(11, 53, 81, 0.18);
+}
+
+.btn--primary {
+  background: linear-gradient(180deg, #f6d56b, var(--gold));
+  color: #382400;
+}
+
+.btn--secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.btn--light {
+  background: var(--white);
+  color: var(--sky-700);
+}
+
+.btn--outline {
+  background: var(--white);
+  color: var(--sky-700);
+  border: 1px solid rgba(17, 95, 156, 0.18);
+}
+
+.btn--outline:hover {
+  background: var(--sky-50);
+}
+
+/* Quick links */
 .quick-links {
   margin-top: -44px;
   position: relative;
@@ -505,6 +519,7 @@ button {
   font-size: 0.96rem;
 }
 
+/* Shared cards and grids */
 .grid {
   display: grid;
   gap: 20px;
@@ -543,11 +558,12 @@ button {
 
 .accent-card {
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.98)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)),
     linear-gradient(135deg, var(--sky-100), var(--sand-100));
   border: 1px solid rgba(62, 160, 223, 0.14);
 }
 
+/* About */
 .about-layout {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -583,6 +599,7 @@ button {
   color: var(--muted);
 }
 
+/* Tourism */
 .tourism-card {
   position: relative;
   overflow: hidden;
@@ -613,6 +630,7 @@ button {
   margin-top: 8px;
 }
 
+/* News and placeholders */
 .label {
   display: inline-block;
   padding: 6px 10px;
@@ -641,6 +659,106 @@ button {
   font-weight: 700;
 }
 
+/* Announcement tabs */
+.announcement-container-wide {
+  width: min(1400px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.announcement-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0 20px;
+}
+
+.announcement-tab {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(62, 160, 223, 0.08);
+  color: var(--sky-700);
+  border: 1px solid rgba(17, 95, 156, 0.1);
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.announcement-tab:hover {
+  background: rgba(62, 160, 223, 0.14);
+  transform: translateY(-1px);
+}
+
+.announcement-tab.is-active {
+  background: linear-gradient(180deg, var(--sky-600), var(--sky-700));
+  color: var(--white);
+  border-color: transparent;
+}
+
+.announcement-panels {
+  width: 100%;
+}
+
+.announcement-panel {
+  display: none;
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(17, 95, 156, 0.08);
+  padding: 28px;
+}
+
+.announcement-panel.is-active {
+  display: block;
+}
+
+.announcement-panel__layout {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.announcement-panel__media {
+  width: 100%;
+}
+
+.announcement-panel__media img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #000;
+  display: block;
+}
+
+.announcement-panel__content h3 {
+  margin: 0 0 14px;
+  color: var(--deep-sea);
+  font-size: 1.55rem;
+}
+
+.announcement-panel__content p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.announcement-list {
+  margin: 0 0 16px 20px;
+  color: var(--muted);
+}
+
+.announcement-list li {
+  margin-bottom: 8px;
+}
+
+.announcement-signature {
+  margin-top: 18px;
+  font-weight: 700;
+  color: var(--deep-sea);
+}
+
+/* FAQ */
 .faq-list {
   display: grid;
   gap: 14px;
@@ -695,6 +813,7 @@ button {
   color: var(--muted);
 }
 
+/* Citizen's Charter */
 .charter-banner {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -726,6 +845,7 @@ button {
   flex-wrap: wrap;
 }
 
+/* Contact */
 .contact-layout {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -841,6 +961,7 @@ button {
   display: block;
 }
 
+/* Mayor modal */
 .modal {
   position: fixed;
   inset: 0;
@@ -987,6 +1108,7 @@ button {
   font-weight: 700;
 }
 
+/* Back to top */
 .back-to-top {
   position: fixed;
   right: 18px;
@@ -1013,9 +1135,10 @@ button {
   transform: translateY(0);
 }
 
+/* Footer */
 .gov-footer {
   background: #0b3551;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   padding: 50px 0 30px;
 }
 
@@ -1031,7 +1154,7 @@ button {
 }
 
 .gov-footer a {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
 }
 
@@ -1047,11 +1170,19 @@ button {
   flex-wrap: wrap;
 }
 
+.gov-footer__logos a {
+  display: inline-flex;
+}
+
 .gov-footer__logos img {
   height: 70px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   padding: 10px;
   border-radius: 12px;
+}
+
+.gov-footer__logos a:hover img {
+  transform: scale(1.05);
 }
 
 .gov-footer__grid {
@@ -1078,19 +1209,12 @@ button {
 .gov-footer__bottom {
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
   font-size: 0.9rem;
 }
 
-.gov-footer__logos a {
-  display: inline-flex;
-}
-
-.gov-footer__logos a:hover img {
-  transform: scale(1.05);
-}
-
+/* Image carousel and lightbox */
 .carousel {
   position: relative;
   overflow: hidden;
@@ -1114,17 +1238,13 @@ button {
   cursor: zoom-in;
 }
 
-.announcement-carousel {
-  text-align: left;
-}
-
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
-  color: white;
+  color: #fff;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1139,7 +1259,7 @@ button {
 }
 
 .carousel-btn:hover {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-item {
@@ -1151,8 +1271,8 @@ button {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   padding: 8px 10px;
   border-radius: 10px;
   font-size: 14px;
@@ -1162,8 +1282,8 @@ button {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(0,0,0,0.6);
-  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   padding: 6px 10px;
   border-radius: 10px;
   font-size: 13px;
@@ -1261,6 +1381,13 @@ button {
   z-index: 3;
 }
 
+/* Responsive */
+@media (max-width: 1100px) {
+  .announcement-panel__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1080px) {
   .hero__grid,
   .about-layout,
@@ -1328,7 +1455,7 @@ button {
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: rgba(255,255,255,0.98);
+    background: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid rgba(17, 95, 156, 0.08);
     box-shadow: 0 20px 32px rgba(17, 64, 95, 0.08);
     transform: translateY(-18px);
@@ -1372,6 +1499,31 @@ button {
 }
 
 @media (max-width: 768px) {
+  .announcement-container-wide {
+    width: min(1400px, calc(100% - 22px));
+  }
+
+  .announcement-panel {
+    padding: 18px;
+  }
+
+  .announcement-panel__layout {
+    gap: 18px;
+  }
+
+  .announcement-panel__content h3 {
+    font-size: 1.25rem;
+  }
+
+  .announcement-tabs {
+    gap: 10px;
+  }
+
+  .announcement-tab {
+    width: 100%;
+    text-align: center;
+  }
+
   .modal {
     padding: 0;
     align-items: stretch;
@@ -1511,19 +1663,6 @@ button {
 
   .btn {
     width: 100%;
-  }
-
-  .modal {
-    padding: 12px;
-  }
-
-  .modal__content,
-  .modal__aside {
-    padding: 20px;
-  }
-
-  .gov-footer__bottom {
-    flex-direction: column;
   }
 }
 

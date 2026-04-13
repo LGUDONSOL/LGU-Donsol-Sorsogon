@@ -404,3 +404,29 @@
     });
   })();
 })();
+
+(function () {
+  const tabs = Array.from(document.querySelectorAll(".announcement-tab"));
+  const panels = Array.from(document.querySelectorAll(".announcement-panel"));
+
+  if (!tabs.length || !panels.length) return;
+
+  function activatePanel(targetId) {
+    tabs.forEach(function (tab) {
+      const isMatch = tab.getAttribute("data-target") === targetId;
+      tab.classList.toggle("is-active", isMatch);
+    });
+
+    panels.forEach(function (panel) {
+      panel.classList.toggle("is-active", panel.id === targetId);
+    });
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      const targetId = tab.getAttribute("data-target");
+      if (!targetId) return;
+      activatePanel(targetId);
+    });
+  });
+})();
