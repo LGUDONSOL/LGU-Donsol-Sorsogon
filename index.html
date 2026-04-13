@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Under Maintenance | Municipality of Donsol</title>
-  <link rel="icon" type="image/png" href="images/seal.png" />
+  <link rel="icon" href="images/seal.png" />
 
   <style>
     :root {
       --sky-50: #f2f9ff;
-      --sky-100: #dff0ff;
       --sky-500: #3ea0df;
       --sky-700: #115f9c;
       --deep-sea: #0b3551;
@@ -20,115 +19,87 @@
       --gold: #e3ba45;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html,
     body {
       margin: 0;
-      min-height: 100%;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--deep-sea);
       background:
-        radial-gradient(circle at top right, rgba(62, 160, 223, 0.12), transparent 24%),
+        radial-gradient(circle at top right, rgba(62,160,223,0.12), transparent 24%),
         linear-gradient(180deg, var(--sky-50), #f8fcff 38%, var(--sand-50) 100%);
-    }
-
-    body {
+      
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       padding: 24px;
-      position: relative;
       min-height: 100vh;
-      overflow-y: auto; 
+      overflow-y: auto; /* FIXED scroll */
+      position: relative;
     }
 
     .maintenance-shell {
-      position: relative;
       width: min(720px, 100%);
+      position: relative;
       z-index: 2;
     }
 
     .maintenance-card {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(17, 95, 156, 0.08);
+      background: rgba(255,255,255,0.95);
       border-radius: 28px;
       box-shadow: var(--shadow);
-      padding: 36px 30px;
+      padding: 36px 28px;
       text-align: center;
     }
 
     .seal {
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
-      margin: 0 auto 18px;
-      background: var(--white);
-      border-radius: 50%;
-      padding: 6px;
-      box-shadow: 0 10px 22px rgba(11, 53, 81, 0.1);
+      width: 90px;
+      margin-bottom: 18px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(62, 160, 223, 0.1);
+      background: rgba(62,160,223,0.1);
       color: var(--sky-700);
-      font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: bold;
       margin-bottom: 16px;
     }
 
     h1 {
       margin: 10px 0 16px;
       font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.08;
-      color: var(--deep-sea);
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: var(--sky-500);
+      margin: 18px auto;
+      border-radius: 10px;
     }
 
     .subtitle,
     .notice {
       max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
       color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.75;
+      line-height: 1.7;
     }
 
-    .subtitle {
-      margin-bottom: 18px;
-    }
-
-    .notice {
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-
-    .divider {
-      width: 72px;
-      height: 4px;
-      border-radius: 999px;
-      margin: 18px auto 22px;
-      background: linear-gradient(90deg, var(--sky-500), #7fd5ff);
-    }
+    .subtitle { margin-bottom: 18px; }
+    .notice { margin-bottom: 20px; }
 
     .status-box {
       display: inline-flex;
       align-items: center;
       gap: 10px;
+      background: rgba(17,95,156,0.07);
       padding: 12px 16px;
-      margin: 0 auto 22px;
       border-radius: 16px;
-      background: rgba(17, 95, 156, 0.07);
-      color: var(--sky-700);
-      font-weight: 700;
+      font-weight: bold;
+      margin-bottom: 22px;
     }
 
     .dot {
@@ -136,45 +107,31 @@
       height: 10px;
       border-radius: 50%;
       background: #20b26b;
-      box-shadow: 0 0 0 0 rgba(32, 178, 107, 0.35);
       animation: pulse 1.8s infinite;
     }
 
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(32, 178, 107, 0.35);
-      }
-      70% {
-        box-shadow: 0 0 0 12px rgba(32, 178, 107, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(32, 178, 107, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(32,178,107,0.35); }
+      70% { box-shadow: 0 0 0 12px rgba(32,178,107,0); }
+      100% { box-shadow: 0 0 0 0 rgba(32,178,107,0); }
     }
 
     .actions {
       display: flex;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
       margin-bottom: 22px;
     }
 
     .btn {
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: bold;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 24px rgba(11, 53, 81, 0.15);
     }
 
     .btn--primary {
@@ -183,27 +140,22 @@
     }
 
     .btn--outline {
-      background: var(--white);
+      border: 1px solid #ccc;
       color: var(--sky-700);
-      border: 1px solid rgba(17, 95, 156, 0.16);
+      background: white;
     }
 
     .contact-note {
       max-width: 560px;
-      margin: 16px auto 0;
+      margin: 14px auto;
       font-size: 0.95rem;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .contact-note a {
       color: var(--sky-700);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .contact-note a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
 
     .footer-note {
@@ -212,77 +164,38 @@
       color: var(--muted);
     }
 
-    /* Whale shark animation */
+    /* Whale animation */
     .whale-stage {
       position: absolute;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
-      z-index: 1;
     }
 
     .whale {
       position: absolute;
-      left: -260px;
-      top: 18%;
-      width: min(280px, 42vw);
-      opacity: 0.16;
-      animation: swimAcross 14s linear infinite;
-      transform-origin: center;
+      left: -200px;
+      top: 20%;
+      width: 220px;
+      opacity: 0.12;
+      animation: swim 14s linear infinite;
     }
 
     .whale--two {
-      top: 72%;
-      width: min(220px, 34vw);
-      opacity: 0.1;
+      top: 70%;
+      width: 160px;
       animation-duration: 18s;
-      animation-delay: -7s;
     }
 
-    .whale svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @keyframes swimAcross {
-      0% {
-        transform: translateX(0) translateY(0) scaleX(1);
-      }
-      25% {
-        transform: translateX(35vw) translateY(-10px) scaleX(1);
-      }
-      50% {
-        transform: translateX(70vw) translateY(6px) scaleX(1);
-      }
-      75% {
-        transform: translateX(100vw) translateY(-8px) scaleX(1);
-      }
-      100% {
-        transform: translateX(135vw) translateY(0) scaleX(1);
-      }
+    @keyframes swim {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(140vw); }
     }
 
     @media (max-width: 768px) {
       body {
         align-items: flex-start;
         padding: 20px 14px;
-      }
-    }
-      .maintenance-card {
-        padding: 28px 18px;
-        border-radius: 22px;
-      }
-
-      .seal {
-        width: 82px;
-        height: 82px;
-      }
-
-      .subtitle,
-      .notice,
-      .contact-note {
-        font-size: 0.96rem;
       }
 
       .actions {
@@ -292,79 +205,21 @@
       .btn {
         width: 100%;
       }
-
-      .whale {
-        width: 180px;
-        opacity: 0.1;
-      }
-
-      .whale--two {
-        width: 140px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .whale,
-      .dot {
-        animation: none !important;
-      }
     }
   </style>
 </head>
-<body>
-  <div class="whale-stage" aria-hidden="true">
-    <div class="whale">
-      <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd">
-          <path d="M41 97c18-43 73-68 142-66 58 2 102 20 127 46 29 2 46 15 51 34-15-8-31-11-49-8-10 17-31 30-63 37-32 7-67 6-104-2-40-9-74-22-104-41z" fill="#8ed7ef"/>
-          <path d="M292 58c23-18 53-25 89-20-16 8-28 22-36 41" stroke="#8ed7ef" stroke-width="16" stroke-linecap="round"/>
-          <path d="M38 96c28-9 46-27 55-55-3 30 8 50 33 61" fill="#8ed7ef"/>
-          <path d="M182 50c9 0 16 7 16 16s-7 16-16 16-16-7-16-16 7-16 16-16z" fill="#6ac1df"/>
-          <circle cx="172" cy="77" r="4" fill="#0b3551"/>
-          <g fill="#f5fbff" opacity=".95">
-            <circle cx="108" cy="82" r="4"/>
-            <circle cx="126" cy="68" r="3.5"/>
-            <circle cx="144" cy="89" r="3"/>
-            <circle cx="164" cy="61" r="4"/>
-            <circle cx="188" cy="93" r="3.5"/>
-            <circle cx="210" cy="73" r="3.5"/>
-            <circle cx="232" cy="95" r="4"/>
-            <circle cx="248" cy="78" r="3"/>
-            <circle cx="267" cy="101" r="3.5"/>
-            <circle cx="287" cy="85" r="3.5"/>
-          </g>
-        </g>
-      </svg>
-    </div>
 
-    <div class="whale whale--two">
-      <svg viewBox="0 0 420 180" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd">
-          <path d="M41 97c18-43 73-68 142-66 58 2 102 20 127 46 29 2 46 15 51 34-15-8-31-11-49-8-10 17-31 30-63 37-32 7-67 6-104-2-40-9-74-22-104-41z" fill="#8ed7ef"/>
-          <path d="M292 58c23-18 53-25 89-20-16 8-28 22-36 41" stroke="#8ed7ef" stroke-width="16" stroke-linecap="round"/>
-          <path d="M38 96c28-9 46-27 55-55-3 30 8 50 33 61" fill="#8ed7ef"/>
-          <path d="M182 50c9 0 16 7 16 16s-7 16-16 16-16-7-16-16 7-16 16-16z" fill="#6ac1df"/>
-          <circle cx="172" cy="77" r="4" fill="#0b3551"/>
-          <g fill="#f5fbff" opacity=".95">
-            <circle cx="108" cy="82" r="4"/>
-            <circle cx="126" cy="68" r="3.5"/>
-            <circle cx="144" cy="89" r="3"/>
-            <circle cx="164" cy="61" r="4"/>
-            <circle cx="188" cy="93" r="3.5"/>
-            <circle cx="210" cy="73" r="3.5"/>
-            <circle cx="232" cy="95" r="4"/>
-            <circle cx="248" cy="78" r="3"/>
-            <circle cx="267" cy="101" r="3.5"/>
-            <circle cx="287" cy="85" r="3.5"/>
-          </g>
-        </g>
-      </svg>
-    </div>
+<body>
+
+  <div class="whale-stage">
+    <img src="images/whaleshark.png" class="whale" alt="">
+    <img src="images/whaleshark.png" class="whale whale--two" alt="">
   </div>
 
   <main class="maintenance-shell">
-    <section class="maintenance-card">
-      <img class="seal" src="images/seal.png" alt="Seal of the Municipality of Donsol" />
+    <div class="maintenance-card">
+
+      <img src="images/seal.png" class="seal" alt="Seal">
       <br>
       <div class="eyebrow">Official Website Notice</div>
 
@@ -373,51 +228,49 @@
       <div class="divider"></div>
 
       <p class="subtitle">
-        The official website of the Municipality of Donsol is currently undergoing updates and improvements
-        to better serve the public.
+        The official website of the Municipality of Donsol is currently undergoing updates and improvements to better serve the public.
       </p>
 
       <div class="status-box">
-        <span class="dot" aria-hidden="true"></span>
-        <span>System update in progress</span>
+        <span class="dot"></span>
+        System update in progress
       </div>
 
       <p class="notice">
-        We are working to provide a more user-friendly, informative, and accessible online experience
-        for residents, visitors, and stakeholders. Please check back again soon.
+        We are working to provide a more user-friendly, informative, and accessible online experience. Please check back again soon.
       </p>
 
       <div class="actions">
-        <a
-          class="btn btn--primary"
-          href="https://www.fb.com/LGU.Donsol.Sorsogon"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.fb.com/LGU.Donsol.Sorsogon" target="_blank" class="btn btn--primary">
           Visit Official Facebook Page
         </a>
 
-        <a class="btn btn--outline" href="mailto:admin@donsol.gov.ph">
+        <a href="mailto:admin@donsol.gov.ph" class="btn btn--outline">
           Email for Inquiries
         </a>
       </div>
 
       <p class="contact-note">
-        For announcements and urgent updates, please visit our official Facebook page:
-        <a
-          href="https://www.fb.com/LGU.Donsol.Sorsogon"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        For official announcements and urgent updates, please visit:
+        <a href="https://www.fb.com/LGU.Donsol.Sorsogon" target="_blank">
           LGU Donsol Sorsogon
         </a>
       </p>
 
+      <p class="contact-note">
+        For tourism information, travel guides, and destination updates, please visit:
+        <a href="https://www.facebook.com/DonsolSorsogonTourism" target="_blank">
+          Donsol Sorsogon Tourism
+        </a>
+      </p>
+
       <p class="footer-note">
-        Municipality of Donsol, Sorsogon<br />
+        Municipality of Donsol, Sorsogon<br>
         admin@donsol.gov.ph
       </p>
-    </section>
+
+    </div>
   </main>
+
 </body>
 </html>
