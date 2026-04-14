@@ -297,5 +297,26 @@
     </div>
   </main>
 
+    <script>
+      document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function (e) {
+          const rect = button.getBoundingClientRect();
+          const ripple = button;
+    
+          // remove old animation
+          ripple.classList.remove('ripple');
+    
+          // trigger reflow
+          void ripple.offsetWidth;
+    
+          ripple.classList.add('ripple');
+    
+          // set ripple position
+          ripple.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+          ripple.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+        });
+      });
+    </script>
+  
 </body>
 </html>
