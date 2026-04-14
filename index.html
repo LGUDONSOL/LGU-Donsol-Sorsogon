@@ -133,45 +133,49 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn {
       position: relative;
       overflow: hidden;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .btn:active {
-  transform: scale(0.97);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-}
-
-/* Ripple effect */
-.btn::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  opacity: 0;
-}
-
-.btn.ripple::after {
-  animation: rippleEffect 0.5s ease-out;
-}
-
-@keyframes rippleEffect {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.5;
-  }
-  100% {
-    width: 200%;
-    height: 200%;
-    opacity: 0;
-  }
-}
+      transform: scale(0.97);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    
+    /* Ripple effect */
+    .btn::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;
+    }
+    
+    .btn.ripple::after {
+      animation: rippleEffect 0.5s ease-out;
+    }
+    
+    @keyframes rippleEffect {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+      }
+      100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+      }
+    }
 
     .btn:hover {
       transform: translateY(-1px);
