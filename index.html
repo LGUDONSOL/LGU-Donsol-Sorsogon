@@ -1,322 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Maintenance | Municipality of Donsol</title>
-  <link rel="icon" href="images/seal.png" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Under Maintenance | Municipality of Donsol</title>
+<link rel="icon" href="images/seal.png" />
 
-  <style>
-    :root {
-      --sky-50: #f2f9ff;
-      --sky-500: #3ea0df;
-      --sky-700: #115f9c;
-      --deep-sea: #0b3551;
-      --sand-50: #fffaf1;
-      --muted: #5f7788;
-      --white: #ffffff;
-      --shadow: 0 16px 40px rgba(17, 64, 95, 0.12);
-      --gold: #e3ba45;
-    }
+<style>
+:root {
+  --sky-50: #f2f9ff;
+  --sky-500: #3ea0df;
+  --sky-700: #115f9c;
+  --deep-sea: #0b3551;
+  --sand-50: #fffaf1;
+  --muted: #5f7788;
+  --white: #ffffff;
+  --shadow: 0 16px 40px rgba(17, 64, 95, 0.12);
+  --gold: #e3ba45;
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--deep-sea);
-      background:
-        radial-gradient(circle at top right, rgba(62,160,223,0.12), transparent 24%),
-        linear-gradient(180deg, var(--sky-50), #f8fcff 38%, var(--sand-50) 100%);
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      min-height: 100vh;
-      overflow-y: auto;
-      position: relative;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--deep-sea);
+  background:
+    radial-gradient(circle at top right, rgba(62,160,223,0.12), transparent 24%),
+    linear-gradient(180deg, var(--sky-50), #f8fcff 38%, var(--sand-50) 100%);
 
-    .maintenance-shell {
-      width: min(720px, 100%);
-      position: relative;
-      z-index: 2;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+  position: relative;
+}
 
-    .maintenance-card {
-      background: rgba(255,255,255,0.95);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 36px 28px;
-      text-align: center;
-    }
+.maintenance-shell {
+  width: min(720px, 100%);
+  position: relative;
+  z-index: 2;
+}
 
-    .seal {
-      width: 90px;
-      margin-bottom: 18px;
-    }
+.maintenance-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 36px 28px;
+  text-align: center;
+}
 
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(62,160,223,0.1);
-      color: var(--sky-700);
-      font-weight: bold;
-      margin-bottom: 16px;
-    }
+.seal {
+  width: 90px;
+  margin-bottom: 18px;
+}
 
-    h1 {
-      margin: 10px 0 16px;
-      font-size: clamp(2rem, 5vw, 3rem);
-    }
+.eyebrow {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(62,160,223,0.1);
+  color: var(--sky-700);
+  font-weight: bold;
+  margin-bottom: 16px;
+}
 
-    .divider {
-      width: 60px;
-      height: 4px;
-      background: var(--sky-500);
-      margin: 18px auto;
-      border-radius: 10px;
-    }
+h1 {
+  margin: 10px 0 16px;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
 
-    .subtitle,
-    .notice {
-      max-width: 520px;
-      margin: auto;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--sky-500);
+  margin: 18px auto;
+  border-radius: 10px;
+}
 
-    .subtitle { margin-bottom: 18px; }
-    .notice { margin-bottom: 20px; }
+.subtitle,
+.notice {
+  max-width: 520px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.7;
+}
 
-    .status-box {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(17,95,156,0.07);
-      padding: 12px 16px;
-      border-radius: 16px;
-      font-weight: bold;
-      margin-bottom: 22px;
-    }
+.subtitle { margin-bottom: 18px; }
+.notice { margin-bottom: 20px; }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #20b26b;
-      animation: pulse 1.8s infinite;
-    }
+.status-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(17,95,156,0.07);
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(32,178,107,0.35); }
-      70% { box-shadow: 0 0 0 12px rgba(32,178,107,0); }
-      100% { box-shadow: 0 0 0 0 rgba(32,178,107,0); }
-    }
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #20b26b;
+  animation: pulse 1.8s infinite;
+}
 
-    .actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(32,178,107,0.35); }
+  70% { box-shadow: 0 0 0 12px rgba(32,178,107,0); }
+  100% { box-shadow: 0 0 0 0 rgba(32,178,107,0); }
+}
 
-    .btn {
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
 
-    .btn {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
+.btn {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
 
-    .btn:active {
-      transform: scale(0.97);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-    
-    /* Ripple effect */
-    .btn::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      opacity: 0;
-    }
-    
-    .btn.ripple::after {
-      animation: rippleEffect 0.5s ease-out;
-    }
-    
-    @keyframes rippleEffect {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 0.5;
-      }
-      100% {
-        width: 200%;
-        height: 200%;
-        opacity: 0;
-      }
-    }
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
 
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-    }
+.btn:active {
+  transform: scale(0.97);
+}
 
-    .btn--primary {
-      background: linear-gradient(180deg, #f6d56b, var(--gold));
-      color: #382400;
-    }
+/* Ripple */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
 
-    .btn--outline {
-      border: 1px solid #ccc;
-      color: var(--sky-700);
-      background: white;
-    }
+.btn.ripple::after {
+  animation: ripple 0.5s ease-out;
+}
 
-    .footer-note {
-      margin-top: 22px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+@keyframes ripple {
+  0% { width: 0; height: 0; opacity: 0.5; }
+  100% { width: 200%; height: 200%; opacity: 0; }
+}
 
-    /* Whale animation */
-    .whale-stage {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
+.btn--primary {
+  background: linear-gradient(180deg, #f6d56b, var(--gold));
+  color: #382400;
+}
 
-    .whale {
-      position: absolute;
-      left: -200px;
-      top: 20%;
-      width: 220px;
-      opacity: 0.12;
-      animation: swim 14s linear infinite;
-    }
+.btn--outline {
+  border: 1px solid #ccc;
+  color: var(--sky-700);
+  background: white;
+}
 
-    .whale--two {
-      top: 70%;
-      width: 160px;
-      animation-duration: 18s;
-    }
+.footer-note {
+  margin-top: 22px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
 
-    @keyframes swim {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(140vw); }
-    }
+/* Whale animation */
+.whale-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
 
-    @media (max-width: 768px) {
-      body {
-        align-items: flex-start;
-        padding: 20px 14px;
-      }
+.whale {
+  position: absolute;
+  left: -200px;
+  top: 20%;
+  width: 220px;
+  opacity: 0.12;
+  animation: swim 14s linear infinite;
+}
 
-      .actions {
-        flex-direction: column;
-      }
+.whale--two {
+  top: 70%;
+  width: 160px;
+  animation-duration: 18s;
+}
 
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+@keyframes swim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(140vw); }
+}
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 20px 14px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="whale-stage">
-    <img src="images/whaleshark.png" class="whale" alt="">
-    <img src="images/whaleshark.png" class="whale whale--two" alt="">
-  </div>
+<div class="whale-stage">
+  <img src="images/whaleshark.png" class="whale" alt="">
+  <img src="images/whaleshark.png" class="whale whale--two" alt="">
+</div>
 
-  <main class="maintenance-shell">
-    <div class="maintenance-card">
+<main class="maintenance-shell">
+  <div class="maintenance-card">
 
-      <img src="images/seal.png" class="seal" alt="Seal">
-      <br>
-      <div class="eyebrow">Official Website Notice</div>
+    <img src="images/seal.png" class="seal" alt="Seal">
 
-      <h1>Website Under Maintenance</h1>
+    <div class="eyebrow">Official Website Notice</div>
 
-      <div class="divider"></div>
+    <h1>Website Under Maintenance</h1>
 
-      <p class="subtitle">
-        The official website of the Municipality of Donsol is currently undergoing updates and improvements to better serve the public.
-      </p>
+    <div class="divider"></div>
 
-      <div class="status-box">
-        <span class="dot"></span>
-        System update in progress
-      </div>
+    <p class="subtitle">
+      The official website of the Municipality of Donsol is currently undergoing updates and improvements to better serve the public.
+    </p>
 
-      <p class="notice">
-        We are working to provide a more user-friendly, informative, and accessible online experience. Please check back again soon.
-      </p>
-
-      <div class="actions">
-        <a href="https://www.fb.com/LGU.Donsol.Sorsogon" target="_blank" class="btn btn--primary">
-          📘 Official Facebook Page
-        </a>
-
-        <a href="https://www.facebook.com/DonsolSorsogonTourism" target="_blank" class="btn btn--outline">
-          ✈️ Tourism Page
-        </a>
-
-        <a href="mailto:admin@donsol.gov.ph" class="btn btn--outline">
-          ✉️ Email Inquiry
-        </a>
-      </div>
-
-      <p class="footer-note">
-        Municipality of Donsol, Sorsogon<br>
-        admin@donsol.gov.ph
-      </p>
-
+    <div class="status-box">
+      <span class="dot"></span>
+      System update in progress
     </div>
-  </main>
 
-    <script>
-      document.querySelectorAll('.btn').forEach(button => {
-        button.addEventListener('click', function (e) {
-          const rect = button.getBoundingClientRect();
-          const ripple = button;
-    
-          // remove old animation
-          ripple.classList.remove('ripple');
-    
-          // trigger reflow
-          void ripple.offsetWidth;
-    
-          ripple.classList.add('ripple');
-    
-          // set ripple position
-          ripple.style.setProperty('--x', (e.clientX - rect.left) + 'px');
-          ripple.style.setProperty('--y', (e.clientY - rect.top) + 'px');
-        });
-      });
-    </script>
-  
+    <p class="notice">
+      We are working to provide a more user-friendly, informative, and accessible online experience. Please check back again soon.
+    </p>
+
+    <div class="actions">
+      <a href="https://www.fb.com/LGU.Donsol.Sorsogon" target="_blank" class="btn btn--primary">
+        📘 Official Facebook Page
+      </a>
+
+      <a href="https://www.facebook.com/DonsolSorsogonTourism" target="_blank" class="btn btn--outline">
+        ✈️ Tourism Page
+      </a>
+
+      <a href="mailto:admin@donsol.gov.ph" class="btn btn--outline">
+        ✉️ Email Inquiry
+      </a>
+    </div>
+
+    <p class="footer-note">
+      Municipality of Donsol, Sorsogon<br>
+      admin@donsol.gov.ph
+    </p>
+
+  </div>
+</main>
+
+<script>
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const rect = button.getBoundingClientRect();
+
+    button.classList.remove('ripple');
+    void button.offsetWidth;
+    button.classList.add('ripple');
+
+    button.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+    button.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+  });
+});
+</script>
+
 </body>
 </html>
