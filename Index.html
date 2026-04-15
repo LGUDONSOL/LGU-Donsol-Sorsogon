@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Webpage Not Available | Municipality of Donsol</title>
+<link rel="icon" href="images/seal.png" />
+
+<style>
+:root {
+  --sky-50: #f2f9ff;
+  --sky-500: #3ea0df;
+  --deep-sea: #0b3551;
+  --muted: #5f7788;
+  --white: #ffffff;
+  --shadow: 0 16px 40px rgba(17, 64, 95, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--deep-sea);
+  background:
+    radial-gradient(circle at top right, rgba(62,160,223,0.12), transparent 24%),
+    linear-gradient(180deg, var(--sky-50), #f8fcff 60%, #fff 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  width: min(720px, 100%);
+}
+
+.card {
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.seal {
+  width: 90px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 10px 0 14px;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--sky-500);
+  margin: 16px auto 22px;
+  border-radius: 10px;
+}
+
+p {
+  max-width: 520px;
+  margin: 0 auto 16px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.notice {
+  font-weight: bold;
+  color: var(--deep-sea);
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 20px 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <img src="images/seal.png" class="seal" alt="Seal">
+
+    <h1>Webpage Not Available</h1>
+
+    <div class="divider"></div>
+
+    <p class="notice">
+      This website is currently unavailable.
+    </p>
+
+    <p>
+      The previous version of this website was independently developed and maintained using personal resources.
+    </p>
+
+    <p>
+      As of this time, the site has been taken offline.
+    </p>
+
+    <p>
+      For official information, please refer to the Municipality of Donsol’s official communication channels.
+    </p>
+
+    <div class="footer">
+      Municipality of Donsol, Sorsogon
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
