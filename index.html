@@ -1,120 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Webpage Not Available | Municipality of Donsol</title>
-<link rel="icon" href="images/seal.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="The official Municipality of Donsol website is currently under maintenance. Tourism information and inquiries remain available through Donsol Tourism."
+  />
+  <meta name="theme-color" content="#0b3551" />
 
-<style>
-:root {
-  --sky-50: #f2f9ff;
-  --sky-500: #3ea0df;
-  --deep-sea: #0b3551;
-  --muted: #5f7788;
-  --white: #ffffff;
-  --shadow: 0 16px 40px rgba(17, 64, 95, 0.12);
-}
+  <title>Website Under Maintenance | Municipality of Donsol</title>
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--deep-sea);
-  background:
-    radial-gradient(circle at top right, rgba(62,160,223,0.12), transparent 24%),
-    linear-gradient(180deg, var(--sky-50), #f8fcff 60%, #fff 100%);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 24px;
-}
-
-.container {
-  width: min(720px, 100%);
-}
-
-.card {
-  background: var(--white);
-  border-radius: 28px;
-  box-shadow: var(--shadow);
-  padding: 40px 28px;
-  text-align: center;
-}
-
-.seal {
-  width: 90px;
-  margin-bottom: 18px;
-}
-
-h1 {
-  margin: 10px 0 14px;
-  font-size: clamp(2rem, 5vw, 2.8rem);
-}
-
-.divider {
-  width: 60px;
-  height: 4px;
-  background: var(--sky-500);
-  margin: 16px auto 22px;
-  border-radius: 10px;
-}
-
-p {
-  max-width: 520px;
-  margin: 0 auto 16px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.notice {
-  font-weight: bold;
-  color: var(--deep-sea);
-}
-
-.footer {
-  margin-top: 24px;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-@media (max-width: 768px) {
-  body {
-    align-items: flex-start;
-    padding: 20px 14px;
-  }
-}
-</style>
+  <link rel="icon" href="images/seal.png" />
+  <link rel="stylesheet" href="maintenance.css" />
 </head>
 
 <body>
+  <main class="maintenance-page">
+    <section class="maintenance-card" aria-labelledby="maintenance-title">
+      <div class="maintenance-card__main">
+        <div class="brand-lockup" aria-label="Municipality of Donsol">
+          <img
+            src="images/seal.png"
+            class="brand-lockup__seal"
+            alt="Municipality of Donsol official seal"
+          />
 
-<div class="container">
-  <div class="card">
+          <div class="brand-lockup__text">
+            <strong>Municipality of Donsol</strong>
+            <span>Sorsogon, Philippines</span>
+          </div>
+        </div>
 
-    <img src="images/seal.png" class="seal" alt="Seal">
+        <div class="status-badge">
+          <span class="status-badge__dot" aria-hidden="true"></span>
+          Website maintenance in progress
+        </div>
 
-    <h1>Webpage Not Available</h1>
+        <h1 id="maintenance-title">We’re improving our official website.</h1>
 
-    <div class="divider"></div>
+        <p class="maintenance-card__lead">
+          The Municipality of Donsol website is temporarily unavailable while maintenance
+          and improvements are being completed.
+        </p>
 
-    <p class="notice">
-      This website is currently unavailable.
-    </p>
+        <p>
+          Thank you for your patience. Please continue to follow the Municipality of
+          Donsol’s official communication channels for government announcements and public
+          service information.
+        </p>
 
-    <p>
-      For official information, please refer to the Municipality of Donsol’s official communication channels.
-    </p>
+        <p class="maintenance-card__note">
+          This temporary page will be replaced once the official LGU website is ready.
+        </p>
+      </div>
 
-    <div class="footer">
-      Municipality of Donsol, Sorsogon
-    </div>
+      <aside class="tourism-panel" aria-labelledby="tourism-title">
+        <div class="tourism-panel__logo-wrap">
+          <img
+            src="images/Tourism logo.jpg"
+            class="tourism-panel__logo"
+            alt="Donsol Tourism logo"
+          />
+        </div>
 
-  </div>
-</div>
+        <p class="tourism-panel__eyebrow">Planning a visit to Donsol?</p>
+        <h2 id="tourism-title">Tourism information and inquiries</h2>
 
+        <p>
+          For attractions, trip planning, accommodations, visitor information, and tourism
+          assistance, please use the official Donsol Tourism channels below.
+        </p>
+
+        <div class="tourism-panel__actions" aria-label="Donsol Tourism links">
+          <a
+            class="button button--primary"
+            href="https://lgudonsol.github.io/Tourism/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the Donsol Tourism website in a new tab"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.92 9h-3.01a15.7 15.7 0 0 0-1.26-5.01A8.03 8.03 0 0 1 18.92 11ZM12 4c.83 0 2.17 2.45 2.52 7H9.48C9.83 6.45 11.17 4 12 4ZM9.35 5.99A15.7 15.7 0 0 0 8.09 11H5.08a8.03 8.03 0 0 1 4.27-5.01ZM5.08 13h3.01a15.7 15.7 0 0 0 1.26 5.01A8.03 8.03 0 0 1 5.08 13ZM12 20c-.83 0-2.17-2.45-2.52-7h5.04c-.35 4.55-1.69 7-2.52 7Zm2.65-1.99A15.7 15.7 0 0 0 15.91 13h3.01a8.03 8.03 0 0 1-4.27 5.01Z" />
+            </svg>
+            Visit Tourism Website
+          </a>
+
+          <a
+            class="button button--facebook"
+            href="https://www.facebook.com/DonsolSorsogonTourism"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the Donsol Tourism Facebook page in a new tab"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 8h3V4.5c-.52-.07-2.3-.22-4.42-.22C8.4 4.28 5.54 6.83 5.54 11.5V14H2v3.91h3.54V24h4.34v-6.09h3.61L14.06 14H9.88v-2.12C9.88 9.98 10.39 8 14 8Z" />
+            </svg>
+            Visit Tourism Facebook Page
+          </a>
+        </div>
+
+        <p class="tourism-panel__help">
+          For direct questions or the latest tourism updates, Facebook is usually the most
+          convenient option.
+        </p>
+      </aside>
+    </section>
+
+    <footer class="page-footer">
+      <span>&copy; 2026 Municipality of Donsol, Sorsogon</span>
+      <span aria-hidden="true">•</span>
+      <span>Official temporary maintenance page</span>
+    </footer>
+  </main>
 </body>
 </html>
