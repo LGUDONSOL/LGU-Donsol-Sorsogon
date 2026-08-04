@@ -1,8 +1,8 @@
 /*
-  Project Version: v1.16.06
-  Update: Media gallery videos muted by default
-  Description: All videos opened inside the Experience Preview media galleries now start muted while retaining the browser's native controls so visitors can manually unmute them.
-  Date: 2026-07-20
+  Project Version: v1.18.01
+  Update: Prevent media-section jump on page load
+  Description: Prevented media gallery initialization from calling scrollIntoView when the page first opens. Gallery thumbnails still scroll into view after visitor interaction through thumbnail, previous, next, or keyboard controls.
+  Date: 2026-08-04
 */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1096,7 +1096,10 @@ function initMediaGallery(gallery) {
     });
   }
 
-  function renderActiveItem({ moveFocus = false } = {}) {
+  function renderActiveItem({
+    moveFocus = false,
+    scrollThumbnail = false
+  } = {}) {
     const activeItem = items[activeIndex];
 
     if (!activeItem) return;
@@ -1112,11 +1115,18 @@ function initMediaGallery(gallery) {
     updateThumbnails();
     updateControls();
 
-    activeItem.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "nearest"
-    });
+    /*
+      Do not scroll during initial gallery setup. Calling scrollIntoView while
+      DOMContentLoaded is still initializing every gallery causes the browser
+      to jump directly to the Media section on a normal page visit.
+    */
+    if (scrollThumbnail) {
+      activeItem.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest"
+      });
+    }
 
     if (moveFocus) {
       activeItem.focus();
@@ -1127,7 +1137,10 @@ function initMediaGallery(gallery) {
     if (!items.length) return;
 
     activeIndex = (index + items.length) % items.length;
-    renderActiveItem(options);
+    renderActiveItem({
+      scrollThumbnail: true,
+      ...options
+    });
   }
 
   items.forEach((item, index) => {
