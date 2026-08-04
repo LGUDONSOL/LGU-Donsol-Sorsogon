@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.18.01
-  Update: Prevent media-section jump on page load
-  Description: Prevented media gallery initialization from calling scrollIntoView when the page first opens. Gallery thumbnails still scroll into view after visitor interaction through thumbnail, previous, next, or keyboard controls.
+  Project Version: v1.19.02
+  Update: Accommodation collapse scroll correction
+  Description: When visitors choose Show Fewer Accommodations, the directory now collapses to three listings and smoothly returns to the beginning of the accommodation section while accounting for the fixed header.
   Date: 2026-08-04
 */
 
@@ -1204,29 +1204,170 @@ function initMediaGallery(gallery) {
 /* Accommodation filter */
 
 function initAccommodationFilter() {
-  const filterButtons = document.querySelectorAll("[data-filter]");
-  const cards = document.querySelectorAll("[data-category]");
+  const section = document.querySelector("#stay");
+
+  if (!section) return;
+
+  const filterButtons = Array.from(section.querySelectorAll("[data-filter]"));
+  const cards = Array.from(
+    section.querySelectorAll(".accommodation-card[data-category]")
+  );
+  const toggleButton = section.querySelector("[data-accommodation-toggle]");
+  const toggleLabel = section.querySelector("[data-accommodation-toggle-label]");
+  const status = section.querySelector("[data-accommodation-status]");
+  const siteHeader =
+    document.querySelector("[data-site-header]") ||
+    document.querySelector(".site-header");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+  const requestedLimit = Number.parseInt(
+    section.dataset.accommodationPreviewLimit || "3",
+    10
+  );
+  const previewLimit = Number.isFinite(requestedLimit)
+    ? Math.max(requestedLimit, 1)
+    : 3;
 
   if (!filterButtons.length || !cards.length) return;
 
+  const filterLabels = {
+    all: {
+      button: "Accommodations",
+      status: "accommodations"
+    },
+    "beach-resort": {
+      button: "Beach Resorts",
+      status: "beach resorts"
+    },
+    resort: {
+      button: "Resorts",
+      status: "resorts"
+    },
+    "guest-house": {
+      button: "Guest Houses",
+      status: "guest houses"
+    },
+    homestay: {
+      button: "Homestays",
+      status: "homestays"
+    }
+  };
+
+  let activeFilter =
+    filterButtons.find((button) => button.classList.contains("active"))
+      ?.dataset.filter || "all";
+  let isExpanded = false;
+
+  function getMatchingCards() {
+    return cards.filter((card) => {
+      return activeFilter === "all" || card.dataset.category === activeFilter;
+    });
+  }
+
+  function updateFilterButtons() {
+    filterButtons.forEach((button) => {
+      const isActive = button.dataset.filter === activeFilter;
+
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
+  function updateDirectory() {
+    const matchingCards = getMatchingCards();
+    const hasMoreThanPreview = matchingCards.length > previewLimit;
+
+    if (!hasMoreThanPreview) {
+      isExpanded = false;
+    }
+
+    const visibleCards = isExpanded
+      ? matchingCards
+      : matchingCards.slice(0, previewLimit);
+    const visibleCardSet = new Set(visibleCards);
+    const matchingCardSet = new Set(matchingCards);
+
+    cards.forEach((card) => {
+      const matchesFilter = matchingCardSet.has(card);
+      const isVisible = matchesFilter && visibleCardSet.has(card);
+
+      card.classList.toggle("is-filter-hidden", !matchesFilter);
+      card.classList.toggle(
+        "is-directory-hidden",
+        matchesFilter && !visibleCardSet.has(card)
+      );
+      card.setAttribute("aria-hidden", isVisible ? "false" : "true");
+    });
+
+    const labels = filterLabels[activeFilter] || filterLabels.all;
+    const shownCount = visibleCards.length;
+
+    if (status) {
+      status.textContent =
+        `Showing ${shownCount} of ${matchingCards.length} ${labels.status}.`;
+    }
+
+    if (!toggleButton) return;
+
+    toggleButton.hidden = !hasMoreThanPreview;
+    toggleButton.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+
+    if (toggleLabel) {
+      toggleLabel.textContent = isExpanded
+        ? `Show Fewer ${labels.button}`
+        : `View All ${matchingCards.length} ${labels.button}`;
+    }
+  }
+
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const selectedFilter = button.dataset.filter;
+      activeFilter = button.dataset.filter || "all";
+      isExpanded = false;
 
-      filterButtons.forEach((filterButton) => {
-        filterButton.classList.remove("active");
-      });
-
-      button.classList.add("active");
-
-      cards.forEach((card) => {
-        const cardCategory = card.dataset.category;
-        const shouldShow = selectedFilter === "all" || selectedFilter === cardCategory;
-
-        card.classList.toggle("is-hidden", !shouldShow);
-      });
+      updateFilterButtons();
+      updateDirectory();
     });
   });
+
+  function scrollToAccommodationStart() {
+    /*
+      Wait until the hidden cards have been removed from the layout before
+      calculating the destination. This prevents the viewport from staying
+      near the bottom of the formerly expanded directory.
+    */
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const headerHeight = siteHeader
+          ? siteHeader.getBoundingClientRect().height
+          : 0;
+        const sectionTop =
+          window.scrollY +
+          section.getBoundingClientRect().top -
+          headerHeight -
+          16;
+
+        window.scrollTo({
+          top: Math.max(sectionTop, 0),
+          behavior: prefersReducedMotion.matches ? "auto" : "smooth"
+        });
+      });
+    });
+  }
+
+  toggleButton?.addEventListener("click", () => {
+    const wasExpanded = isExpanded;
+
+    isExpanded = !isExpanded;
+    updateDirectory();
+
+    if (wasExpanded && !isExpanded) {
+      scrollToAccommodationStart();
+    }
+  });
+
+  updateFilterButtons();
+  updateDirectory();
 }
 
 /* Inquiry form */
