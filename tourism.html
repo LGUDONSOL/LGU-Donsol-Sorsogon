@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    Project Version: v1.18.01
+    Update: Tourism file naming integration
+    Description: Renamed the main webpage files to tourism.html, tourism.css, and tourism.js, and updated the stylesheet and script references while preserving all existing tourism content, media galleries, feedback tools, and interactions.
+    Date: 2026-08-04
+  -->
+  <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
+
+  <meta
+    name="description"
+    content="Discover Donsol, Sorsogon—home to responsible whale shark encounters, firefly-lit river tours, kayaking, river cruises, fresh local flavors, and welcoming coastal stays."
+  />
+
+  <meta
+    name="project-version"
+    content="v1.18.01 - Tourism file naming integration"
+  />
+
+  <meta name="theme-color" content="#063d42" />
+
+  <link rel="icon" type="image/png" href="images/Tourism Logo.png" />
+  <link rel="stylesheet" href="tourism.css" />
+
+  <script src="tourism.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="announcement-bar">
+      <p>Whale sharks, glowing rivers, local flavors, and slow adventures await in Donsol.</p>
+      <a href="#trip-planner">Plan your escape</a>
+    </div>
+
+    <nav class="navbar" aria-label="Primary navigation">
+      <div class="brand" aria-label="Donsol Tourism and Municipality of Donsol links">
+        <span class="brand-logos">
+          <a
+            class="brand-seal-link"
+            href="https://www.donsol.gov.ph"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the official Municipality of Donsol website"
+          >
+            <img
+              src="images/Donsol Seal.png"
+              alt="Municipality of Donsol official seal"
+              class="brand-seal"
+            />
+          </a>
+
+          <a
+            class="brand-tourism-link"
+            href="#top"
+            aria-label="Go to the Donsol Tourism home section"
+          >
+            <img
+              src="images/Tourism Logo.png"
+              alt="Donsol Tourism logo"
+              class="brand-tourism-logo"
+            />
+          </a>
+        </span>
+
+        <a class="brand-text" href="#top" aria-label="Go to the Donsol Tourism home section">
+          <strong>Donsol Tourism</strong>
+          <small>Sorsogon, Philippines</small>
+        </a>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+        data-nav-toggle
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="primary-menu" data-nav-menu>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#explore-donsol">Explore</a></li>
+        <li><a href="#attractions">Attractions</a></li>
+        <li><a href="#media-showcase">Media</a></li>
+        <li><a href="#stay">Accommodations</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#specials">Donsolano Specials</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#visitor-guide">Visitor Guide</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#contact">Contact Tourism Office</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section
+      class="hero section-hero hero-video-first"
+      id="top"
+      aria-labelledby="hero-title"
+      aria-describedby="hero-description"
+      data-hero-reveal
+    >
+      <div class="hero-media" aria-hidden="true">
+        <!--
+          Official local Donsol hero video.
+          Expected project path: https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4
+          Keep the fallback poster until a matching local poster image is available.
+        -->
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="images/donsol-hero-poster.jpg"
+        >
+          <source
+            src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+
+        <img
+          src="images/donsol-hero-poster.jpg"
+          alt=""
+          class="hero-image hero-poster"
+        />
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-atmosphere">
+          <span class="hero-orb hero-orb-one"></span>
+          <span class="hero-orb hero-orb-two"></span>
+          <span class="hero-orb hero-orb-three"></span>
+        </div>
+      </div>
+
+      <div class="hero-video-intro" aria-hidden="true" data-hero-video-intro>
+        <p class="hero-video-title">DONSOL</p>
+        <span class="hero-video-location">Sorsogon, Philippines</span>
+      </div>
+
+      <div
+        class="container hero-grid hero-grid-cinematic hero-reveal-content"
+        id="hero-introduction"
+        data-hero-reveal-content
+      >
+        <div class="hero-content">
+          <p class="eyebrow">Your Donsol adventure begins here</p>
+
+          <h1 id="hero-title">
+            Come to Donsol, where gentle giants glide and rivers glow.
+          </h1>
+
+          <p class="hero-description" id="hero-description">
+            Meet the butanding responsibly, cruise beneath firefly-lit trees, paddle peaceful
+            waterways, and enjoy the warmth of Donsolano hospitality in Sorsogon.
+          </p>
+
+          <div class="hero-actions" aria-label="Main actions">
+            <a class="btn btn-primary" href="#attractions">Discover Donsol</a>
+            <a class="btn btn-secondary" href="#trip-planner">Build Your Itinerary</a>
+          </div>
+
+          <div class="hero-snapshot" aria-label="Donsol trip snapshot">
+            <p>Trip Snapshot</p>
+
+            <ul>
+              <li>
+                <span>Signature encounter</span>
+                <strong>Butanding</strong>
+              </li>
+              <li>
+                <span>After-dark wonder</span>
+                <strong>Firefly River</strong>
+              </li>
+              <li>
+                <span>Ideal stay</span>
+                <strong>2–3 Days</strong>
+              </li>
+              <li>
+                <span>Travel promise</span>
+                <strong>Nature & Community</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a
+        class="hero-scroll-cue hero-video-scroll-cue"
+        href="#hero-introduction"
+        aria-label="Reveal the Donsol home introduction"
+        data-hero-reveal-trigger
+      >
+        <span>Scroll to discover</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+
+      <button
+        class="hero-cinematic-replay"
+        type="button"
+        aria-label="Return to the Donsol cinematic video opening"
+        data-hero-video-replay
+      >
+        <span aria-hidden="true">▶</span>
+        <span>Watch cinematic view</span>
+      </button>
+    </section>
+
+    <section class="section explore-section" id="explore-donsol" aria-labelledby="explore-donsol-title">
+      <div class="container">
+        <div class="section-heading explore-heading">
+          <p class="eyebrow">Explore Donsol</p>
+          <h2 id="explore-donsol-title">What will bring you to Donsol?</h2>
+          <p>
+            Start with the experience that excites you most, then shape the rest of your stay around
+            Donsol’s wildlife encounters, glowing rivers, local flavors, welcoming stays, and community celebrations.
+          </p>
+        </div>
+
+        <div class="explore-grid" aria-label="Quick links to Donsol tourism sections">
+          <article class="explore-card explore-card-large">
+            <a href="#whale-shark" aria-label="Explore Whale Shark Experience in Donsol">
+              <img
+                src="images/Explore/Butanding Interaction.jpg"
+                alt="Whale shark swimming underwater in Donsol"
+                loading="lazy"
+              />
+
+              <div class="explore-card-content">
+                <span class="explore-icon" aria-hidden="true">01</span>
+                <span class="tag">Signature Experience</span>
+                <h3>Whale Shark Experience</h3>
+                <p>Share the sea with the butanding in a guided encounter shaped by respect for wildlife.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="explore-card">
+            <a href="#firefly" aria-label="Explore Firefly Watching in Donsol">
+              <img
+                src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
+                alt="Fireflies glowing along a quiet river"
+                loading="lazy"
+              />
+
+              <div class="explore-card-content">
+                <span class="explore-icon" aria-hidden="true">02</span>
+                <span class="tag">Evening Tour</span>
+                <h3>Firefly Watching</h3>
+                <p>Cruise a quiet river after dark as fireflies shimmer among the trees.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="explore-card">
+            <a href="#kayaking" aria-label="Explore Kayaking and River Cruising Activity in Donsol">
+              <img
+                src="images/Explore/Kayaking.png"
+                alt="Visitors enjoying kayaking and river cruising on calm water"
+                loading="lazy"
+              />
+
+              <div class="explore-card-content">
+                <span class="explore-icon" aria-hidden="true">03</span>
+                <span class="tag">Soft Adventure</span>
+                <h3>Kayaking & River Cruising</h3>
+                <p>Paddle at your own pace or settle into a scenic cruise along Donsol’s calm waterways.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="explore-card">
+            <a href="#stay" aria-label="Explore Where to Stay in Donsol">
+              <img
+                src="images/Explore/Accomodation.jpg"
+                alt="Coastal resort accommodation"
+                loading="lazy"
+              />
+
+              <div class="explore-card-content">
+                <span class="explore-icon" aria-hidden="true">04</span>
+                <span class="tag">Stay Options</span>
+                <h3>Where to Stay</h3>
+                <p>Find a comfortable base close to nature, local dining, and your next adventure.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="explore-card">
+            <a href="#food" aria-label="Explore Food and Pasalubong in Donsol">
+              <img
+                src="images/Explore/Pusit.jpg"
+                alt="Local food served on a table"
+                loading="lazy"
+              />
+
+              <div class="explore-card-content">
+                <span class="explore-icon" aria-hidden="true">05</span>
+                <span class="tag">Local Taste</span>
+                <h3>Food & Pasalubong</h3>
+                <p>Taste fresh seafood, Bicolano favorites, and locally made treats worth bringing home.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="explore-card">
+            <a href="#events" aria-label="Explore Events and Culture in Donsol">
+              <img
+                src="images/Explore/Cultural.jpg"
+                alt="Local community tourism activity"
+                loading="lazy"
+              />
+
+              <div class="explore-card-content">
+                <span class="explore-icon" aria-hidden="true">06</span>
+                <span class="tag">Local Culture</span>
+                <h3>Events & Culture</h3>
+                <p>Celebrate Donsol through festivals, markets, community programs, and local traditions.</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="logo-section" aria-label="Official tourism identity and partner tourism marks">
+      <div class="container logo-row">
+        <div class="official-marks official-marks-local" aria-label="Donsol tourism identity">
+          <a
+            class="official-mark official-mark-local"
+            href="https://www.donsol.gov.ph"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the official Municipality of Donsol website"
+          >
+            <img src="images/Donsol Seal.png" alt="Municipality of Donsol official seal" />
+            <span>Municipality of Donsol</span>
+          </a>
+
+          <a
+            class="official-mark official-mark-local"
+            href="#top"
+            aria-label="Go to the Donsol Tourism home section"
+          >
+            <img src="images/Tourism Logo.png" alt="Donsol Tourism logo" />
+            <span>Donsol Tourism</span>
+          </a>
+        </div>
+
+        <div class="official-marks official-marks-national" aria-label="Philippine tourism partner links">
+          <a
+            class="official-mark official-mark-dot"
+            href="https://www.tourism.gov.ph/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the Department of Tourism Philippines website"
+          >
+            <img src="images/DOT.png" alt="Department of Tourism Philippines logo" />
+            <span>Department of Tourism</span>
+          </a>
+
+          <a
+            class="official-mark official-mark-love"
+            href="https://www.tourism.gov.ph/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the Love the Philippines tourism website"
+          >
+            <img src="images/Love_the_Philippines_Logo.jpg" alt="Love the Philippines tourism campaign logo" />
+            <span>Love the Philippines</span>
+          </a>
+        </div>
+
+        <p>
+          Rooted in conservation, community livelihood, and the warm welcome of the Donsolano people.
+        </p>
+      </div>
+    </section>
+
+    <section class="section intro-section" aria-labelledby="intro-title">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">Why visit Donsol</p>
+          <h2 id="intro-title">More than a whale shark destination.</h2>
+        </div>
+
+        <p>
+          Donsol invites you to slow down and reconnect with nature. Come for the wonder of
+          the butanding, then stay for glowing river evenings, peaceful waterways, coastal
+          flavors, and the genuine hospitality of the community.
+        </p>
+      </div>
+    </section>
+
+    <section class="section signature-section" id="attractions" aria-labelledby="signature-title">
+      <div class="container">
+        <div class="section-heading signature-heading">
+          <p class="eyebrow">Signature experiences</p>
+          <h2 id="signature-title">Three unforgettable ways to experience Donsol.</h2>
+          <p>
+            Begin with the experience that matches your travel style, then combine the others
+            for a nature-filled escape that feels adventurous, peaceful, and distinctly Donsol.
+          </p>
+        </div>
+
+        <div class="signature-grid" aria-label="Donsol signature experiences at a glance">
+          <article class="signature-card signature-card-primary">
+            <div class="signature-card-header">
+              <span class="signature-number" aria-hidden="true">01</span>
+              <span class="tag">Responsible Wildlife</span>
+            </div>
+
+            <div class="signature-card-body">
+              <h3>Whale Shark Interaction</h3>
+              <p>
+                Feel the anticipation of open water and the wonder of meeting the butanding
+                through a responsible, guide-led wildlife experience.
+              </p>
+
+              <dl class="signature-details">
+                <div>
+                  <dt>Best for</dt>
+                  <dd>Wildlife lovers, first-time visitors, families, and small groups</dd>
+                </div>
+
+                <div>
+                  <dt>Travel mood</dt>
+                  <dd>Early-day adventure, open-water excitement, and nature at its most inspiring</dd>
+                </div>
+
+                <div>
+                  <dt>Planning note</dt>
+                  <dd>Subject to weather and sea conditions. Follow the briefing and keep a respectful distance.</dd>
+                </div>
+              </dl>
+
+              <a class="text-link" href="#whale-shark">View whale shark details</a>
+            </div>
+          </article>
+
+          <article class="signature-card">
+            <div class="signature-card-header">
+              <span class="signature-number" aria-hidden="true">02</span>
+              <span class="tag">Evening Nature Tour</span>
+            </div>
+
+            <div class="signature-card-body">
+              <h3>Firefly Watching</h3>
+              <p>
+                End your day on a quiet river, where the darkness comes alive with the soft
+                glow of fireflies among the trees.
+              </p>
+
+              <dl class="signature-details">
+                <div>
+                  <dt>Best for</dt>
+                  <dd>Couples, families, seniors, and relaxed travelers</dd>
+                </div>
+
+                <div>
+                  <dt>Travel mood</dt>
+                  <dd>Peaceful, romantic, family-friendly, and immersed in nature</dd>
+                </div>
+
+                <div>
+                  <dt>Planning note</dt>
+                  <dd>Best after sunset. Keep noise low and avoid disturbing the river environment.</dd>
+                </div>
+              </dl>
+
+              <a class="text-link" href="#firefly">View firefly details</a>
+            </div>
+          </article>
+
+          <article class="signature-card">
+            <div class="signature-card-header">
+              <span class="signature-number" aria-hidden="true">03</span>
+              <span class="tag">Soft Adventure</span>
+            </div>
+
+            <div class="signature-card-body">
+              <h3>Kayaking and River Cruising Activity</h3>
+              <p>
+                Choose active paddling or a relaxed scenic cruise and discover Donsol’s
+                waterways at an unhurried, photo-friendly pace.
+              </p>
+
+              <dl class="signature-details">
+                <div>
+                  <dt>Best for</dt>
+                  <dd>Small groups, barkadas, families, active travelers, and relaxed sightseers</dd>
+                </div>
+
+                <div>
+                  <dt>Travel mood</dt>
+                  <dd>Slow travel, light adventure, scenic views, and flexible schedules</dd>
+                </div>
+
+                <div>
+                  <dt>Planning note</dt>
+                  <dd>Works well as an add-on for 2–3 day itineraries or relaxed afternoon schedules.</dd>
+                </div>
+              </dl>
+
+              <a class="text-link" href="#kayaking">View kayaking and river cruising details</a>
+            </div>
+          </article>
+        </div>
+
+        <aside class="signature-planning-note" aria-label="Suggested Donsol experience combination">
+          <strong>Make it a Donsol weekend:</strong>
+          <span>
+            Begin with a morning butanding encounter, unwind on an evening firefly cruise,
+            then add kayaking, river cruising, local dining, and a market stop over two to three days.
+          </span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section media-showcase-section" id="media-showcase" aria-labelledby="media-showcase-title">
+      <div class="container">
+        <div class="section-heading media-showcase-heading">
+          <p class="eyebrow">Donsol in photos and film</p>
+          <h2 id="media-showcase-title">Picture yourself in Donsol.</h2>
+          <p>
+            Step into the moments that make Donsol unforgettable—from open-water encounters
+            and glowing river nights to local food, community life, and peaceful adventures.
+          </p>
+        </div>
+
+        <div class="media-showcase" data-media-showcase>
+          <div class="media-stage">
+            <article
+              class="media-panel active"
+              id="media-whale-sharks"
+              role="tabpanel"
+              aria-labelledby="media-tab-whale-sharks"
+              data-media-panel
+            >
+              <div
+                class="media-gallery"
+                data-media-gallery
+                data-media-limit="20"
+                aria-label="Whale Shark Interaction media gallery"
+              >
+                <div class="media-frame media-frame-video" data-media-gallery-stage>
+                  <div class="media-gallery-output" data-media-gallery-output>
+                    <video
+                      controls
+                      muted
+                      playsinline
+                      preload="metadata"
+                      poster="images/donsol-hero-poster.jpg"
+                      data-media-active
+                    >
+                      <source
+                        src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4"
+                        type="video/mp4"
+                      />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+
+                  <button
+                    class="media-gallery-control media-gallery-prev"
+                    type="button"
+                    aria-label="Show previous Whale Shark media"
+                    data-media-prev
+                  >
+                    <span aria-hidden="true">‹</span>
+                  </button>
+
+                  <button
+                    class="media-gallery-control media-gallery-next"
+                    type="button"
+                    aria-label="Show next Whale Shark media"
+                    data-media-next
+                  >
+                    <span aria-hidden="true">›</span>
+                  </button>
+
+                  <span class="media-gallery-counter" aria-live="polite" data-media-counter>
+                    1 / 17
+                  </span>
+                </div>
+
+                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <div
+                  class="media-gallery-thumbnails"
+                  role="list"
+                  aria-label="Choose Whale Shark media"
+                  data-media-thumbnails
+                >
+
+                 
+
+                  <button
+                    class="media-gallery-thumbnail active"
+                    type="button"
+                    role="listitem"
+                    aria-label="Play Donsol Whale Shark experience video"
+                    aria-pressed="true"
+                    data-media-item
+                    data-media-type="video"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4"
+                    data-media-poster="images/donsol-hero-poster.jpg"
+                    data-media-alt="Donsol tourism video featuring the destination and Whale Shark experience"
+                  >
+                    <img
+                      src="images/donsol-hero-poster.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <span class="media-thumbnail-play" aria-hidden="true">▶</span>
+                  </button>
+
+                   <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                   <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120214/Whale-Shark_15_reuupp.jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120214/Whale-Shark_15_reuupp.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                   <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (3).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (3).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                   <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (4).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (4).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                   <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (5).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (5).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (6).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (6).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (7).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (7).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (8).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (8).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (9).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (9).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (10).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (10).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (11).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (11).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (12).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (12).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (13).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (13).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (14).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (14).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (15).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (15).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/whale-sharks/Whale-Shark (16).jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="images/media/whale-sharks/Whale-Shark (16).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  
+                  
+                  
+
+                </div>
+              </div>
+
+              <div class="media-panel-copy">
+                <span class="tag">Signature Wildlife</span>
+                <h3>Whale Shark Interaction</h3>
+                <p>
+                  See the wonder, anticipation, and respect that define a responsible
+                  butanding encounter in the waters of Donsol.
+                </p>
+                <a class="text-link" href="#whale-shark">View activity details</a>
+              </div>
+            </article>
+
+            <article
+              class="media-panel"
+              id="media-fireflies"
+              role="tabpanel"
+              aria-labelledby="media-tab-fireflies"
+              data-media-panel
+              hidden
+            >
+              <div
+                class="media-gallery"
+                data-media-gallery
+                data-media-limit="20"
+                aria-label="Firefly Watching media gallery"
+              >
+                <div class="media-frame" data-media-gallery-stage>
+                  <div class="media-gallery-output" data-media-gallery-output>
+                    <img
+                      src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
+                      alt="Fireflies glowing near a quiet river"
+                      loading="lazy"
+                      data-media-active
+                    />
+                  </div>
+
+                  <button
+                    class="media-gallery-control media-gallery-prev"
+                    type="button"
+                    aria-label="Show previous Firefly Watching media"
+                    data-media-prev
+                    disabled
+                  >
+                    <span aria-hidden="true">‹</span>
+                  </button>
+
+                  <button
+                    class="media-gallery-control media-gallery-next"
+                    type="button"
+                    aria-label="Show next Firefly Watching media"
+                    data-media-next
+                    disabled
+                  >
+                    <span aria-hidden="true">›</span>
+                  </button>
+
+                  <span class="media-gallery-counter" aria-live="polite" data-media-counter>
+                    1 / 1
+                  </span>
+                </div>
+
+                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <div
+                  class="media-gallery-thumbnails"
+                  role="list"
+                  aria-label="Choose Firefly Watching media"
+                  data-media-thumbnails
+                >
+                  <button
+                    class="media-gallery-thumbnail active"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Firefly Watching photo"
+                    aria-pressed="true"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
+                    data-media-alt="Fireflies glowing near a quiet river"
+                  >
+                    <img
+                      src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <div class="media-panel-copy">
+                <span class="tag">After-Dark Wonder</span>
+                <h3>Firefly Watching</h3>
+                <p>
+                  Step into a quieter side of Donsol, where a gentle river journey is illuminated
+                  by fireflies after sunset.
+                </p>
+                <a class="text-link" href="#firefly">View activity details</a>
+              </div>
+            </article>
+
+            <article
+              class="media-panel"
+              id="media-kayaking"
+              role="tabpanel"
+              aria-labelledby="media-tab-kayaking"
+              data-media-panel
+              hidden
+            >
+              <div
+                class="media-gallery"
+                data-media-gallery
+                data-media-limit="20"
+                aria-label="Kayaking and River Cruising Activity media gallery"
+              >
+                <div class="media-frame" data-media-gallery-stage>
+                  <div class="media-gallery-output" data-media-gallery-output>
+                    <img
+                      src="images/media/kayaking/kayaking-01.png"
+                      alt="Visitors enjoying kayaking and river cruising in Donsol"
+                      loading="lazy"
+                      data-media-active
+                    />
+                  </div>
+
+                  <button
+                    class="media-gallery-control media-gallery-prev"
+                    type="button"
+                    aria-label="Show previous Kayaking and River Cruising media"
+                    data-media-prev
+                  >
+                    <span aria-hidden="true">‹</span>
+                  </button>
+
+                  <button
+                    class="media-gallery-control media-gallery-next"
+                    type="button"
+                    aria-label="Show next Kayaking and River Cruising media"
+                    data-media-next
+                  >
+                    <span aria-hidden="true">›</span>
+                  </button>
+
+                  <span class="media-gallery-counter" aria-live="polite" data-media-counter>
+                    1 / 6
+                  </span>
+                </div>
+
+                <!-- Four gallery photos plus two videos. Maximum allowed: twenty media items. -->
+                <div
+                  class="media-gallery-thumbnails"
+                  role="list"
+                  aria-label="Choose Kayaking and River Cruising media"
+                  data-media-thumbnails
+                >
+                  <button
+                    class="media-gallery-thumbnail active"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Kayaking and River Cruising photo one"
+                    aria-pressed="true"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/kayaking/kayaking-01.png"
+                    data-media-alt="Visitors enjoying kayaking and river cruising in Donsol"
+                  >
+                    <img
+                      src="images/media/kayaking/kayaking-01.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Kayaking and River Cruising photo two"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/kayaking/kayaking-02.png"
+                    data-media-alt="Kayakers exploring calm waterways in Donsol"
+                  >
+                    <img
+                      src="images/media/kayaking/kayaking-02.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Kayaking and River Cruising photo three"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/kayaking/kayaking-03.png"
+                    data-media-alt="Scenic kayaking and river cruising activity in Donsol"
+                  >
+                    <img
+                      src="images/media/kayaking/kayaking-03.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Kayaking and River Cruising photo four"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/kayaking/kayaking-04.png"
+                    data-media-alt="Visitors enjoying a peaceful Donsol river activity"
+                  >
+                    <img
+                      src="images/media/kayaking/kayaking-04.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Play Kayaking and River Cruising video one"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="video"
+                    data-media-src="videos/media/kayaking/kayaking-video-01.mp4"
+                    data-media-poster="images/media/kayaking/kayaking-video-01-poster.png"
+                    data-media-alt="Video preview of kayaking and river cruising in Donsol"
+                  >
+                    <img
+                      src="images/media/kayaking/kayaking-video-01-poster.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <span class="media-thumbnail-play" aria-hidden="true">▶</span>
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Play Kayaking and River Cruising video two"
+                    aria-pressed="false"
+                    
+                    data-media-item
+                    data-media-type="video"
+                    data-media-src="videos/media/kayaking/kayaking-video-02.mp4"
+                    data-media-poster="images/media/kayaking/kayaking-video-02-poster.png"
+                    data-media-alt="Second video preview of kayaking and river cruising in Donsol"
+                  >
+                    <img
+                      src="images/media/kayaking/kayaking-video-02-poster.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <span class="media-thumbnail-play" aria-hidden="true">▶</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="media-panel-copy">
+                <span class="tag">4 Photos · 2 Videos</span>
+                <h3>Kayaking and River Cruising Activity</h3>
+                <p>
+                  Follow calm waterways by paddle or boat and discover a peaceful adventure
+                  made for slow travel, fresh air, and scenic moments.
+                </p>
+                <a class="text-link" href="#kayaking">View activity details</a>
+              </div>
+            </article>
+
+            <article
+              class="media-panel"
+              id="media-local-life"
+              role="tabpanel"
+              aria-labelledby="media-tab-local-life"
+              data-media-panel
+              hidden
+            >
+              <div
+                class="media-gallery"
+                data-media-gallery
+                data-media-limit="20"
+                aria-label="Food and Local Life media gallery"
+              >
+                <div class="media-frame" data-media-gallery-stage>
+                  <div class="media-gallery-output" data-media-gallery-output>
+                    <img
+                      src="https://i.pinimg.com/1200x/31/0b/39/310b3944a11720e430320bf92f84aff9.jpg"
+                      alt="Local Donsolano food served on a table"
+                      loading="lazy"
+                      data-media-active
+                    />
+                  </div>
+
+                  <button
+                    class="media-gallery-control media-gallery-prev"
+                    type="button"
+                    aria-label="Show previous Food and Local Life media"
+                    data-media-prev
+                  >
+                    <span aria-hidden="true">‹</span>
+                  </button>
+
+                  <button
+                    class="media-gallery-control media-gallery-next"
+                    type="button"
+                    aria-label="Show next Food and Local Life media"
+                    data-media-next
+                  >
+                    <span aria-hidden="true">›</span>
+                  </button>
+
+                  <span class="media-gallery-counter" aria-live="polite" data-media-counter>
+                    1 / 8
+                  </span>
+                </div>
+
+                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <div
+                  class="media-gallery-thumbnails"
+                  role="list"
+                  aria-label="Choose Food and Local Life media"
+                  data-media-thumbnails
+                >
+                  <button
+                    class="media-gallery-thumbnail active"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local food photo"
+                    aria-pressed="true"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (1).jpg"
+                    data-media-alt="Local Donsolano food served on a table"
+                  >
+                    <img
+                      src="images/media/foods/foods (1).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (2).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (2).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (3).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (3).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (4).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (4).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (5).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (5).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (6).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (6).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (7).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (7).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                  
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show local seafood photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/media/foods/foods (8).jpg"
+                    data-media-alt="Local seafood dish prepared in Donsol"
+                  >
+                    <img
+                      src="images/media/foods/foods (8).jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <div class="media-panel-copy">
+                <span class="tag">Taste of Donsol</span>
+                <h3>Food and Local Life</h3>
+                <p>
+                  Meet Donsol through its fresh seafood, comforting local dishes, lively markets,
+                  and products proudly made by the community.
+                </p>
+                <a class="text-link" href="#food">Explore food stops</a>
+              </div>
+            </article>
+
+            <article
+              class="media-panel"
+              id="media-events"
+              role="tabpanel"
+              aria-labelledby="media-tab-events"
+              data-media-panel
+              hidden
+            >
+              <div
+                class="media-gallery"
+                data-media-gallery
+                data-media-limit="20"
+                aria-label="Events and Community Moments media gallery"
+              >
+                <div class="media-frame" data-media-gallery-stage>
+                  <div class="media-gallery-output" data-media-gallery-output>
+                    <img
+                      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85"
+                      alt="Local community tourism activity"
+                      loading="lazy"
+                      data-media-active
+                    />
+                  </div>
+
+                  <button
+                    class="media-gallery-control media-gallery-prev"
+                    type="button"
+                    aria-label="Show previous Events media"
+                    data-media-prev
+                  >
+                    <span aria-hidden="true">‹</span>
+                  </button>
+
+                  <button
+                    class="media-gallery-control media-gallery-next"
+                    type="button"
+                    aria-label="Show next Events media"
+                    data-media-next
+                  >
+                    <span aria-hidden="true">›</span>
+                  </button>
+
+                  <span class="media-gallery-counter" aria-live="polite" data-media-counter>
+                    1 / 1
+                  </span>
+                </div>
+
+                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <div
+                  class="media-gallery-thumbnails"
+                  role="list"
+                  aria-label="Choose Events media"
+                  data-media-thumbnails
+                >
+                  
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    role="listitem"
+                    aria-label="Show Donsol cultural event photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="images/Explore/Cultural.jpg"
+                    data-media-alt="Cultural and community event in Donsol"
+                  >
+                    <img
+                      src="images/Explore/Cultural.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <div class="media-panel-copy">
+                <span class="tag">Culture & Community</span>
+                <h3>Events and Community Moments</h3>
+                <p>
+                  Feel the energy of Donsol through festivals, markets, conservation activities,
+                  and community celebrations that welcome visitors into local life.
+                </p>
+                <a class="text-link" href="#events">View events</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="media-tabs" role="tablist" aria-label="Choose a Donsol media preview">
+            <button
+              class="media-tab active"
+              id="media-tab-whale-sharks"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="media-whale-sharks"
+              data-media-button
+            >
+              <span>01</span>
+              Whale Sharks
+            </button>
+
+            <button
+              class="media-tab"
+              id="media-tab-fireflies"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="media-fireflies"
+              data-media-button
+            >
+              <span>02</span>
+              Fireflies
+            </button>
+
+            <button
+              class="media-tab"
+              id="media-tab-kayaking"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="media-kayaking"
+              data-media-button
+            >
+              <span>03</span>
+              Kayaking & River Cruising
+            </button>
+
+            <button
+              class="media-tab"
+              id="media-tab-local-life"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="media-local-life"
+              data-media-button
+            >
+              <span>04</span>
+              Food & Local Life
+            </button>
+
+            <button
+              class="media-tab"
+              id="media-tab-events"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="media-events"
+              data-media-button
+            >
+              <span>05</span>
+              Events
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experiences-section activity-guide-section" id="activity-guide" aria-labelledby="activity-guide-title">
+      <div class="container">
+        <div class="section-heading activity-guide-heading">
+          <p class="eyebrow">Know before you go</p>
+          <h2 id="activity-guide-title">Plan well. Travel responsibly. Enjoy more.</h2>
+          <p>
+            A little preparation makes every experience better. Review the best time, ideal
+            travel style, expected duration, and responsible tourism reminders before you go.
+          </p>
+        </div>
+
+        <div class="experience-list activity-guide-list">
+          <article class="experience-item activity-guide-item" id="whale-shark">
+            <div class="experience-number activity-guide-number">01</div>
+
+            <div class="experience-body activity-guide-body">
+              <span class="tag">Signature Donsol Experience</span>
+              <h3>Whale Shark Interaction</h3>
+              <p>
+                Every butanding encounter begins with respect for wildlife. Sightings are guided
+                by nature, weather, and sea conditions, making each trip a genuine and unscripted experience.
+              </p>
+
+              <dl class="activity-meta-grid">
+                <div>
+                  <dt>Best time</dt>
+                  <dd>Morning</dd>
+                </div>
+
+                <div>
+                  <dt>Ideal for</dt>
+                  <dd>First-time visitors and marine wildlife lovers</dd>
+                </div>
+
+                <div>
+                  <dt>Duration</dt>
+                  <dd>Usually a half-day activity</dd>
+                </div>
+
+                <div>
+                  <dt>Reminder</dt>
+                  <dd>Follow the briefing, keep distance, and never touch or chase wildlife</dd>
+                </div>
+              </dl>
+
+              <ul class="check-list">
+                <li>Register and attend the official briefing before the activity</li>
+                <li>Listen to trained guides and boat crew at all times</li>
+                <li>Prepare for schedule changes due to weather and sea conditions</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-item activity-guide-item" id="firefly">
+            <div class="experience-number activity-guide-number">02</div>
+
+            <div class="experience-body activity-guide-body">
+              <span class="tag">Night Nature Tour</span>
+              <h3>Donsol River Firefly Watching</h3>
+              <p>
+                Let the day end gently on the Donsol River. This peaceful evening experience
+                is ideal after a daytime adventure or as a memorable welcome to town.
+              </p>
+
+              <dl class="activity-meta-grid">
+                <div>
+                  <dt>Best time</dt>
+                  <dd>After sunset</dd>
+                </div>
+
+                <div>
+                  <dt>Ideal for</dt>
+                  <dd>Families, couples, seniors, and relaxed travelers</dd>
+                </div>
+
+                <div>
+                  <dt>Duration</dt>
+                  <dd>Short evening tour</dd>
+                </div>
+
+                <div>
+                  <dt>Reminder</dt>
+                  <dd>Keep noise low and avoid disturbing the river environment</dd>
+                </div>
+              </dl>
+
+              <ul class="check-list">
+                <li>Works well after check-in or after a daytime whale shark activity</li>
+                <li>Settle into the experience quietly and let the natural glow take center stage</li>
+                <li>Avoid flash photography when guides advise against it</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-item activity-guide-item" id="kayaking">
+            <div class="experience-number activity-guide-number">03</div>
+
+            <div class="experience-body activity-guide-body">
+              <span class="tag">Soft Adventure</span>
+              <h3>Kayaking and River Cruising Activity</h3>
+              <p>
+                Discover Donsol from the water at your own pace. Choose a hands-on kayaking
+                adventure or a relaxed river cruise filled with scenery and fresh air.
+              </p>
+
+              <dl class="activity-meta-grid">
+                <div>
+                  <dt>Best time</dt>
+                  <dd>Morning or late afternoon</dd>
+                </div>
+
+                <div>
+                  <dt>Ideal for</dt>
+                  <dd>Small groups, barkadas, families, active travelers, and relaxed sightseers</dd>
+                </div>
+
+                <div>
+                  <dt>Duration</dt>
+                  <dd>Flexible add-on activity</dd>
+                </div>
+
+                <div>
+                  <dt>Reminder</dt>
+                  <dd>Best for 2–3 day trips or slower schedules</dd>
+                </div>
+              </dl>
+
+              <ul class="check-list">
+                <li>Good add-on for visitors staying more than one night</li>
+                <li>Ask local tourism personnel about available routes and community-based experiences</li>
+                <li>Prepare sun protection, drinking water, and dry storage for valuables</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-item activity-guide-item">
+            <div class="experience-number activity-guide-number">04</div>
+
+            <div class="experience-body activity-guide-body">
+              <span class="tag">More to Explore</span>
+              <h3>Coastal Scenery, Local Markets, and Community Stops</h3>
+              <p>
+                Leave room in your itinerary for Donsol’s quieter discoveries—coastal scenery,
+                local markets, community products, and stops recommended by the tourism office.
+              </p>
+
+              <dl class="activity-meta-grid">
+                <div>
+                  <dt>Best time</dt>
+                  <dd>Late morning or afternoon</dd>
+                </div>
+
+                <div>
+                  <dt>Ideal for</dt>
+                  <dd>Longer stays, families, and visitors who want local culture</dd>
+                </div>
+
+                <div>
+                  <dt>Duration</dt>
+                  <dd>Flexible half-day add-on</dd>
+                </div>
+
+                <div>
+                  <dt>Reminder</dt>
+                  <dd>Ask the tourism office for current local recommendations</dd>
+                </div>
+              </dl>
+
+              <ul class="check-list">
+                <li>Supports local sellers, guides, and community livelihood</li>
+                <li>Useful for visitors staying two to three days</li>
+                <li>Check current recommendations before setting out</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trip-section" id="trip-planner" aria-labelledby="trip-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Trip planner</p>
+          <h2 id="trip-title">Choose the Donsol stay that suits you.</h2>
+          <p>
+            Whether you have one day or a long weekend, these sample routes help you enjoy
+            Donsol at a comfortable pace while leaving room for nature and weather.
+          </p>
+        </div>
+
+        <div class="itinerary-tabs" aria-label="Itinerary options">
+          <div class="tab-buttons" role="tablist" aria-label="Choose itinerary length">
+            <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="day-one" id="tab-day-one" data-tab-button>
+              1 Day
+            </button>
+
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="day-two" id="tab-day-two" data-tab-button>
+              2 Days
+            </button>
+
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="day-three" id="tab-day-three" data-tab-button>
+              3 Days
+            </button>
+          </div>
+
+          <div class="tab-panels">
+            <article class="tab-panel active" role="tabpanel" id="day-one" aria-labelledby="tab-day-one" data-tab-panel>
+              <h3>One-Day Donsol Highlights</h3>
+              <ol class="timeline-list">
+                <li>
+                  <strong>Morning</strong>
+                  <span>Arrival, registration, briefing, and whale shark interaction if conditions allow.</span>
+                </li>
+                <li>
+                  <strong>Afternoon</strong>
+                  <span>Enjoy a local lunch, browse the market for pasalubong, and take time to rest.</span>
+                </li>
+                <li>
+                  <strong>Evening</strong>
+                  <span>End with a peaceful firefly river tour before departure or an overnight stay.</span>
+                </li>
+              </ol>
+            </article>
+
+            <article class="tab-panel" role="tabpanel" id="day-two" aria-labelledby="tab-day-two" data-tab-panel hidden>
+              <h3>Two-Day Nature & River Escape</h3>
+              <ol class="timeline-list">
+                <li>
+                  <strong>Day 1</strong>
+                  <span>Arrive, settle in, sample local food, enjoy sunset, and join a firefly river tour.</span>
+                </li>
+                <li>
+                  <strong>Day 2</strong>
+                  <span>Start early for the butanding experience, enjoy seafood for lunch, shop local, and depart.</span>
+                </li>
+              </ol>
+            </article>
+
+            <article class="tab-panel" role="tabpanel" id="day-three" aria-labelledby="tab-day-three" data-tab-panel hidden>
+              <h3>Three-Day Slow Adventure</h3>
+              <ol class="timeline-list">
+                <li>
+                  <strong>Day 1</strong>
+                  <span>Arrive, check in, enjoy a local dinner, and ease into Donsol with an evening river tour.</span>
+                </li>
+                <li>
+                  <strong>Day 2</strong>
+                  <span>Experience the butanding, explore coastal scenery, then kayak or cruise before sunset.</span>
+                </li>
+                <li>
+                  <strong>Day 3</strong>
+                  <span>Enjoy a local breakfast, visit the market, discover Donsolano products, and depart at your own pace.</span>
+                </li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stay-section" id="stay" aria-labelledby="stay-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Where to stay</p>
+          <h2 id="stay-title">Stay close to the experiences you came for.</h2>
+          <p>
+            From coastal resorts to practical inns and welcoming homestays, choose a stay
+            that matches your budget, group, and preferred pace of travel.
+          </p>
+        </div>
+
+        <div class="filter-bar" aria-label="Accommodation filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="resort">Beach Resorts</button>
+          <button class="filter-button" type="button" data-filter="inn">Inns</button>
+          <button class="filter-button" type="button" data-filter="homestay">Homestays</button>
+        </div>
+
+        <div class="card-grid" data-filter-grid>
+          <article class="info-card" data-category="resort">
+            <img
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85"
+              alt="Beach resort near the coast"
+              loading="lazy"
+            />
+
+            <div class="info-card-body">
+              <span class="tag">Beach Resort</span>
+              <h3>Coastal Resorts</h3>
+              <p>
+                Wake up close to the coast and enjoy easy access to sea views, sunsets, and relaxed resort comforts.
+              </p>
+              <a class="text-link" href="#contact">Ask about current options</a>
+            </div>
+          </article>
+
+          <article class="info-card" data-category="inn">
+            <img
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+              alt="Simple family inn room"
+              loading="lazy"
+            />
+
+            <div class="info-card-body">
+              <span class="tag">Inns</span>
+              <h3>Family Inns</h3>
+              <p>
+                A convenient, budget-friendly choice for families, groups, backpackers, and short stays.
+              </p>
+              <a class="text-link" href="#contact">Find an inn</a>
+            </div>
+          </article>
+
+          <article class="info-card" data-category="homestay">
+            <img
+              src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=85"
+              alt="Local homestay exterior"
+              loading="lazy"
+            />
+
+            <div class="info-card-body">
+              <span class="tag">Community Stay</span>
+              <h3>Homestays</h3>
+              <p>
+                Experience warm local hospitality and a closer connection to everyday life in Donsol.
+              </p>
+              <a class="text-link" href="#contact">Ask about homestays</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section food-section" id="food" aria-labelledby="food-title">
+      <div class="container food-grid">
+        <div class="food-copy">
+          <p class="eyebrow">Where to eat</p>
+          <h2 id="food-title">Taste Donsol, one local stop at a time.</h2>
+          <p>
+            Refuel after every adventure with fresh seafood, comforting Bicolano flavors,
+            casual family meals, merienda, and locally made treats to bring home.
+          </p>
+
+          <a class="btn btn-primary" href="#specials">See local specials</a>
+        </div>
+
+        <div class="food-cards">
+          <article class="mini-card">
+            <img
+              src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1200&q=85"
+              alt="Fresh seafood dish"
+              loading="lazy"
+            />
+            <h3>Seafood Grills</h3>
+            <p>Enjoy fresh coastal flavors, grilled favorites, and satisfying meals made for sharing.</p>
+          </article>
+
+          <article class="mini-card">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+              alt="Local restaurant table setting"
+              loading="lazy"
+            />
+            <h3>Local Restaurants</h3>
+            <p>Discover welcoming local dining spots for families, barkadas, and tour groups.</p>
+          </article>
+
+          <article class="mini-card">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
+              alt="Cafe drinks and snacks"
+              loading="lazy"
+            />
+            <h3>Cafes and Snacks</h3>
+            <p>Slow down with coffee, merienda, dessert, and light bites between adventures.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section specials-section" id="specials" aria-labelledby="specials-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Donsolano Specials</p>
+          <h2 id="specials-title">Bring home a taste of Donsol.</h2>
+          <p>
+            Support local livelihoods while discovering flavors, handmade products, and
+            pasalubong that carry the character of Donsol beyond your visit.
+          </p>
+        </div>
+
+        <div class="specials-grid">
+          <article class="special-card">
+            <span class="special-icon" aria-hidden="true">01</span>
+            <h3>Fresh from the Coast</h3>
+            <p>
+              Savor fish, shellfish, and cooked seafood dishes prepared by local restaurants and vendors.
+            </p>
+          </article>
+
+          <article class="special-card">
+            <span class="special-icon" aria-hidden="true">02</span>
+            <h3>Bicolano Comfort Food</h3>
+            <p>
+              Try coconut-rich dishes, spicy favorites, and home-style flavors that bring Bicol to the table.
+            </p>
+          </article>
+
+          <article class="special-card">
+            <span class="special-icon" aria-hidden="true">03</span>
+            <h3>Pasalubong Favorites</h3>
+            <p>
+              Bring home pili products, local snacks, keepsakes, and thoughtful gifts from your Donsol trip.
+            </p>
+          </article>
+
+          <article class="special-card">
+            <span class="special-icon" aria-hidden="true">04</span>
+            <h3>Locally Made Finds</h3>
+            <p>
+              Choose products made by local associations, cooperatives, artisans, and small businesses.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section events-section" id="events" aria-labelledby="events-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Events and culture</p>
+          <h2 id="events-title">Celebrate the stories and spirit of Donsol.</h2>
+          <p>
+            Time your visit with festivals, markets, conservation programs, and community
+            celebrations that reveal another side of Donsol.
+          </p>
+        </div>
+
+        <div class="events-list">
+          <article class="event-card">
+            <div class="event-date">
+              <span>May</span>
+              <strong>Check Schedule</strong>
+            </div>
+
+            <div class="event-content">
+              <span class="tag">Festival</span>
+              <h3>Butanding Festival</h3>
+              <p>
+                Join Donsol’s thanksgiving celebration through cultural presentations,
+                community activities, and events inspired by the town’s connection with the butanding.
+              </p>
+              <a class="text-link" href="#contact">Check festival updates</a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date">
+              <span>Seasonal</span>
+              <strong>Tourism Month</strong>
+            </div>
+
+            <div class="event-content">
+              <span class="tag">Tourism</span>
+              <h3>Eco-Tourism Activities</h3>
+              <p>
+                Take part in activities that celebrate conservation, coastal care, tourism learning,
+                and the people working to protect Donsol’s natural heritage.
+              </p>
+              <a class="text-link" href="#contact">Ask about upcoming activities</a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-date">
+              <span>Year-round</span>
+              <strong>Local Culture</strong>
+            </div>
+
+            <div class="event-content">
+              <span class="tag">Community</span>
+              <h3>Food Fairs and Local Markets</h3>
+              <p>
+                Browse seasonal markets, food fairs, pasalubong showcases, and livelihood events
+                that bring local makers and flavors together.
+              </p>
+              <a class="text-link" href="#specials">View local specials</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guide-section" id="visitor-guide" aria-labelledby="guide-title">
+      <div class="container guide-grid">
+        <div class="guide-content">
+          <p class="eyebrow">Visitor guide</p>
+          <h2 id="guide-title">Help keep Donsol beautiful.</h2>
+          <p>
+            The best Donsol experiences are shared with care. Respect wildlife, protect natural
+            spaces, support local livelihoods, and follow the guidance of trained tourism personnel.
+          </p>
+
+          <a class="btn btn-primary" href="#contact">Ask the Tourism Office</a>
+        </div>
+
+        <div class="guide-cards">
+          <article class="guide-card">
+            <h3>Respect the butanding</h3>
+            <p>
+              Follow the briefing, listen to your guide, keep a respectful distance,
+              and never touch or chase marine wildlife.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Protect the firefly river</h3>
+            <p>
+              Keep noise low, avoid flash photography when instructed, and respect the river environment.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Support local communities</h3>
+            <p>
+              Buy from local sellers, ask permission before taking close-up photos of people,
+              and dispose of trash properly.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Plan with nature in mind</h3>
+            <p>
+              Confirm tour availability, weather conditions, rates, schedules, and updated local rules
+              before finalizing your visit.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <p class="eyebrow">Plan with local guidance</p>
+          <h2 id="contact-title">Let us help you experience Donsol.</h2>
+          <p>
+            Contact the Donsol Tourism Office for current activity availability, local guidance,
+            travel reminders, and help shaping an itinerary that suits your group.
+          </p>
+
+          <div class="contact-details">
+            <p>
+              <span>Office</span>
+              <strong>Donsol Tourism Office</strong>
+            </p>
+
+            <p>
+              <span>Location</span>
+              <strong>Dancalan, Donsol, Sorsogon, Philippines</strong>
+            </p>
+
+            <p>
+              <span>Email</span>
+              <strong>tourism@donsol.gov.ph</strong>
+            </p>
+
+            <p>
+              <span>Phone</span>
+              <strong>+63917 132 3826</strong>
+            </p>
+          </div>
+        </div>
+
+        <form class="inquiry-form" action="#" method="post">
+          <div class="form-header">
+            <h3>Tell us about your trip</h3>
+            <p>Share your preferred dates, group size, and interests so the tourism team can guide your planning.</p>
+          </div>
+
+          <div class="form-row">
+            <label for="full-name">Full name</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-row">
+            <label for="travel-date">Preferred travel date</label>
+            <input type="date" id="travel-date" name="travel-date" />
+          </div>
+
+          <div class="form-row">
+            <label for="interest">Main interest</label>
+            <select id="interest" name="interest">
+              <option value="">Select one</option>
+              <option value="whale-shark">Whale Shark Interaction</option>
+              <option value="firefly">Firefly Watching</option>
+              <option value="kayaking">Kayaking and River Cruising Activity</option>
+              <option value="food">Food and local products</option>
+              <option value="stay">Accommodations</option>
+              <option value="events">Events</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us your group size, dates, and preferred activities."
+            ></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Submit inquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logos" aria-label="Tourism logos and partner links">
+          <a
+            class="footer-local-logo"
+            href="https://www.donsol.gov.ph"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the official Municipality of Donsol website"
+          >
+            <img src="images/Donsol Seal.png" alt="Municipality of Donsol seal" />
+          </a>
+
+          <a
+            class="footer-local-logo"
+            href="#top"
+            aria-label="Go to the Donsol Tourism home section"
+          >
+            <img src="images/Tourism Logo.png" alt="Donsol Tourism logo" />
+          </a>
+
+          <a
+            class="footer-partner-logo footer-partner-logo-dot"
+            href="https://www.tourism.gov.ph/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the Department of Tourism Philippines website"
+          >
+            <img src="images/DOT.png" alt="Department of Tourism Philippines logo" />
+          </a>
+
+          <a
+            class="footer-partner-logo footer-partner-logo-love"
+            href="https://www.tourism.gov.ph/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the Love the Philippines tourism website"
+          >
+            <img src="images/Love_the_Philippines_Logo.jpg" alt="Love the Philippines tourism campaign logo" />
+          </a>
+        </div>
+
+        <h2>Donsol Tourism</h2>
+        <p>
+          Come for the butanding. Stay for the glowing rivers, coastal flavors,
+          local culture, and the warm welcome of Donsol.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#attractions">Attractions</a></li>
+          <li><a href="#media-showcase">Media showcase</a></li>
+          <li><a href="#trip-planner">Trip planner</a></li>
+          <li><a href="#stay">Accommodations</a></li>
+          <li><a href="#food">Restaurants</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Local</h3>
+        <ul>
+          <li><a href="#specials">Donsolano Specials</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#visitor-guide">Visitor guide</a></li>
+          <li><a href="#contact">Tourism Office</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>Get travel updates</h3>
+        <p>Be first to hear about tourism updates, events, travel reminders, and local advisories.</p>
+
+        <form action="#" method="post" class="newsletter-form">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="newsletter-email"
+            placeholder="Email address"
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Donsol Tourism. All rights reserved.</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="whats-new-widget" data-whats-new-widget>
+    <button
+      class="whats-new-trigger"
+      type="button"
+      aria-label="Open latest Donsol tourism updates"
+      aria-expanded="false"
+      aria-controls="whats-new-panel"
+      data-whats-new-toggle
+    >
+      <span class="whats-new-icon" aria-hidden="true">
+        <svg
+          class="whats-new-megaphone"
+          viewBox="0 0 64 64"
+          focusable="false"
+        >
+          <path
+            class="whats-new-megaphone-sound"
+            d="M49.5 17.5c4.2 2.9 6.7 7.4 6.7 12.5s-2.5 9.6-6.7 12.5"
+            fill="none"
+            stroke="#ff5a3d"
+            stroke-width="4.4"
+            stroke-linecap="round"
+          />
+          <path
+            class="whats-new-megaphone-sound"
+            d="M53.8 9.8C60 14.2 63 21.2 63 30s-3 15.8-9.2 20.2"
+            fill="none"
+            stroke="#ffb15f"
+            stroke-width="3.4"
+            stroke-linecap="round"
+            opacity="0.95"
+          />
+          <path
+            class="whats-new-megaphone-cone"
+            d="M24.8 22.5 47.6 11.2c2.7-1.3 5.8.7 5.8 3.7v30.2c0 3-3.1 5-5.8 3.7L24.8 37.5Z"
+            fill="#f23b2f"
+          />
+          <path
+            class="whats-new-megaphone-mouth"
+            d="M13.3 22.4h12.4v15.2H13.3c-4.2 0-7.6-3.4-7.6-7.6s3.4-7.6 7.6-7.6Z"
+            fill="#ffffff"
+          />
+          <path
+            class="whats-new-megaphone-handle"
+            d="M18.4 36.8h10.2l4.1 13.7c.7 2.2-.9 4.4-3.2 4.4h-6.1c-1.5 0-2.8-1-3.2-2.4Z"
+            fill="#7b1f1c"
+          />
+          <path
+            class="whats-new-megaphone-handle-shine"
+            d="M23.3 39.7h3.4l2.9 9.7"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            opacity="0.45"
+          />
+          <path
+            class="whats-new-megaphone-highlight"
+            d="M31.2 23.4 45.6 16.5"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="3.1"
+            stroke-linecap="round"
+            opacity="0.72"
+          />
+        </svg>
+      </span>
+      <span class="whats-new-label">What's New?</span>
+    </button>
+
+    <aside
+      class="whats-new-panel"
+      id="whats-new-panel"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="whats-new-title"
+      aria-describedby="whats-new-description"
+      hidden
+      data-whats-new-panel
+    >
+      <div class="whats-new-panel-header">
+        <div>
+          <p class="eyebrow">Latest update</p>
+          <h2 id="whats-new-title">What's new in Donsol?</h2>
+        </div>
+
+        <button
+          class="whats-new-close"
+          type="button"
+          aria-label="Close latest updates panel"
+          data-whats-new-close
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="whats-new-content">
+        <span class="tag">Official Facebook Updates</span>
+        <p id="whats-new-description">
+          Plan with the latest tourism announcements, event notices, travel reminders,
+          and official updates from Donsol Sorsogon Tourism.
+        </p>
+
+        <a
+          class="btn btn-primary"
+          href="https://www.facebook.com/DonsolSorsogonTourism"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Latest Posts on Facebook
+        </a>
+      </div>
+    </aside>
+  </div>
+
+
+  <div class="feedback-widget" data-feedback-widget>
+    <button
+      class="feedback-trigger"
+      type="button"
+      aria-label="Open Donsol Tourism feedback form"
+      aria-expanded="false"
+      aria-controls="feedback-modal"
+      data-feedback-toggle
+    >
+      <span class="feedback-label">Send Feedback</span>
+
+      <span class="feedback-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" focusable="false">
+          <path
+            d="M13 11h38a7 7 0 0 1 7 7v24a7 7 0 0 1-7 7H30L17 58v-9h-4a7 7 0 0 1-7-7V18a7 7 0 0 1 7-7Z"
+            fill="currentColor"
+          />
+          <path
+            d="M19 25h26M19 33h19"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+
+  <div
+    class="feedback-modal"
+    id="feedback-modal"
+    hidden
+    data-feedback-modal
+  >
+    <div class="feedback-modal-backdrop" data-feedback-backdrop></div>
+
+    <section
+      class="feedback-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="feedback-title"
+      aria-describedby="feedback-description"
+      tabindex="-1"
+      data-feedback-dialog
+    >
+      <div class="feedback-dialog-header">
+        <div>
+          <p class="eyebrow">Help us improve</p>
+          <h2 id="feedback-title">Send feedback to Donsol Tourism</h2>
+          <p id="feedback-description">
+            Help us make every Donsol visit better by sharing a correction, suggestion,
+            compliment, concern, or website issue with the Tourism Office.
+          </p>
+        </div>
+
+        <button
+          class="feedback-close"
+          type="button"
+          aria-label="Close feedback form"
+          data-feedback-close
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="feedback-form-embed" data-feedback-embed-container>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdEyou-7INQzV3FgCHhKOtJ7Vw7ynDEAjq0Ho5B6q9ylA4Xsw/viewform?embedded=true"
+          title="Donsol Tourism feedback form"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          data-feedback-embed
+        >
+          Loading…
+        </iframe>
+      </div>
+
+      <p class="feedback-embed-note">
+        Responses are submitted through Google Forms and recorded in the Donsol Tourism
+        Office's private response sheet.
+      </p>
+
+      <div class="feedback-photo-upload">
+        <div class="feedback-photo-upload-copy">
+          <strong>Need to include a supporting photo?</strong>
+          <span>Optional. Google Account sign-in is required for photo uploads.</span>
+        </div>
+
+        <a
+          class="feedback-photo-upload-button"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfCzm_CGM79tIjEFhKU_4KvlOtRSPrDn87JJ2BqA0hVMajHEg/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the optional Donsol Tourism supporting photo upload form in a new tab"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              d="M8.4 5.5 9.7 3.8h4.6l1.3 1.7H19a2 2 0 0 1 2 2v9.7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7.5a2 2 0 0 1 2-2h3.4Zm3.6 3a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2Zm0 1.8a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6Z"
+              fill="currentColor"
+            />
+          </svg>
+          Upload a Supporting Photo
+        </a>
+      </div>
+
+      <p class="feedback-embed-fallback">
+        Having trouble loading the form?
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdEyou-7INQzV3FgCHhKOtJ7Vw7ynDEAjq0Ho5B6q9ylA4Xsw/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open the feedback form in a new tab
+        </a>.
+      </p>
+    </section>
+  </div>
+
+  <button
+    class="scroll-top-button"
+    type="button"
+    aria-label="Scroll back to top"
+    aria-hidden="true"
+    tabindex="-1"
+    data-scroll-top
+  >
+    <span aria-hidden="true">↑</span>
+  </button>
+</body>
+</html>
