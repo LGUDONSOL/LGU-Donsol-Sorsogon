@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.19.01
-    Update: Compact accommodation directory preview
-    Description: The accommodation directory now shows only three alphabetical listings at first, with category-aware View All and Show Fewer controls so visitors can scan the page quickly and expand the complete directory only when needed.
-    Date: 2026-08-04
+    Project Version: v1.19.04
+    Update: Accommodation directory data refresh
+    Description: Refreshed the 23 accommodation listings from the latest Tourism Office data, including the newly supplied AGM Beachfront Resort location and map coordinates, while preserving the three-card preview, alphabetical order, category filters, and previously confirmed data corrections.
+    Date: 2026-08-10
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
 
@@ -17,7 +17,7 @@
     content="Discover Donsol, Sorsogon—home to responsible whale shark encounters, firefly-lit river tours, kayaking, river cruises, fresh local flavors, and welcoming coastal stays."
   />
 
-  <meta name="project-version" content="v1.19.01 - Compact accommodation directory preview" />
+  <meta name="project-version" content="v1.19.04 - Accommodation directory data refresh" />
 
   <meta name="theme-color" content="#063d42" />
 
@@ -1844,7 +1844,7 @@
           <p class="eyebrow">Official accommodation directory</p>
           <h2 id="stay-title">Find your place to stay in Donsol.</h2>
           <p>
-            Explore beachfront resorts, homestays, guest houses, and other local stays.
+            Explore beachfront resorts, homestays, guest houses, inns, and other local stays.
             Use the filters to compare options, then contact each establishment directly
             to confirm rates, availability, amenities, and booking requirements.
           </p>
@@ -1856,18 +1856,18 @@
             Listings are arranged alphabetically and are provided for visitor convenience,
             not as a ranking or endorsement. Property details may change, so please confirm
             all information directly with the establishment before making a reservation.
-            Location and map details are still being verified and will be added as they become available.
+            Locations and map links are based on the information supplied for this directory.
           </p>
         </aside>
 
         <div class="filter-bar accommodation-filter-bar" aria-label="Filter accommodations by type">
           <button class="filter-button active" type="button" data-filter="all">
             <span>All Stays</span>
-            <span class="filter-count" aria-hidden="true">15</span>
+            <span class="filter-count" aria-hidden="true">23</span>
           </button>
           <button class="filter-button" type="button" data-filter="beach-resort">
             <span>Beach Resorts</span>
-            <span class="filter-count" aria-hidden="true">11</span>
+            <span class="filter-count" aria-hidden="true">14</span>
           </button>
           <button class="filter-button" type="button" data-filter="resort">
             <span>Resorts</span>
@@ -1877,9 +1877,13 @@
             <span>Guest Houses</span>
             <span class="filter-count" aria-hidden="true">1</span>
           </button>
+          <button class="filter-button" type="button" data-filter="inn">
+            <span>Inns</span>
+            <span class="filter-count" aria-hidden="true">2</span>
+          </button>
           <button class="filter-button" type="button" data-filter="homestay">
             <span>Homestays</span>
-            <span class="filter-count" aria-hidden="true">2</span>
+            <span class="filter-count" aria-hidden="true">5</span>
           </button>
         </div>
 
@@ -1906,7 +1910,7 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Dancalan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -1926,6 +1930,7 @@
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/agmwhalesharkdonsol" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for AGM Beachfront Resort">Facebook Page</a>
               <a class="accommodation-action" href="tel:+639196882264" aria-label="Call for AGM Beachfront Resort">Call</a>
               <a class="accommodation-action" href="mailto:agmresort@gmail.com" aria-label="Email for AGM Beachfront Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.915893,123.584955" target="_blank" rel="noopener noreferrer" aria-label="View Map for AGM Beachfront Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -1936,7 +1941,7 @@
             <div class="accommodation-card-media">
               <img
                 src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1785828231/Aguluz_djlhpw.jpg"
-                alt="AGULUZE Homestay accommodation in Donsol"
+                alt="AGULUZ Homestay accommodation in Donsol"
                 width="900"
                 height="600"
                 loading="lazy"
@@ -1946,12 +1951,12 @@
             </div>
 
             <div class="accommodation-card-body">
-              <h3>AGULUZE Homestay</h3>
+              <h3>AGULUZ Homestay</h3>
 
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>San Jose St. Awaii, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -1967,10 +1972,56 @@
               </div>
               </dl>
 
-              <div class="accommodation-actions" aria-label="AGULUZE Homestay contact links">
-              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/aguluzbutanding" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for AGULUZE Homestay">Facebook Page</a>
-              <a class="accommodation-action" href="tel:+639189420897" aria-label="Call for AGULUZE Homestay">Call</a>
-              <a class="accommodation-action" href="mailto:razomarilyn@yahoo.com" aria-label="Email for AGULUZE Homestay">Email</a>
+              <div class="accommodation-actions" aria-label="AGULUZ Homestay contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/aguluzbutanding" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for AGULUZ Homestay">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639189420897" aria-label="Call for AGULUZ Homestay">Call</a>
+              <a class="accommodation-action" href="mailto:razomarilyn@yahoo.com" aria-label="Email for AGULUZ Homestay">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.905044,123.596795" target="_blank" rel="noopener noreferrer" aria-label="View Map for AGULUZ Homestay">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="homestay"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786343150/alexandras_fgmqgn.jpg"
+                alt="Alexandras Transient Haus accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Homestay</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>Alexandras Transient Haus</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>M Hernandez, Poso, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639937962231">+63993 796 2231</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:alexandrastransienthaus@gmail.com">alexandrastransienthaus@gmail.com</a></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="Alexandras Transient Haus contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.google.com/maps/search/?api=1&amp;query=12.907598,123.595095" target="_blank" rel="noopener noreferrer" aria-label="View Map for Alexandras Transient Haus">View Map</a>
+              <a class="accommodation-action" href="tel:+639937962231" aria-label="Call for Alexandras Transient Haus">Call</a>
+              <a class="accommodation-action" href="mailto:alexandrastransienthaus@gmail.com" aria-label="Email for Alexandras Transient Haus">Email</a>
               </div>
             </div>
           </article>
@@ -1996,15 +2047,15 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 6, Dancalan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd><a href="tel:+639095181150">+63909 518 1150</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd><a href="mailto:amorbeachresort@gmail.com">amorbeachresort@gmail.com</a></dd>
               </div>
               <div>
                 <dt>Website</dt>
@@ -2014,6 +2065,9 @@
 
               <div class="accommodation-actions" aria-label="AMOR Farm Beach Resort contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/amorfarmbeachresort" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for AMOR Farm Beach Resort">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639095181150" aria-label="Call for AMOR Farm Beach Resort">Call</a>
+              <a class="accommodation-action" href="mailto:amorbeachresort@gmail.com" aria-label="Email for AMOR Farm Beach Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.918718,123.582084" target="_blank" rel="noopener noreferrer" aria-label="View Map for AMOR Farm Beach Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2039,11 +2093,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 4, Ginamagaan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><a href="tel:+639064445016">+63906 444 5016</a></dd>
+                <dd><a href="tel:+639318888775">+63931 888 8775</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2057,8 +2111,55 @@
 
               <div class="accommodation-actions" aria-label="Bali Oli Beach Front Resort contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/BaliOlibfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Bali Oli Beach Front Resort">Facebook Page</a>
-              <a class="accommodation-action" href="tel:+639064445016" aria-label="Call for Bali Oli Beach Front Resort">Call</a>
+              <a class="accommodation-action" href="tel:+639318888775" aria-label="Call for Bali Oli Beach Front Resort">Call</a>
               <a class="accommodation-action" href="mailto:baliolibfr@gmail.com" aria-label="Email for Bali Oli Beach Front Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.944738,123.558045" target="_blank" rel="noopener noreferrer" aria-label="View Map for Bali Oli Beach Front Resort">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="inn"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786342867/big_3_nfabhv.jpg"
+                alt="BIG 3 Transient Inn accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Inn</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>BIG 3 Transient Inn</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Saint Joseph Village, Awaii, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639622437140">+63962 243 7140</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:big3transient.inn@gmail.com">big3transient.inn@gmail.com</a></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="BIG 3 Transient Inn contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/profile.php?id=61564577916235" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for BIG 3 Transient Inn">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639622437140" aria-label="Call for BIG 3 Transient Inn">Call</a>
+              <a class="accommodation-action" href="mailto:big3transient.inn@gmail.com" aria-label="Email for BIG 3 Transient Inn">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.904751,123.598582" target="_blank" rel="noopener noreferrer" aria-label="View Map for BIG 3 Transient Inn">View Map</a>
               </div>
             </div>
           </article>
@@ -2084,7 +2185,7 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 5, Primera Amor, Sta. Cruz, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -2104,6 +2205,7 @@
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/profile.php?id=61559457746075" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Consolacion Beach Resort">Facebook Page</a>
               <a class="accommodation-action" href="tel:+639543776114" aria-label="Call for Consolacion Beach Resort">Call</a>
               <a class="accommodation-action" href="mailto:maricelibeltran@gmail.com" aria-label="Email for Consolacion Beach Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.984261,123.491872" target="_blank" rel="noopener noreferrer" aria-label="View Map for Consolacion Beach Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2129,7 +2231,7 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 7, Dancalan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -2149,6 +2251,7 @@
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/dancalanbeach" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Dancalan Beach Resort">Facebook Page</a>
               <a class="accommodation-action" href="tel:+639994450030" aria-label="Call for Dancalan Beach Resort">Call</a>
               <a class="accommodation-action" href="mailto:lyn_amor0122@yahoo.com.ph" aria-label="Email for Dancalan Beach Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.923039,123.578112" target="_blank" rel="noopener noreferrer" aria-label="View Map for Dancalan Beach Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2174,11 +2277,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 5, Primera Amor, Sta. Cruz, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd><a href="tel:+639700589176">+63970 058 9176</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2192,6 +2295,8 @@
 
               <div class="accommodation-actions" aria-label="Ellah&#x27;s Beachfront Resort contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/Ellasplacerestobar" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Ellah&#x27;s Beachfront Resort">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639700589176" aria-label="Call for Ellah&#x27;s Beachfront Resort">Call</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.984764,123.491027" target="_blank" rel="noopener noreferrer" aria-label="View Map for Ellah&#x27;s Beachfront Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2217,11 +2322,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 1, Aplaya, Pangpang, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd><a href="tel:+639691626291">+63969 162 6291</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2235,8 +2340,56 @@
 
               <div class="accommodation-actions" aria-label="Elysia Beach Resort contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/ElysiaBeachResort" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Elysia Beach Resort">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639691626291" aria-label="Call for Elysia Beach Resort">Call</a>
               <a class="accommodation-action" href="mailto:elysia@live.co.kr" aria-label="Email for Elysia Beach Resort">Email</a>
               <a class="accommodation-action" href="https://elysia-donsol.com" target="_blank" rel="noopener noreferrer" aria-label="Website for Elysia Beach Resort">Website</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.926845,123.574098" target="_blank" rel="noopener noreferrer" aria-label="View Map for Elysia Beach Resort">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="homestay"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786343151/giddys_d69zfv.jpg"
+                alt="G.P. Homestay accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Homestay</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>G.P. Homestay</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Clemente St., Punta Waling-Waling, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639951572636">+63995 157 2636</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:nhangtineo0923@gmail.com">nhangtineo0923@gmail.com</a></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="G.P. Homestay contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/giddysplace" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for G.P. Homestay">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639951572636" aria-label="Call for G.P. Homestay">Call</a>
+              <a class="accommodation-action" href="mailto:nhangtineo0923@gmail.com" aria-label="Email for G.P. Homestay">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.905221,123.59369" target="_blank" rel="noopener noreferrer" aria-label="View Map for G.P. Homestay">View Map</a>
               </div>
             </div>
           </article>
@@ -2262,11 +2415,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 5, Gimagaan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><a href="tel:+639626020932">+63962 602 0932</a></dd>
+                <dd><a href="tel:+639936469236">+63993 646 9236</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2280,8 +2433,53 @@
 
               <div class="accommodation-actions" aria-label="Hamina Beach Resort contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/Haminabeachresort" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Hamina Beach Resort">Facebook Page</a>
-              <a class="accommodation-action" href="tel:+639626020932" aria-label="Call for Hamina Beach Resort">Call</a>
+              <a class="accommodation-action" href="tel:+639936469236" aria-label="Call for Hamina Beach Resort">Call</a>
               <a class="accommodation-action" href="mailto:haminaresort@gmail.com" aria-label="Email for Hamina Beach Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.940244,123.56294" target="_blank" rel="noopener noreferrer" aria-label="View Map for Hamina Beach Resort">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="homestay"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786343150/Lola_Erna_ojqdhk.png"
+                alt="Harong ni Lola Erna accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Homestay</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>Harong ni Lola Erna</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Tupas, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639451038648">+63945 103 8648</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="Harong ni Lola Erna contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.google.com/maps/search/?api=1&amp;query=12.912236,123.593125" target="_blank" rel="noopener noreferrer" aria-label="View Map for Harong ni Lola Erna">View Map</a>
+              <a class="accommodation-action" href="tel:+639451038648" aria-label="Call for Harong ni Lola Erna">Call</a>
               </div>
             </div>
           </article>
@@ -2307,11 +2505,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Ogod, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><a href="tel:+639551833719">+63955 183 3719</a></dd>
+                <dd><a href="tel:+639993994129">+63999 399 4129</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2325,7 +2523,53 @@
 
               <div class="accommodation-actions" aria-label="Manel Guest House contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/don.marasigan.73" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Manel Guest House">Facebook Page</a>
-              <a class="accommodation-action" href="tel:+639551833719" aria-label="Call for Manel Guest House">Call</a>
+              <a class="accommodation-action" href="tel:+639993994129" aria-label="Call for Manel Guest House">Call</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.899005,123.617552" target="_blank" rel="noopener noreferrer" aria-label="View Map for Manel Guest House">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="beach-resort"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786343115/nirvana_xxbmfa.jpg"
+                alt="Nirvana Resort and Restobar accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Beach Resort</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>Nirvana Resort and Restobar</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Purok 1, Pangpang, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639972300348">+63997 230 0348</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="Nirvana Resort and Restobar contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/nirvannaresort" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Nirvana Resort and Restobar">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639972300348" aria-label="Call for Nirvana Resort and Restobar">Call</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.928773,123.572366" target="_blank" rel="noopener noreferrer" aria-label="View Map for Nirvana Resort and Restobar">View Map</a>
               </div>
             </div>
           </article>
@@ -2351,11 +2595,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Gura, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd><a href="tel:+639186368981">+63918 636 8981</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2369,7 +2613,9 @@
 
               <div class="accommodation-actions" aria-label="Rosewall Garden Resort contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/RosewallGardenResort" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Rosewall Garden Resort">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639186368981" aria-label="Call for Rosewall Garden Resort">Call</a>
               <a class="accommodation-action" href="mailto:wgsabater.cese@yahoo.com" aria-label="Email for Rosewall Garden Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.910547,123.636074" target="_blank" rel="noopener noreferrer" aria-label="View Map for Rosewall Garden Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2395,7 +2641,7 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 1, Mangingisda, Sta. Cruz, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -2415,6 +2661,7 @@
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/profile.php?id=61573334001993" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Torres Paayahayan">Facebook Page</a>
               <a class="accommodation-action" href="tel:+639279583217" aria-label="Call for Torres Paayahayan">Call</a>
               <a class="accommodation-action" href="mailto:paayahayantorres@gmail.com" aria-label="Email for Torres Paayahayan">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.987521,123.485689" target="_blank" rel="noopener noreferrer" aria-label="View Map for Torres Paayahayan">View Map</a>
               </div>
             </div>
           </article>
@@ -2440,7 +2687,7 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Saint Joseph Village, Awaii, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -2460,6 +2707,7 @@
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/touristlinkhomestay" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Touristlink Homestay">Facebook Page</a>
               <a class="accommodation-action" href="tel:+639266598037" aria-label="Call for Touristlink Homestay">Call</a>
               <a class="accommodation-action" href="mailto:perinaleizl@gmail.com" aria-label="Email for Touristlink Homestay">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.904836,123.599383" target="_blank" rel="noopener noreferrer" aria-label="View Map for Touristlink Homestay">View Map</a>
               </div>
             </div>
           </article>
@@ -2485,11 +2733,11 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Purok 4, Vinisitahan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd><a href="tel:+639912872260">+63991 287 2260</a></dd>
+                <dd><a href="tel:+639304180872">+63930 418 0872</a></dd>
               </div>
               <div>
                 <dt>Email</dt>
@@ -2503,7 +2751,98 @@
 
               <div class="accommodation-actions" aria-label="Usad Ka Puon contact links">
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/usadkapuonbeachresort" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Usad Ka Puon">Facebook Page</a>
-              <a class="accommodation-action" href="tel:+639912872260" aria-label="Call for Usad Ka Puon">Call</a>
+              <a class="accommodation-action" href="tel:+639304180872" aria-label="Call for Usad Ka Puon">Call</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.948004,123.553116" target="_blank" rel="noopener noreferrer" aria-label="View Map for Usad Ka Puon">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="inn"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786342867/villa_peralta_kx6opm.png"
+                alt="Villa Peralta Inn accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Inn</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>Villa Peralta Inn</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Purok 3, Tupas, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639272138628">+63927 213 8628</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:villaperaltainn@gmail.com">villaperaltainn@gmail.com</a></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="Villa Peralta Inn contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/VillaPeraltaInn" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Villa Peralta Inn">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639272138628" aria-label="Call for Villa Peralta Inn">Call</a>
+              <a class="accommodation-action" href="mailto:villaperaltainn@gmail.com" aria-label="Email for Villa Peralta Inn">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.912224,123.594465" target="_blank" rel="noopener noreferrer" aria-label="View Map for Villa Peralta Inn">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="beach-resort"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1786343115/Villa_Siville_uxiys1.jpg"
+                alt="Villa Siville - Private Beach Resort accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Beach Resort</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>Villa Siville - Private Beach Resort</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Purok 2, Mangingisda, Sta. Cruz, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="Villa Siville - Private Beach Resort contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/profile.php?id=61557911483661" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Villa Siville - Private Beach Resort">Facebook Page</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.987435,123.48607" target="_blank" rel="noopener noreferrer" aria-label="View Map for Villa Siville - Private Beach Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2529,7 +2868,7 @@
               <dl class="accommodation-details">
               <div>
                 <dt>Location</dt>
-                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+                <dd>Dancalan, Donsol, Sorsogon</dd>
               </div>
               <div>
                 <dt>Phone</dt>
@@ -2549,6 +2888,53 @@
               <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/vittonandwoodlandresorts" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Vitton and Woodland Beach Resorts">Facebook Page</a>
               <a class="accommodation-action" href="tel:+639209693489" aria-label="Call for Vitton and Woodland Beach Resorts">Call</a>
               <a class="accommodation-action" href="mailto:reservations@vittonandwoodland.com" aria-label="Email for Vitton and Woodland Beach Resorts">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.92418,123.577064" target="_blank" rel="noopener noreferrer" aria-label="View Map for Vitton and Woodland Beach Resorts">View Map</a>
+              </div>
+            </div>
+          </article>
+          <article
+            class="info-card accommodation-card"
+            data-category="beach-resort"
+          >
+            <div class="accommodation-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_600/v1785827948/Vitton_and_Woodland_skwwak.jpg"
+                alt="Woodland Beach Resort accommodation in Donsol"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="accommodation-category">Beach Resort</span>
+            </div>
+
+            <div class="accommodation-card-body">
+              <h3>Woodland Beach Resort</h3>
+
+              <dl class="accommodation-details">
+              <div>
+                <dt>Location</dt>
+                <dd>Pangpang, Donsol, Sorsogon</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+639209693489">+63920 969 3489</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:reservation@vittonwoodland.com">reservation@vittonwoodland.com</a></dd>
+              </div>
+              <div>
+                <dt>Website</dt>
+                <dd><span class="accommodation-pending">Not yet provided</span></dd>
+              </div>
+              </dl>
+
+              <div class="accommodation-actions" aria-label="Woodland Beach Resort contact links">
+              <a class="accommodation-action accommodation-action-primary" href="https://www.facebook.com/vittonandwoodlandresorts" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page for Woodland Beach Resort">Facebook Page</a>
+              <a class="accommodation-action" href="tel:+639209693489" aria-label="Call for Woodland Beach Resort">Call</a>
+              <a class="accommodation-action" href="mailto:reservation@vittonwoodland.com" aria-label="Email for Woodland Beach Resort">Email</a>
+              <a class="accommodation-action" href="https://www.google.com/maps/search/?api=1&amp;query=12.926949,123.574784" target="_blank" rel="noopener noreferrer" aria-label="View Map for Woodland Beach Resort">View Map</a>
               </div>
             </div>
           </article>
@@ -2556,7 +2942,7 @@
 
         <div class="accommodation-directory-controls" data-accommodation-controls>
           <p class="accommodation-directory-status" aria-live="polite" data-accommodation-status>
-            Showing 3 of 15 accommodations.
+            Showing 3 of 23 accommodations.
           </p>
 
           <button
@@ -2566,7 +2952,7 @@
             aria-controls="accommodation-directory-grid"
             data-accommodation-toggle
           >
-            <span data-accommodation-toggle-label>View All 15 Accommodations</span>
+            <span data-accommodation-toggle-label>View All 23 Accommodations</span>
             <span class="accommodation-directory-toggle-icon" aria-hidden="true">↓</span>
           </button>
         </div>
