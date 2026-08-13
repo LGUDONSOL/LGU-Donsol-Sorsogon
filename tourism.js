@@ -1,8 +1,8 @@
 /*
-  Project Version: v1.19.02
-  Update: Accommodation collapse scroll correction
-  Description: When visitors choose Show Fewer Accommodations, the directory now collapses to three listings and smoothly returns to the beginning of the accommodation section while accounting for the fixed header.
-  Date: 2026-08-04
+  Project Version: v1.20.01
+  Update: Pasalubong and local souvenir gallery behavior
+  Description: Added scoped category filtering plus three-item View All / Show Fewer behavior for the new souvenir gallery, including smooth return to the Pasalubong section after collapsing, while preserving existing accommodation and page interactions.
+  Date: 2026-08-13
 */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initItineraryTabs();
   initMediaShowcase();
   initAccommodationFilter();
+  initSouvenirGallery();
   initScrollReveal();
   initHeroVideoFallback();
   initInquiryForm();
@@ -1368,6 +1369,49 @@ function initAccommodationFilter() {
 
   updateFilterButtons();
   updateDirectory();
+}
+
+
+/* Pasalubong and local souvenir gallery */
+function initSouvenirGallery() {
+  const section = document.querySelector("#specials");
+  if (!section) return;
+  const filterButtons = Array.from(section.querySelectorAll("[data-souvenir-filter]"));
+  const cards = Array.from(section.querySelectorAll(".souvenir-card[data-souvenir-category]"));
+  const toggleButton = section.querySelector("[data-souvenir-toggle]");
+  const toggleLabel = section.querySelector("[data-souvenir-toggle-label]");
+  const status = section.querySelector("[data-souvenir-status]");
+  const siteHeader = document.querySelector("[data-site-header]") || document.querySelector(".site-header");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const requestedLimit = Number.parseInt(section.dataset.souvenirPreviewLimit || "3", 10);
+  const previewLimit = Number.isFinite(requestedLimit) ? Math.max(requestedLimit, 1) : 3;
+  if (!filterButtons.length || !cards.length) return;
+  const labels = {
+    all: {button:"Souvenirs",status:"souvenir items"},
+    "whale-shark": {button:"Whale Shark Souvenirs",status:"whale shark souvenir items"},
+    bags: {button:"Bags",status:"souvenir bags"},
+    others: {button:"Other Finds",status:"other souvenir items"}
+  };
+  let activeFilter = filterButtons.find((b)=>b.classList.contains("active"))?.dataset.souvenirFilter || "all";
+  let isExpanded = false;
+  function getMatchingCards() { return cards.filter((card)=>activeFilter === "all" || card.dataset.souvenirCategory === activeFilter); }
+  function updateFilterButtons() { filterButtons.forEach((button)=>{ const active=button.dataset.souvenirFilter===activeFilter; button.classList.toggle("active",active); button.setAttribute("aria-pressed",active?"true":"false"); }); }
+  function updateGallery() {
+    const matchingCards=getMatchingCards(); const hasMore=matchingCards.length>previewLimit;
+    if (!hasMore) isExpanded=false;
+    const visible=isExpanded?matchingCards:matchingCards.slice(0,previewLimit);
+    const visibleSet=new Set(visible), matchingSet=new Set(matchingCards);
+    cards.forEach((card)=>{ const match=matchingSet.has(card); const show=match&&visibleSet.has(card); card.classList.toggle("is-filter-hidden",!match); card.classList.toggle("is-directory-hidden",match&&!show); card.setAttribute("aria-hidden",show?"false":"true"); });
+    const text=labels[activeFilter]||labels.all;
+    if (status) status.textContent=`Showing ${visible.length} of ${matchingCards.length} ${text.status}.`;
+    if (!toggleButton) return;
+    toggleButton.hidden=!hasMore; toggleButton.setAttribute("aria-expanded",isExpanded?"true":"false");
+    if (toggleLabel) toggleLabel.textContent=isExpanded?`Show Fewer ${text.button}`:`View All ${matchingCards.length} ${text.button}`;
+  }
+  filterButtons.forEach((button)=>button.addEventListener("click",()=>{ activeFilter=button.dataset.souvenirFilter||"all"; isExpanded=false; updateFilterButtons(); updateGallery(); }));
+  function scrollToSouvenirStart() { window.requestAnimationFrame(()=>window.requestAnimationFrame(()=>{ const headerHeight=siteHeader?siteHeader.getBoundingClientRect().height:0; const sectionTop=window.scrollY+section.getBoundingClientRect().top-headerHeight-16; window.scrollTo({top:Math.max(sectionTop,0),behavior:prefersReducedMotion.matches?"auto":"smooth"}); })); }
+  toggleButton?.addEventListener("click",()=>{ const wasExpanded=isExpanded; isExpanded=!isExpanded; updateGallery(); if (wasExpanded&&!isExpanded) scrollToSouvenirStart(); });
+  updateFilterButtons(); updateGallery();
 }
 
 /* Inquiry form */

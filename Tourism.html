@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.19.04
-    Update: Accommodation directory data refresh
-    Description: Refreshed the 23 accommodation listings from the latest Tourism Office data, including the newly supplied AGM Beachfront Resort location and map coordinates, while preserving the three-card preview, alphabetical order, category filters, and previously confirmed data corrections.
-    Date: 2026-08-10
+    Project Version: v1.20.01
+    Update: Pasalubong and local souvenir gallery
+    Description: Replaced the former Donsolano Specials cards with a compact Donsol Pasalubong Center showcase and a 19-item category-filtered souvenir gallery using the Tourism Office's supplied images, with three-item preview, View All, and Show Fewer behavior.
+    Date: 2026-08-13
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
 
@@ -17,7 +17,7 @@
     content="Discover Donsol, Sorsogon—home to responsible whale shark encounters, firefly-lit river tours, kayaking, river cruises, fresh local flavors, and welcoming coastal stays."
   />
 
-  <meta name="project-version" content="v1.19.04 - Accommodation directory data refresh" />
+  <meta name="project-version" content="v1.20.01 - Pasalubong and local souvenir gallery" />
 
   <meta name="theme-color" content="#063d42" />
 
@@ -92,7 +92,7 @@
         <li><a href="#media-showcase">Media</a></li>
         <li><a href="#stay">Accommodations</a></li>
         <li><a href="#food">Food</a></li>
-        <li><a href="#specials">Donsolano Specials</a></li>
+        <li><a href="#specials">Pasalubong</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#visitor-guide">Visitor Guide</a></li>
       </ul>
@@ -2969,7 +2969,7 @@
             casual family meals, merienda, and locally made treats to bring home.
           </p>
 
-          <a class="btn btn-primary" href="#specials">See local specials</a>
+          <a class="btn btn-primary" href="#specials">Browse Pasalubong</a>
         </div>
 
         <div class="food-cards">
@@ -3006,49 +3006,452 @@
       </div>
     </section>
 
-    <section class="section specials-section" id="specials" aria-labelledby="specials-title">
+    <section
+      class="section specials-section souvenir-section"
+      id="specials"
+      aria-labelledby="specials-title"
+      data-souvenir-preview-limit="3"
+    >
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Donsolano Specials</p>
-          <h2 id="specials-title">Bring home a taste of Donsol.</h2>
+        <div class="section-heading specials-heading">
+          <p class="eyebrow">Pasalubong &amp; Local Souvenirs</p>
+          <h2 id="specials-title">Take a piece of Donsol home with you.</h2>
           <p>
-            Support local livelihoods while discovering flavors, handmade products, and
-            pasalubong that carry the character of Donsol beyond your visit.
+            Browse whale shark-themed keepsakes, souvenir bags, and other take-home finds
+            featured through the Donsol Pasalubong Center. Product selection and availability
+            may change, so check current choices during your visit.
           </p>
         </div>
 
-        <div class="specials-grid">
-          <article class="special-card">
-            <span class="special-icon" aria-hidden="true">01</span>
-            <h3>Fresh from the Coast</h3>
-            <p>
-              Savor fish, shellfish, and cooked seafood dishes prepared by local restaurants and vendors.
-            </p>
-          </article>
+        <article class="souvenir-center-card" aria-labelledby="souvenir-center-title">
+          <div class="souvenir-center-media">
+            <img
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_1200,h_800/v1786590570/1_qznmzs.jpg"
+              alt="Donsol Pasalubong Center"
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
 
-          <article class="special-card">
-            <span class="special-icon" aria-hidden="true">02</span>
-            <h3>Bicolano Comfort Food</h3>
+          <div class="souvenir-center-copy">
+            <p class="eyebrow">Your Pasalubong Stop</p>
+            <h3 id="souvenir-center-title">Donsol Pasalubong Center</h3>
             <p>
-              Try coconut-rich dishes, spicy favorites, and home-style flavors that bring Bicol to the table.
+              Add a souvenir stop to your Donsol itinerary and browse keepsakes inspired by
+              the destination and its signature butanding experience.
             </p>
-          </article>
 
-          <article class="special-card">
-            <span class="special-icon" aria-hidden="true">03</span>
-            <h3>Pasalubong Favorites</h3>
-            <p>
-              Bring home pili products, local snacks, keepsakes, and thoughtful gifts from your Donsol trip.
-            </p>
-          </article>
+            <div class="souvenir-center-highlights" aria-label="Souvenir collection categories">
+              <span>Whale Shark Souvenirs</span>
+              <span>Bags</span>
+              <span>Other Finds</span>
+            </div>
 
-          <article class="special-card">
-            <span class="special-icon" aria-hidden="true">04</span>
-            <h3>Locally Made Finds</h3>
-            <p>
-              Choose products made by local associations, cooperatives, artisans, and small businesses.
+            <p class="souvenir-center-note">
+              Photos show the souvenir collection supplied for this tourism directory.
+              Specific items, designs, and stocks may vary.
             </p>
+          </div>
+        </article>
+
+        <div class="filter-bar souvenir-filter-bar" aria-label="Filter souvenir items by category">
+          <button class="filter-button active" type="button" data-souvenir-filter="all"><span>All Souvenirs</span><span class="filter-count" aria-hidden="true">19</span></button>
+          <button class="filter-button" type="button" data-souvenir-filter="whale-shark"><span>Whale Shark</span><span class="filter-count" aria-hidden="true">8</span></button>
+          <button class="filter-button" type="button" data-souvenir-filter="bags"><span>Bags</span><span class="filter-count" aria-hidden="true">5</span></button>
+          <button class="filter-button" type="button" data-souvenir-filter="others"><span>Other Finds</span><span class="filter-count" aria-hidden="true">6</span></button>
+        </div>
+
+        <div class="specials-grid souvenir-grid" id="souvenir-directory-grid" data-souvenir-grid>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/2_zbgktk.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 01</span>
+              </div>
+            </div>
           </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="bags"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/10_t0cnbk.jpg"
+                alt="Souvenir bag selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Bags</span>
+                <span class="souvenir-item-label">Selection 01</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="others"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/16_mubtlm.jpg"
+                alt="Souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Other Finds</span>
+                <span class="souvenir-item-label">Selection 01</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/7_u4a56m.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 02</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/13_wurdsk.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 03</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/15_reqhe2.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 04</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/18_aue4p4.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 05</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/19_fcej2d.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 06</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/20_lfagff.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 07</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="whale-shark"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/22_yxwvp4.jpg"
+                alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Whale Shark</span>
+                <span class="souvenir-item-label">Selection 08</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="bags"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/11_ezccsc.jpg"
+                alt="Souvenir bag selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Bags</span>
+                <span class="souvenir-item-label">Selection 02</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="bags"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/4_a3dh61.jpg"
+                alt="Souvenir bag selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Bags</span>
+                <span class="souvenir-item-label">Selection 03</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="bags"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/6_kalc9w.jpg"
+                alt="Souvenir bag selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Bags</span>
+                <span class="souvenir-item-label">Selection 04</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="bags"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/23_ferush.jpg"
+                alt="Souvenir bag selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Bags</span>
+                <span class="souvenir-item-label">Selection 05</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="others"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/8_pzsbry.jpg"
+                alt="Souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Other Finds</span>
+                <span class="souvenir-item-label">Selection 02</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="others"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/5_gxhqos.jpg"
+                alt="Souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Other Finds</span>
+                <span class="souvenir-item-label">Selection 03</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="others"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/14_jjkda3.jpg"
+                alt="Souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Other Finds</span>
+                <span class="souvenir-item-label">Selection 04</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="others"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/17_e1yja8.jpg"
+                alt="Souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Other Finds</span>
+                <span class="souvenir-item-label">Selection 05</span>
+              </div>
+            </div>
+          </article>
+          <article
+            class="special-card souvenir-card"
+            data-souvenir-category="others"
+          >
+            <div class="souvenir-card-media">
+              <img
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/21_mcwijz.jpg"
+                alt="Souvenir selection at the Donsol Pasalubong Center"
+                width="900"
+                height="700"
+                loading="lazy"
+                decoding="async"
+              />
+
+              <div class="souvenir-card-overlay">
+                <span class="souvenir-category">Other Finds</span>
+                <span class="souvenir-item-label">Selection 06</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="souvenir-directory-controls" data-souvenir-controls>
+          <p class="souvenir-directory-status" aria-live="polite" data-souvenir-status>Showing 3 of 19 souvenir items.</p>
+          <button class="souvenir-directory-toggle" type="button" aria-expanded="false" aria-controls="souvenir-directory-grid" data-souvenir-toggle>
+            <span data-souvenir-toggle-label>View All 19 Souvenirs</span>
+            <span class="souvenir-directory-toggle-icon" aria-hidden="true">↓</span>
+          </button>
         </div>
       </div>
     </section>
@@ -3112,7 +3515,7 @@
                 Browse seasonal markets, food fairs, pasalubong showcases, and livelihood events
                 that bring local makers and flavors together.
               </p>
-              <a class="text-link" href="#specials">View local specials</a>
+              <a class="text-link" href="#specials">Browse Pasalubong</a>
             </div>
           </article>
         </div>
@@ -3314,7 +3717,7 @@
       <div class="footer-links">
         <h3>Local</h3>
         <ul>
-          <li><a href="#specials">Donsolano Specials</a></li>
+          <li><a href="#specials">Pasalubong</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#visitor-guide">Visitor guide</a></li>
           <li><a href="#contact">Tourism Office</a></li>
