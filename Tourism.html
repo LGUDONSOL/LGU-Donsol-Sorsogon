@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.20.01
-    Update: Pasalubong and local souvenir gallery
-    Description: Replaced the former Donsolano Specials cards with a compact Donsol Pasalubong Center showcase and a 19-item category-filtered souvenir gallery using the Tourism Office's supplied images, with three-item preview, View All, and Show Fewer behavior.
-    Date: 2026-08-13
+    Project Version: v1.21.02
+    Update: Cross-platform no-crop media scaling
+    Description: Preserves the original aspect ratio of Media Showcase, Pasalubong, and full-screen photos on desktop, tablet, and mobile by fitting the complete image inside its available frame instead of cropping it.
+    Date: 2026-08-20
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
 
@@ -17,7 +17,7 @@
     content="Discover Donsol, Sorsogon—home to responsible whale shark encounters, firefly-lit river tours, kayaking, river cruises, fresh local flavors, and welcoming coastal stays."
   />
 
-  <meta name="project-version" content="v1.20.01 - Pasalubong and local souvenir gallery" />
+  <meta name="project-version" content="v1.21.02 - Cross-platform no-crop media scaling" />
 
   <meta name="theme-color" content="#063d42" />
 
@@ -553,7 +553,6 @@
               <div
                 class="media-gallery"
                 data-media-gallery
-                data-media-limit="20"
                 aria-label="Whale Shark Interaction media gallery"
               >
                 <div class="media-frame media-frame-video" data-media-gallery-stage>
@@ -597,7 +596,7 @@
                   </span>
                 </div>
 
-                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
                   role="list"
@@ -780,11 +779,11 @@
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="ihttps://res.cloudinary.com/xdzxqvgu/image/upload/v1785120203/Whale-Shark_9_xr3ags.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120203/Whale-Shark_9_xr3ags.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="ihttps://res.cloudinary.com/xdzxqvgu/image/upload/v1785120203/Whale-Shark_9_xr3ags.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120203/Whale-Shark_9_xr3ags.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -953,7 +952,6 @@
               <div
                 class="media-gallery"
                 data-media-gallery
-                data-media-limit="20"
                 aria-label="Firefly Watching media gallery"
               >
                 <div class="media-frame" data-media-gallery-stage>
@@ -991,7 +989,7 @@
                   </span>
                 </div>
 
-                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
                   role="list"
@@ -1040,7 +1038,6 @@
               <div
                 class="media-gallery"
                 data-media-gallery
-                data-media-limit="20"
                 aria-label="Kayaking and River Cruising Activity media gallery"
               >
                 <div class="media-frame" data-media-gallery-stage>
@@ -1076,7 +1073,7 @@
                   </span>
                 </div>
 
-                <!-- Four gallery photos plus two videos. Maximum allowed: twenty media items. -->
+                <!-- Four gallery photos plus two videos. Additional media items may be added without a hard limit. -->
                 <div
                   class="media-gallery-thumbnails"
                   role="list"
@@ -1220,7 +1217,6 @@
               <div
                 class="media-gallery"
                 data-media-gallery
-                data-media-limit="20"
                 aria-label="Food and Local Life media gallery"
               >
                 <div class="media-frame" data-media-gallery-stage>
@@ -1256,7 +1252,7 @@
                   </span>
                 </div>
 
-                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
                   role="list"
@@ -1431,7 +1427,6 @@
               <div
                 class="media-gallery"
                 data-media-gallery
-                data-media-limit="20"
                 aria-label="Events and Community Moments media gallery"
               >
                 <div class="media-frame" data-media-gallery-stage>
@@ -1467,7 +1462,7 @@
                   </span>
                 </div>
 
-                <!-- Add no more than twenty data-media-item buttons inside this list. -->
+                <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
                   role="list"
@@ -3070,7 +3065,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/2_zbgktk.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590571/2_zbgktk.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590571/2_zbgktk.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3090,7 +3086,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/10_t0cnbk.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590571/10_t0cnbk.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590571/10_t0cnbk.jpg"
                 alt="Souvenir bag selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3110,7 +3107,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/16_mubtlm.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590572/16_mubtlm.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590572/16_mubtlm.jpg"
                 alt="Souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3130,7 +3128,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/7_u4a56m.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590571/7_u4a56m.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590571/7_u4a56m.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3150,7 +3149,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/13_wurdsk.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590572/13_wurdsk.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590572/13_wurdsk.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3170,7 +3170,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/15_reqhe2.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590572/15_reqhe2.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590572/15_reqhe2.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3190,7 +3191,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/18_aue4p4.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/18_aue4p4.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/18_aue4p4.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3210,7 +3212,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/19_fcej2d.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/19_fcej2d.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/19_fcej2d.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3230,7 +3233,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/20_lfagff.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/20_lfagff.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/20_lfagff.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3250,7 +3254,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/22_yxwvp4.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/22_yxwvp4.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/22_yxwvp4.jpg"
                 alt="Whale shark themed souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3270,7 +3275,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/11_ezccsc.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590571/11_ezccsc.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590571/11_ezccsc.jpg"
                 alt="Souvenir bag selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3290,7 +3296,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/4_a3dh61.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590571/4_a3dh61.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590571/4_a3dh61.jpg"
                 alt="Souvenir bag selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3310,7 +3317,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/6_kalc9w.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590572/6_kalc9w.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590572/6_kalc9w.jpg"
                 alt="Souvenir bag selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3330,7 +3338,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/23_ferush.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/23_ferush.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/23_ferush.jpg"
                 alt="Souvenir bag selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3350,7 +3359,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/8_pzsbry.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590572/8_pzsbry.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590572/8_pzsbry.jpg"
                 alt="Souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3370,7 +3380,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590571/5_gxhqos.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590571/5_gxhqos.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590571/5_gxhqos.jpg"
                 alt="Souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3390,7 +3401,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590572/14_jjkda3.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590572/14_jjkda3.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590572/14_jjkda3.jpg"
                 alt="Souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3410,7 +3422,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/17_e1yja8.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/17_e1yja8.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/17_e1yja8.jpg"
                 alt="Souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3430,7 +3443,8 @@
           >
             <div class="souvenir-card-media">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fill,w_900,h_700/v1786590573/21_mcwijz.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_fit,w_900,h_700/v1786590573/21_mcwijz.jpg"
+                data-souvenir-viewer-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,c_limit,w_2000/v1786590573/21_mcwijz.jpg"
                 alt="Souvenir selection at the Donsol Pasalubong Center"
                 width="900"
                 height="700"
@@ -3572,83 +3586,183 @@
 
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container contact-grid">
-        <div class="contact-card">
-          <p class="eyebrow">Plan with local guidance</p>
-          <h2 id="contact-title">Let us help you experience Donsol.</h2>
-          <p>
-            Contact the Donsol Tourism Office for current activity availability, local guidance,
-            travel reminders, and help shaping an itinerary that suits your group.
-          </p>
+        <div class="contact-card contact-office-card">
+          <a
+            class="contact-office-visual"
+            href="https://www.google.com/maps/search/?api=1&amp;query=12.923202402773779,123.57807448116841"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Google Maps directions to the Donsol Tourism Office"
+          >
+            <img
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1400/v1787194535/Screenshot_2026-08-20_105500_ifyay8.png"
+              alt="Butanding Visitors Center and Donsol Tourism Center building in Dancalan, Donsol"
+              width="1918"
+              height="850"
+              loading="lazy"
+              decoding="async"
+            />
 
-          <div class="contact-details">
-            <p>
-              <span>Office</span>
-              <strong>Donsol Tourism Office</strong>
-            </p>
+            <span class="contact-office-visual-label">
+              <strong>Visit the Donsol Tourism Office</strong>
+              <small>Dancalan, Donsol, Sorsogon</small>
+            </span>
 
-            <p>
-              <span>Location</span>
-              <strong>Dancalan, Donsol, Sorsogon, Philippines</strong>
-            </p>
+            <span class="contact-office-visual-action" aria-hidden="true">
+              Get Directions ↗
+            </span>
+          </a>
 
-            <p>
-              <span>Email</span>
-              <strong>tourism@donsol.gov.ph</strong>
-            </p>
+          <div class="contact-office-content">
+            <div>
+              <p class="eyebrow">Plan with local guidance</p>
+              <h2 id="contact-title">Planning your Donsol visit? We’re here to help.</h2>
+              <p>
+                Ask the Donsol Tourism Office about activities, accommodations, local recommendations,
+                travel reminders, group visits, and other tourism concerns.
+              </p>
+            </div>
 
-            <p>
-              <span>Phone</span>
-              <strong>+63917 132 3826</strong>
-            </p>
+            <div class="contact-details" aria-label="Donsol Tourism Office details">
+              <p>
+                <span>Office</span>
+                <strong>Donsol Tourism Office</strong>
+              </p>
+
+              <p>
+                <span>Location</span>
+                <strong>Dancalan, Donsol, Sorsogon, Philippines</strong>
+                <a
+                  class="text-link"
+                  href="https://www.google.com/maps/search/?api=1&amp;query=12.923202402773779,123.57807448116841"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Google Maps directions to the Donsol Tourism Office"
+                >
+                  Get Directions
+                </a>
+              </p>
+
+              <p>
+                <span>Office Hours</span>
+                <strong>Daily · 8:00 AM–5:00 PM</strong>
+              </p>
+
+              <p>
+                <span>Cellphone</span>
+                <strong><a href="tel:+639173226109">+63917 322 6109</a></strong>
+              </p>
+
+              <p>
+                <span>Email</span>
+                <strong><a href="mailto:tourism@donsol.gov.ph">tourism@donsol.gov.ph</a></strong>
+              </p>
+            </div>
           </div>
         </div>
 
-        <form class="inquiry-form" action="#" method="post">
-          <div class="form-header">
-            <h3>Tell us about your trip</h3>
-            <p>Share your preferred dates, group size, and interests so the tourism team can guide your planning.</p>
+        <div class="contact-channels" aria-labelledby="contact-channels-title">
+          <div class="contact-channels-header">
+            <p class="eyebrow">Choose how to reach us</p>
+            <h3 id="contact-channels-title">Contact the Tourism Office directly.</h3>
+            <p>
+              Use the channel that is most convenient for your travel question.
+            </p>
           </div>
 
-          <div class="form-row">
-            <label for="full-name">Full name</label>
-            <input type="text" id="full-name" name="full-name" placeholder="Your name" required />
+          <div class="contact-channel-list">
+            <article class="contact-channel-card contact-channel-primary">
+              <div class="contact-channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img">
+                  <path d="M4 4.75A3.75 3.75 0 0 1 7.75 1h8.5A3.75 3.75 0 0 1 20 4.75v7.5A3.75 3.75 0 0 1 16.25 16H11l-4.75 4v-4.28A3.75 3.75 0 0 1 4 12.25v-7.5Z"></path>
+                  <path d="m8.25 10.75 2.55-2.7 2.35 1.95 2.6-2.75"></path>
+                </svg>
+              </div>
+
+              <div class="contact-channel-copy">
+                <span class="contact-channel-kicker">Recommended for quick questions</span>
+                <h4>Messenger</h4>
+                <p>
+                  Send the Tourism Office a message through the official Donsol Sorsogon Tourism Facebook account.
+                </p>
+              </div>
+
+              <a
+                class="contact-channel-action contact-channel-action-primary"
+                href="https://m.me/DonsolSorsogonTourism"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message Donsol Tourism on Messenger"
+              >
+                Message Us
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+
+            <article class="contact-channel-card">
+              <div class="contact-channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img">
+                  <path d="M7.2 2.5 4.85 4.1c-.82.56-1.15 1.62-.8 2.55 2.36 6.18 7.12 10.94 13.3 13.3.93.35 1.99.02 2.55-.8l1.6-2.35a1.75 1.75 0 0 0-.38-2.34l-3.14-2.42a1.75 1.75 0 0 0-2.18.03l-1.72 1.39a14.6 14.6 0 0 1-3.54-3.54l1.39-1.72a1.75 1.75 0 0 0 .03-2.18L9.54 2.88A1.75 1.75 0 0 0 7.2 2.5Z"></path>
+                </svg>
+              </div>
+
+              <div class="contact-channel-copy">
+                <span class="contact-channel-kicker">Direct assistance</span>
+                <h4>Call or Text</h4>
+                <p>
+                  Reach the Tourism Office directly at <strong>+63917 322 6109</strong>.
+                </p>
+              </div>
+
+              <div class="contact-channel-actions" aria-label="Call or text Donsol Tourism Office">
+                <a
+                  class="contact-channel-action"
+                  href="tel:+639173226109"
+                  aria-label="Call Donsol Tourism Office"
+                >
+                  Call
+                </a>
+
+                <a
+                  class="contact-channel-action"
+                  href="sms:+639173226109"
+                  aria-label="Send a text message to Donsol Tourism Office"
+                >
+                  Send a Text
+                </a>
+              </div>
+            </article>
+
+            <article class="contact-channel-card">
+              <div class="contact-channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img">
+                  <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect>
+                  <path d="m4 6.5 8 6 8-6"></path>
+                </svg>
+              </div>
+
+              <div class="contact-channel-copy">
+                <span class="contact-channel-kicker">Detailed or formal inquiries</span>
+                <h4>Email</h4>
+                <p>
+                  Useful for group visits, agencies, schools, partnerships, and detailed travel questions.
+                </p>
+              </div>
+
+              <a
+                class="contact-channel-action"
+                href="mailto:tourism@donsol.gov.ph?subject=Donsol%20Tourism%20Inquiry"
+                aria-label="Email Donsol Tourism Office"
+              >
+                Send Email
+              </a>
+            </article>
           </div>
 
-          <div class="form-row">
-            <label for="email">Email address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          </div>
-
-          <div class="form-row">
-            <label for="travel-date">Preferred travel date</label>
-            <input type="date" id="travel-date" name="travel-date" />
-          </div>
-
-          <div class="form-row">
-            <label for="interest">Main interest</label>
-            <select id="interest" name="interest">
-              <option value="">Select one</option>
-              <option value="whale-shark">Whale Shark Interaction</option>
-              <option value="firefly">Firefly Watching</option>
-              <option value="kayaking">Kayaking and River Cruising Activity</option>
-              <option value="food">Food and local products</option>
-              <option value="stay">Accommodations</option>
-              <option value="events">Events</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Tell us your group size, dates, and preferred activities."
-            ></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Submit inquiry</button>
-        </form>
+          <p class="contact-hours-note">
+            <strong>Office hours:</strong> Daily, 8:00 AM–5:00 PM.
+          </p>
+        </div>
       </div>
     </section>
   </main>

@@ -1,11 +1,13 @@
 /*
-  Project Version: v1.20.01
-  Update: Pasalubong and local souvenir gallery behavior
-  Description: Added scoped category filtering plus three-item View All / Show Fewer behavior for the new souvenir gallery, including smooth return to the Pasalubong section after collapsing, while preserving existing accommodation and page interactions.
-  Date: 2026-08-13
+  Project Version: v1.21.02
+  Update: Cross-platform no-crop media scaling
+  Description: Keeps the existing Media and Pasalubong gallery logic unchanged while CSS now guarantees complete-image, original-aspect presentation across desktop, tablet, mobile, and the full-screen viewer.
+  Date: 2026-08-20
 */
 
 document.addEventListener("DOMContentLoaded", () => {
+  const photoViewer = initPhotoViewer();
+
   initHeroContextReveal();
   initHeaderReveal();
   initScrollTopButton();
@@ -13,14 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initFeedbackModal();
   initMobileNavigation();
   initItineraryTabs();
-  initMediaShowcase();
+  initMediaShowcase(photoViewer);
   initAccommodationFilter();
-  initSouvenirGallery();
+  initSouvenirGallery(photoViewer);
   initScrollReveal();
   initHeroVideoFallback();
-  initInquiryForm();
   initNewsletterForm();
-  initTravelDateMinimum();
 });
 
 /* Video-first hero context reveal */
@@ -621,7 +621,8 @@ function initScrollReveal() {
     ".guide-content",
     ".guide-card",
     ".contact-card",
-    ".inquiry-form"
+    ".contact-channels",
+    ".contact-channel-card"
   ];
 
   const revealElements = document.querySelectorAll(revealSelectors.join(", "));
@@ -841,9 +842,258 @@ function initItineraryTabs() {
 }
 
 
+
+/* Shared Media and Pasalubong photo viewer */
+
+function initPhotoViewer() {
+  const viewer = document.createElement("div");
+
+  viewer.className = "photo-viewer";
+  viewer.hidden = true;
+
+  viewer.innerHTML = `
+    <div class="photo-viewer-backdrop" data-photo-viewer-backdrop></div>
+    <div
+      class="photo-viewer-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="photo-viewer-title"
+      tabindex="-1"
+      data-photo-viewer-dialog
+    >
+      <div class="photo-viewer-toolbar">
+        <div class="photo-viewer-heading">
+          <span class="photo-viewer-kicker" data-photo-viewer-kicker>Photo Gallery</span>
+          <strong class="photo-viewer-title" id="photo-viewer-title" data-photo-viewer-title>Donsol Tourism</strong>
+        </div>
+        <div class="photo-viewer-actions">
+          <button
+            class="photo-viewer-action"
+            type="button"
+            data-photo-viewer-fullscreen
+            aria-label="Enter browser full screen"
+          >
+            <span aria-hidden="true">⛶</span>
+            <span class="photo-viewer-action-label" data-photo-viewer-fullscreen-label>Full Screen</span>
+          </button>
+          <button
+            class="photo-viewer-close"
+            type="button"
+            aria-label="Close full-screen photo viewer"
+            data-photo-viewer-close
+          >×</button>
+        </div>
+      </div>
+      <div class="photo-viewer-stage" data-photo-viewer-stage>
+        <button
+          class="photo-viewer-nav photo-viewer-prev"
+          type="button"
+          aria-label="Show previous photo"
+          data-photo-viewer-prev
+        ><span aria-hidden="true">‹</span></button>
+        <img class="photo-viewer-image" alt="" data-photo-viewer-image />
+        <button
+          class="photo-viewer-nav photo-viewer-next"
+          type="button"
+          aria-label="Show next photo"
+          data-photo-viewer-next
+        ><span aria-hidden="true">›</span></button>
+      </div>
+      <div class="photo-viewer-footer">
+        <p class="photo-viewer-caption" data-photo-viewer-caption></p>
+        <span class="photo-viewer-counter" aria-live="polite" data-photo-viewer-counter></span>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(viewer);
+
+  const dialog = viewer.querySelector("[data-photo-viewer-dialog]");
+  const backdrop = viewer.querySelector("[data-photo-viewer-backdrop]");
+  const image = viewer.querySelector("[data-photo-viewer-image]");
+  const title = viewer.querySelector("[data-photo-viewer-title]");
+  const kicker = viewer.querySelector("[data-photo-viewer-kicker]");
+  const caption = viewer.querySelector("[data-photo-viewer-caption]");
+  const counter = viewer.querySelector("[data-photo-viewer-counter]");
+  const previousButton = viewer.querySelector("[data-photo-viewer-prev]");
+  const nextButton = viewer.querySelector("[data-photo-viewer-next]");
+  const closeButton = viewer.querySelector("[data-photo-viewer-close]");
+  const fullscreenButton = viewer.querySelector("[data-photo-viewer-fullscreen]");
+  const fullscreenLabel = viewer.querySelector("[data-photo-viewer-fullscreen-label]");
+
+  let items = [];
+  let activeIndex = 0;
+  let lastFocusedElement = null;
+  let touchStartX = null;
+
+  if (!dialog || !image) return null;
+
+  if (!dialog.requestFullscreen) {
+    fullscreenButton?.setAttribute("hidden", "");
+  }
+
+  function isOpen() {
+    return !viewer.hidden;
+  }
+
+  function normalizeItems(nextItems) {
+    return (Array.isArray(nextItems) ? nextItems : [])
+      .map((item) => ({
+        src: String(item?.src || "").trim(),
+        alt: String(item?.alt || "").trim(),
+        caption: String(item?.caption || item?.alt || "").trim()
+      }))
+      .filter((item) => item.src);
+  }
+
+  function render() {
+    if (!items.length) return;
+
+    activeIndex = (activeIndex + items.length) % items.length;
+    const item = items[activeIndex];
+    const hasMultipleItems = items.length > 1;
+
+    image.src = item.src;
+    image.alt = item.alt || "Donsol tourism photo";
+    caption.textContent = item.caption || item.alt || "";
+    counter.textContent = `${activeIndex + 1} / ${items.length}`;
+
+    previousButton.disabled = !hasMultipleItems;
+    nextButton.disabled = !hasMultipleItems;
+    previousButton.setAttribute("aria-hidden", hasMultipleItems ? "false" : "true");
+    nextButton.setAttribute("aria-hidden", hasMultipleItems ? "false" : "true");
+  }
+
+  function show(index) {
+    if (!items.length) return;
+    activeIndex = (index + items.length) % items.length;
+    render();
+  }
+
+  function open({
+    items: nextItems,
+    startIndex = 0,
+    title: nextTitle = "Donsol Tourism",
+    kicker: nextKicker = "Photo Gallery"
+  } = {}) {
+    const normalized = normalizeItems(nextItems);
+    if (!normalized.length) return;
+
+    items = normalized;
+    activeIndex = Math.min(Math.max(startIndex, 0), items.length - 1);
+    lastFocusedElement = document.activeElement;
+    title.textContent = nextTitle;
+    kicker.textContent = nextKicker;
+
+    viewer.hidden = false;
+    document.body.classList.add("photo-viewer-open");
+    render();
+
+    window.requestAnimationFrame(() => closeButton?.focus());
+  }
+
+  async function close({ returnFocus = true } = {}) {
+    if (!isOpen()) return;
+
+    if (document.fullscreenElement === dialog && document.exitFullscreen) {
+      try {
+        await document.exitFullscreen();
+      } catch {
+        // The viewer can still close if fullscreen exit is rejected.
+      }
+    }
+
+    viewer.hidden = true;
+    document.body.classList.remove("photo-viewer-open");
+    image.removeAttribute("src");
+    image.alt = "";
+
+    if (
+      returnFocus &&
+      lastFocusedElement instanceof HTMLElement &&
+      document.contains(lastFocusedElement)
+    ) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  async function toggleBrowserFullscreen() {
+    if (!dialog.requestFullscreen) return;
+
+    try {
+      if (document.fullscreenElement === dialog) {
+        await document.exitFullscreen?.();
+      } else {
+        await dialog.requestFullscreen();
+      }
+    } catch {
+      // The overlay already fills the viewport when native fullscreen is unavailable.
+    }
+  }
+
+  function updateFullscreenButton() {
+    if (!fullscreenButton || !fullscreenLabel) return;
+    const isFullscreen = document.fullscreenElement === dialog;
+
+    fullscreenButton.setAttribute(
+      "aria-label",
+      isFullscreen ? "Exit browser full screen" : "Enter browser full screen"
+    );
+    fullscreenLabel.textContent = isFullscreen ? "Exit Full Screen" : "Full Screen";
+  }
+
+  previousButton?.addEventListener("click", () => show(activeIndex - 1));
+  nextButton?.addEventListener("click", () => show(activeIndex + 1));
+  closeButton?.addEventListener("click", () => close());
+  backdrop?.addEventListener("click", () => close());
+  fullscreenButton?.addEventListener("click", toggleBrowserFullscreen);
+  document.addEventListener("fullscreenchange", updateFullscreenButton);
+
+  document.addEventListener("keydown", (event) => {
+    if (!isOpen()) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close();
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      show(activeIndex - 1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      show(activeIndex + 1);
+    }
+  });
+
+  dialog.addEventListener(
+    "touchstart",
+    (event) => {
+      if (event.touches.length) {
+        touchStartX = event.touches[0].clientX;
+      }
+    },
+    { passive: true }
+  );
+
+  dialog.addEventListener(
+    "touchend",
+    (event) => {
+      if (touchStartX === null || !event.changedTouches.length) return;
+
+      const deltaX = event.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+
+      if (Math.abs(deltaX) < 50 || items.length < 2) return;
+      show(deltaX > 0 ? activeIndex - 1 : activeIndex + 1);
+    },
+    { passive: true }
+  );
+
+  return { open, close, show };
+}
+
 /* Media showcase */
 
-function initMediaShowcase() {
+function initMediaShowcase(photoViewer) {
   const showcases = document.querySelectorAll("[data-media-showcase]");
 
   if (!showcases.length) return;
@@ -861,7 +1111,7 @@ function initMediaShowcase() {
 
       if (!gallery) return;
 
-      const controller = initMediaGallery(gallery);
+      const controller = initMediaGallery(gallery, photoViewer);
 
       if (controller) {
         galleryControllers.set(panel, controller);
@@ -974,28 +1224,35 @@ function initMediaShowcase() {
   });
 }
 
-function initMediaGallery(gallery) {
+function initMediaGallery(gallery, photoViewer) {
   const output = gallery.querySelector("[data-media-gallery-output]");
   const stage = gallery.querySelector("[data-media-gallery-stage]");
   const previousButton = gallery.querySelector("[data-media-prev]");
   const nextButton = gallery.querySelector("[data-media-next]");
   const counter = gallery.querySelector("[data-media-counter]");
   const thumbnailContainer = gallery.querySelector("[data-media-thumbnails]");
-  const requestedLimit = Number.parseInt(gallery.dataset.mediaLimit || "8", 10);
-  const mediaLimit = Number.isFinite(requestedLimit)
-    ? Math.min(Math.max(requestedLimit, 1), 8)
-    : 8;
-
-  const allItems = Array.from(gallery.querySelectorAll("[data-media-item]"));
-  const items = allItems.slice(0, mediaLimit);
+  const items = Array.from(gallery.querySelectorAll("[data-media-item]"));
 
   if (!output || !stage || !items.length) return null;
 
-  allItems.slice(mediaLimit).forEach((item) => {
-    item.hidden = true;
-    item.tabIndex = -1;
-    item.setAttribute("aria-hidden", "true");
+  /*
+    No hard gallery limit: every data-media-item remains available.
+    Large thumbnail collections scroll instead of hiding later items.
+  */
+  items.forEach((item) => {
+    item.hidden = false;
+    item.removeAttribute("aria-hidden");
   });
+
+  const photoItems = items.filter((item) => item.dataset.mediaType !== "video");
+  const panel = gallery.closest("[data-media-panel]");
+  const viewerTitle =
+    panel?.querySelector(".media-panel-copy h3")?.textContent?.trim() ||
+    gallery.getAttribute("aria-label") ||
+    "Donsol Media";
+  const viewerKicker =
+    panel?.querySelector(".media-panel-copy .tag")?.textContent?.trim() ||
+    "Donsol Media";
 
   let activeIndex = items.findIndex((item) => {
     return (
@@ -1006,6 +1263,42 @@ function initMediaGallery(gallery) {
 
   if (activeIndex < 0) {
     activeIndex = 0;
+  }
+
+  const photoViewerButton = document.createElement("button");
+  photoViewerButton.className = "media-photo-viewer-button";
+  photoViewerButton.type = "button";
+  photoViewerButton.innerHTML =
+    '<span aria-hidden="true">⛶</span><span>View Full Screen</span>';
+  photoViewerButton.setAttribute(
+    "aria-label",
+    "View active Media photo full screen"
+  );
+  stage.appendChild(photoViewerButton);
+
+  function getPhotoViewerItems() {
+    return photoItems.map((item) => ({
+      src: item.dataset.mediaSrc || "",
+      alt: item.dataset.mediaAlt || "",
+      caption: item.dataset.mediaAlt || ""
+    }));
+  }
+
+  function openActivePhoto() {
+    if (!photoViewer) return;
+
+    const activeItem = items[activeIndex];
+    if (!activeItem || activeItem.dataset.mediaType === "video") return;
+
+    const photoIndex = photoItems.indexOf(activeItem);
+    if (photoIndex < 0) return;
+
+    photoViewer.open({
+      items: getPhotoViewerItems(),
+      startIndex: photoIndex,
+      title: viewerTitle,
+      kicker: viewerKicker
+    });
   }
 
   function pauseActiveVideo() {
@@ -1112,6 +1405,17 @@ function initMediaGallery(gallery) {
 
     output.replaceChildren(mediaElement);
     stage.classList.toggle("media-frame-video", isVideo);
+    output.classList.toggle(
+      "is-photo-viewer-ready",
+      !isVideo && Boolean(photoViewer)
+    );
+
+    photoViewerButton.hidden = isVideo || !photoViewer;
+    photoViewerButton.tabIndex = isVideo || !photoViewer ? -1 : 0;
+
+    if (!isVideo && photoViewer) {
+      mediaElement.addEventListener("click", openActivePhoto);
+    }
 
     updateThumbnails();
     updateControls();
@@ -1149,6 +1453,8 @@ function initMediaGallery(gallery) {
       showItem(index);
     });
   });
+
+  photoViewerButton.addEventListener("click", openActivePhoto);
 
   previousButton?.addEventListener("click", () => {
     showItem(activeIndex - 1);
@@ -1373,91 +1679,229 @@ function initAccommodationFilter() {
 
 
 /* Pasalubong and local souvenir gallery */
-function initSouvenirGallery() {
+function initSouvenirGallery(photoViewer) {
   const section = document.querySelector("#specials");
   if (!section) return;
-  const filterButtons = Array.from(section.querySelectorAll("[data-souvenir-filter]"));
-  const cards = Array.from(section.querySelectorAll(".souvenir-card[data-souvenir-category]"));
+
+  const filterButtons = Array.from(
+    section.querySelectorAll("[data-souvenir-filter]")
+  );
+  const cards = Array.from(
+    section.querySelectorAll(".souvenir-card[data-souvenir-category]")
+  );
   const toggleButton = section.querySelector("[data-souvenir-toggle]");
   const toggleLabel = section.querySelector("[data-souvenir-toggle-label]");
   const status = section.querySelector("[data-souvenir-status]");
-  const siteHeader = document.querySelector("[data-site-header]") || document.querySelector(".site-header");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const requestedLimit = Number.parseInt(section.dataset.souvenirPreviewLimit || "3", 10);
-  const previewLimit = Number.isFinite(requestedLimit) ? Math.max(requestedLimit, 1) : 3;
+  const siteHeader =
+    document.querySelector("[data-site-header]") ||
+    document.querySelector(".site-header");
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+  const requestedLimit = Number.parseInt(
+    section.dataset.souvenirPreviewLimit || "3",
+    10
+  );
+  const previewLimit = Number.isFinite(requestedLimit)
+    ? Math.max(requestedLimit, 1)
+    : 3;
+
   if (!filterButtons.length || !cards.length) return;
+
   const labels = {
-    all: {button:"Souvenirs",status:"souvenir items"},
-    "whale-shark": {button:"Whale Shark Souvenirs",status:"whale shark souvenir items"},
-    bags: {button:"Bags",status:"souvenir bags"},
-    others: {button:"Other Finds",status:"other souvenir items"}
+    all: {
+      button: "Souvenirs",
+      status: "souvenir items",
+      viewer: "All Souvenirs"
+    },
+    "whale-shark": {
+      button: "Whale Shark Souvenirs",
+      status: "whale shark souvenir items",
+      viewer: "Whale Shark Souvenirs"
+    },
+    bags: {
+      button: "Bags",
+      status: "souvenir bags",
+      viewer: "Souvenir Bags"
+    },
+    others: {
+      button: "Other Finds",
+      status: "other souvenir items",
+      viewer: "Other Finds"
+    }
   };
-  let activeFilter = filterButtons.find((b)=>b.classList.contains("active"))?.dataset.souvenirFilter || "all";
+
+  let activeFilter =
+    filterButtons.find((button) => button.classList.contains("active"))
+      ?.dataset.souvenirFilter || "all";
   let isExpanded = false;
-  function getMatchingCards() { return cards.filter((card)=>activeFilter === "all" || card.dataset.souvenirCategory === activeFilter); }
-  function updateFilterButtons() { filterButtons.forEach((button)=>{ const active=button.dataset.souvenirFilter===activeFilter; button.classList.toggle("active",active); button.setAttribute("aria-pressed",active?"true":"false"); }); }
-  function updateGallery() {
-    const matchingCards=getMatchingCards(); const hasMore=matchingCards.length>previewLimit;
-    if (!hasMore) isExpanded=false;
-    const visible=isExpanded?matchingCards:matchingCards.slice(0,previewLimit);
-    const visibleSet=new Set(visible), matchingSet=new Set(matchingCards);
-    cards.forEach((card)=>{ const match=matchingSet.has(card); const show=match&&visibleSet.has(card); card.classList.toggle("is-filter-hidden",!match); card.classList.toggle("is-directory-hidden",match&&!show); card.setAttribute("aria-hidden",show?"false":"true"); });
-    const text=labels[activeFilter]||labels.all;
-    if (status) status.textContent=`Showing ${visible.length} of ${matchingCards.length} ${text.status}.`;
-    if (!toggleButton) return;
-    toggleButton.hidden=!hasMore; toggleButton.setAttribute("aria-expanded",isExpanded?"true":"false");
-    if (toggleLabel) toggleLabel.textContent=isExpanded?`Show Fewer ${text.button}`:`View All ${matchingCards.length} ${text.button}`;
+
+  function getMatchingCards() {
+    return cards.filter((card) => {
+      return (
+        activeFilter === "all" ||
+        card.dataset.souvenirCategory === activeFilter
+      );
+    });
   }
-  filterButtons.forEach((button)=>button.addEventListener("click",()=>{ activeFilter=button.dataset.souvenirFilter||"all"; isExpanded=false; updateFilterButtons(); updateGallery(); }));
-  function scrollToSouvenirStart() { window.requestAnimationFrame(()=>window.requestAnimationFrame(()=>{ const headerHeight=siteHeader?siteHeader.getBoundingClientRect().height:0; const sectionTop=window.scrollY+section.getBoundingClientRect().top-headerHeight-16; window.scrollTo({top:Math.max(sectionTop,0),behavior:prefersReducedMotion.matches?"auto":"smooth"}); })); }
-  toggleButton?.addEventListener("click",()=>{ const wasExpanded=isExpanded; isExpanded=!isExpanded; updateGallery(); if (wasExpanded&&!isExpanded) scrollToSouvenirStart(); });
-  updateFilterButtons(); updateGallery();
-}
 
-/* Inquiry form */
+  function getPhotoViewerItems(matchingCards) {
+    return matchingCards.map((card) => {
+      const image = card.querySelector(".souvenir-card-media img");
+      const category =
+        card.querySelector(".souvenir-category")?.textContent?.trim() ||
+        "Souvenir";
+      const itemLabel =
+        card.querySelector(".souvenir-item-label")?.textContent?.trim() || "";
 
-function initInquiryForm() {
-  const inquiryForm = document.querySelector(".inquiry-form");
+      return {
+        src:
+          image?.dataset.souvenirViewerSrc ||
+          image?.currentSrc ||
+          image?.src || "",
+        alt: image?.alt || `${category} souvenir in Donsol`,
+        caption: [category, itemLabel].filter(Boolean).join(" · ")
+      };
+    });
+  }
 
-  if (!inquiryForm) return;
+  function openCardInViewer(card) {
+    if (!photoViewer) return;
 
-  inquiryForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+    const matchingCards = getMatchingCards();
+    const startIndex = matchingCards.indexOf(card);
+    if (startIndex < 0) return;
 
-    const fullName = inquiryForm.querySelector("#full-name");
-    const email = inquiryForm.querySelector("#email");
-    const message = inquiryForm.querySelector("#message");
+    const activeLabels = labels[activeFilter] || labels.all;
 
-    const nameValue = fullName.value.trim();
-    const emailValue = email.value.trim();
-    const messageValue = message.value.trim();
+    photoViewer.open({
+      items: getPhotoViewerItems(matchingCards),
+      startIndex,
+      title: "Pasalubong & Local Souvenirs",
+      kicker: activeLabels.viewer
+    });
+  }
 
-    clearFormStatus(inquiryForm);
+  function updateFilterButtons() {
+    filterButtons.forEach((button) => {
+      const isActive = button.dataset.souvenirFilter === activeFilter;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
 
-    if (!nameValue || !emailValue) {
-      showFormStatus(inquiryForm, "Please enter your name and email address.", "error");
-      return;
+  function updateGallery() {
+    const matchingCards = getMatchingCards();
+    const hasMoreThanPreview = matchingCards.length > previewLimit;
+
+    if (!hasMoreThanPreview) {
+      isExpanded = false;
     }
 
-    if (!isValidEmail(emailValue)) {
-      showFormStatus(inquiryForm, "Please enter a valid email address.", "error");
-      return;
+    const visibleCards = isExpanded
+      ? matchingCards
+      : matchingCards.slice(0, previewLimit);
+    const visibleSet = new Set(visibleCards);
+    const matchingSet = new Set(matchingCards);
+
+    cards.forEach((card) => {
+      const matches = matchingSet.has(card);
+      const visible = matches && visibleSet.has(card);
+
+      card.classList.toggle("is-filter-hidden", !matches);
+      card.classList.toggle(
+        "is-directory-hidden",
+        matches && !visibleSet.has(card)
+      );
+      card.setAttribute("aria-hidden", visible ? "false" : "true");
+    });
+
+    const activeLabels = labels[activeFilter] || labels.all;
+
+    if (status) {
+      status.textContent =
+        `Showing ${visibleCards.length} of ${matchingCards.length} ${activeLabels.status}.`;
     }
 
-    if (messageValue.length > 0 && messageValue.length < 10) {
-      showFormStatus(inquiryForm, "Please add a little more detail to your message.", "error");
-      return;
-    }
+    if (!toggleButton) return;
 
-    showFormStatus(
-      inquiryForm,
-      "Your inquiry is ready. Connect this form to email, Google Forms, or a backend before launching.",
-      "success"
+    toggleButton.hidden = !hasMoreThanPreview;
+    toggleButton.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+
+    if (toggleLabel) {
+      toggleLabel.textContent = isExpanded
+        ? `Show Fewer ${activeLabels.button}`
+        : `View All ${matchingCards.length} ${activeLabels.button}`;
+    }
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeFilter = button.dataset.souvenirFilter || "all";
+      isExpanded = false;
+      updateFilterButtons();
+      updateGallery();
+    });
+  });
+
+  cards.forEach((card) => {
+    const media = card.querySelector(".souvenir-card-media");
+    if (!media || !photoViewer) return;
+
+    const category =
+      card.querySelector(".souvenir-category")?.textContent?.trim() ||
+      "Souvenir";
+    const itemLabel =
+      card.querySelector(".souvenir-item-label")?.textContent?.trim() || "";
+
+    media.setAttribute("role", "button");
+    media.tabIndex = 0;
+    media.setAttribute(
+      "aria-label",
+      `View ${[category, itemLabel].filter(Boolean).join(" ")} full screen`
     );
 
-    inquiryForm.reset();
-    initTravelDateMinimum();
+    media.addEventListener("click", () => openCardInViewer(card));
+
+    media.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openCardInViewer(card);
+    });
   });
+
+  function scrollToSouvenirStart() {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        const headerHeight = siteHeader
+          ? siteHeader.getBoundingClientRect().height
+          : 0;
+        const sectionTop =
+          window.scrollY +
+          section.getBoundingClientRect().top -
+          headerHeight -
+          16;
+
+        window.scrollTo({
+          top: Math.max(sectionTop, 0),
+          behavior: prefersReducedMotion.matches ? "auto" : "smooth"
+        });
+      });
+    });
+  }
+
+  toggleButton?.addEventListener("click", () => {
+    const wasExpanded = isExpanded;
+    isExpanded = !isExpanded;
+    updateGallery();
+
+    if (wasExpanded && !isExpanded) {
+      scrollToSouvenirStart();
+    }
+  });
+
+  updateFilterButtons();
+  updateGallery();
 }
 
 /* Newsletter form */
@@ -1488,21 +1932,6 @@ function initNewsletterForm() {
 
     newsletterForm.reset();
   });
-}
-
-/* Date field */
-
-function initTravelDateMinimum() {
-  const travelDateInput = document.querySelector("#travel-date");
-
-  if (!travelDateInput) return;
-
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-
-  travelDateInput.min = `${year}-${month}-${day}`;
 }
 
 /* Form helpers */
