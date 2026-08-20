@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.21.03
-    Update: Adaptive cross-platform media sizing
-    Description: Media Showcase and Pasalubong images now preserve their full original aspect ratio across desktop, tablet, and mobile. The active Media stage adapts to each image or video ratio while remaining bounded to the viewport, preventing crop on narrow phones and wide desktop screens.
+    Project Version: v1.21.04
+    Update: Mobile-safe natural media sizing and cache refresh
+    Description: Reworked the Media Showcase to use each photo/video's natural rendered size instead of a forced stage ratio, preserving the complete image on phones, tablets, and desktops. Added versioned CSS/JS asset URLs so mobile browsers and static hosting caches load the latest gallery rules.
     Date: 2026-08-20
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
@@ -17,14 +17,14 @@
     content="Discover Donsol, Sorsogon—home to responsible whale shark encounters, firefly-lit river tours, kayaking, river cruises, fresh local flavors, and welcoming coastal stays."
   />
 
-  <meta name="project-version" content="v1.21.03 - Adaptive cross-platform media sizing" />
+  <meta name="project-version" content="v1.21.04 - Mobile-safe natural media sizing" />
 
   <meta name="theme-color" content="#063d42" />
 
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Tourism_logo_unpva8.png" />
-  <link rel="stylesheet" href="tourism.css" />
+  <link rel="stylesheet" href="tourism.css?v=1.21.04" />
 
-  <script src="tourism.js" defer></script>
+  <script src="tourism.js?v=1.21.04" defer></script>
 </head>
 
 <body>
