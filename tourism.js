@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.21.02
-  Update: Cross-platform no-crop media scaling
-  Description: Keeps the existing Media and Pasalubong gallery logic unchanged while CSS now guarantees complete-image, original-aspect presentation across desktop, tablet, mobile, and the full-screen viewer.
+  Project Version: v1.21.03
+  Update: Adaptive cross-platform media sizing
+  Description: The Media Showcase now reads each active image/video's natural dimensions and updates the stage aspect ratio accordingly, while preserving the unlimited gallery, shared fullscreen viewer, keyboard navigation, and Pasalubong behavior.
   Date: 2026-08-20
 */
 
@@ -1362,6 +1362,46 @@ function initMediaGallery(gallery, photoViewer) {
     return image;
   }
 
+  function updateStageAspectRatio(mediaElement, isVideo) {
+    const applyRatio = (width, height) => {
+      if (!width || !height) return;
+
+      const ratio = width / height;
+
+      if (!Number.isFinite(ratio) || ratio <= 0) return;
+
+      stage.style.setProperty("--media-aspect-ratio", `${width} / ${height}`);
+    };
+
+    if (isVideo) {
+      if (mediaElement.videoWidth && mediaElement.videoHeight) {
+        applyRatio(mediaElement.videoWidth, mediaElement.videoHeight);
+      } else {
+        mediaElement.addEventListener(
+          "loadedmetadata",
+          () => {
+            applyRatio(mediaElement.videoWidth, mediaElement.videoHeight);
+          },
+          { once: true }
+        );
+      }
+
+      return;
+    }
+
+    if (mediaElement.naturalWidth && mediaElement.naturalHeight) {
+      applyRatio(mediaElement.naturalWidth, mediaElement.naturalHeight);
+    } else {
+      mediaElement.addEventListener(
+        "load",
+        () => {
+          applyRatio(mediaElement.naturalWidth, mediaElement.naturalHeight);
+        },
+        { once: true }
+      );
+    }
+  }
+
   function updateControls() {
     const hasMultipleItems = items.length > 1;
 
@@ -1405,6 +1445,7 @@ function initMediaGallery(gallery, photoViewer) {
 
     output.replaceChildren(mediaElement);
     stage.classList.toggle("media-frame-video", isVideo);
+    updateStageAspectRatio(mediaElement, isVideo);
     output.classList.toggle(
       "is-photo-viewer-ready",
       !isVideo && Boolean(photoViewer)

@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.21.02
-  Update: Cross-platform no-crop media scaling
-  Description: Guarantees that Media Showcase, Pasalubong, and full-screen photos preserve their original aspect ratio on every viewport by fitting the complete image inside the available frame without cropping or artificial zoom.
+  Project Version: v1.21.03
+  Update: Adaptive cross-platform media sizing
+  Description: Makes the active Media stage respond to each photo/video's natural aspect ratio and guarantees contain-style, no-crop rendering on desktop, tablet, mobile, thumbnails, Pasalubong cards, and the full-screen viewer.
   Date: 2026-08-20
 */
 
@@ -2545,7 +2545,10 @@ a.official-mark:focus-visible {
 
 .media-frame {
   position: relative;
-  min-height: 420px;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: var(--media-aspect-ratio, 16 / 9);
+  max-height: min(72vh, 760px);
   overflow: hidden;
   background: var(--color-deep-ocean);
 }
@@ -2564,10 +2567,10 @@ a.official-mark:focus-visible {
 .media-frame video {
   width: 100%;
   height: 100%;
-  min-height: inherit;
-  object-fit: cover;
+  min-height: 0;
+  object-fit: contain;
   object-position: center;
-  filter: saturate(1.08) contrast(1.04);
+  filter: saturate(1.04) contrast(1.02);
 }
 
 .media-frame-video::before {
@@ -2591,20 +2594,22 @@ a.official-mark:focus-visible {
 
 .media-gallery {
   display: grid;
-  grid-template-rows: minmax(420px, 1fr) auto;
+  grid-template-rows: auto auto;
   min-width: 0;
   background: rgba(2, 39, 44, 0.78);
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .media-gallery .media-frame {
-  min-height: 420px;
+  min-height: 0;
 }
 
 .media-gallery-output {
   position: absolute;
   inset: 0;
   z-index: 0;
+  display: grid;
+  place-items: center;
   overflow: hidden;
   background: var(--color-deep-ocean);
 }
@@ -5128,17 +5133,18 @@ body.photo-viewer-open {
   }
 
   .media-frame {
-    min-height: 380px;
+    min-height: 0;
+    max-height: min(74vh, 700px);
   }
 
   .media-gallery {
-    grid-template-rows: minmax(380px, 1fr) auto;
+    grid-template-rows: auto auto;
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .media-gallery .media-frame {
-    min-height: 380px;
+    min-height: 0;
   }
 
   .media-gallery-thumbnails {
@@ -5553,15 +5559,16 @@ body.photo-viewer-open {
   }
 
   .media-frame {
-    min-height: 300px;
+    min-height: 0;
+    max-height: min(70svh, 620px);
   }
 
   .media-gallery {
-    grid-template-rows: minmax(300px, 1fr) auto;
+    grid-template-rows: auto auto;
   }
 
   .media-gallery .media-frame {
-    min-height: 300px;
+    min-height: 0;
   }
 
   .media-gallery-control {
@@ -5915,35 +5922,39 @@ body.photo-viewer-open {
 
 
 
-/* Cross-platform no-crop gallery guard */
+/* Cross-platform adaptive no-crop gallery guard */
 
 .media-gallery-output img,
+.media-gallery-output video,
 .photo-viewer-image {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  min-width: 0;
-  min-height: 0;
-  object-fit: contain;
-  object-position: center;
-}
-
-.media-gallery-output video {
+  display: block;
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  min-width: 0;
   min-height: 0;
-  object-fit: contain;
-  object-position: center;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 
 .media-gallery-thumbnail img,
 .souvenir-card-media img {
-  object-fit: contain;
-  object-position: center;
-  transform: none;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+}
+
+@media (orientation: portrait) and (max-width: 640px) {
+  .media-frame {
+    max-height: 66svh;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 900px) {
+  .media-frame {
+    max-height: 78svh;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
