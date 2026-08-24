@@ -1,4 +1,4 @@
-/* Donsol Tourism destination landing pages · v1.0.00 · 24 August 2026 */
+/* Donsol Tourism destination landing pages · v1.0.01 · 24 August 2026 */
 
 .destination-page {
   min-height: 100vh;
@@ -320,6 +320,38 @@
 .destination-sidebar-card .btn {
   width: 100%;
   margin-top: 0.8rem;
+}
+
+.destination-response-note {
+  margin: 1rem 0 0.2rem;
+  color: var(--color-ocean);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.destination-sidebar-card .btn + .btn {
+  margin-top: 0.65rem;
+}
+
+.destination-contact-primary {
+  gap: 0.45rem;
+}
+
+.destination-sidebar-card .destination-contact-secondary {
+  color: var(--color-deep-ocean);
+  background: var(--color-white);
+  border-color: rgba(4, 55, 61, 0.2);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.destination-sidebar-card .destination-contact-secondary:hover,
+.destination-sidebar-card .destination-contact-secondary:focus-visible {
+  color: var(--color-white);
+  background: var(--color-ocean);
+  border-color: var(--color-ocean);
 }
 
 .destination-review {
