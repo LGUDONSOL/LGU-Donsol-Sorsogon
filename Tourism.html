@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.21.04
-    Update: Mobile-safe natural media sizing and cache refresh
-    Description: Reworked the Media Showcase to use each photo/video's natural rendered size instead of a forced stage ratio, preserving the complete image on phones, tablets, and desktops. Added versioned CSS/JS asset URLs so mobile browsers and static hosting caches load the latest gallery rules.
-    Date: 2026-08-20
+    Project Version: v1.23.01
+    Update: Organized production asset directories
+    Description: Moves public styles, scripts, and the production font into a conventional assets structure while preserving all visitor and marketing functionality.
+    Date: 2026-08-24
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
 
@@ -17,14 +17,66 @@
     content="Discover Donsol, Sorsogon—home to responsible whale shark encounters, firefly-lit river tours, kayaking, river cruises, fresh local flavors, and welcoming coastal stays."
   />
 
-  <meta name="project-version" content="v1.21.04 - Mobile-safe natural media sizing" />
+  <link rel="canonical" href="https://www.donsol.gov.ph/Tourism.html" />
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_PH" />
+  <meta property="og:site_name" content="Donsol Tourism" />
+  <meta property="og:title" content="Donsol Tourism | Gentle Giants, Glowing Rivers & Local Adventures" />
+  <meta property="og:description" content="Plan a responsible Donsol visit with official guidance on whale shark encounters, river experiences, places to stay, local food, events, and Tourism Office assistance." />
+  <meta property="og:url" content="https://www.donsol.gov.ph/Tourism.html" />
+  <meta property="og:image" content="https://res.cloudinary.com/xdzxqvgu/image/upload/c_fill,g_auto,w_1200,h_630,q_auto/v1785813329/donsol-hero-poster_uid0rt.jpg" />
+  <meta property="og:image:alt" content="Whale shark imagery promoting responsible travel in Donsol, Sorsogon" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Donsol Tourism | Sorsogon, Philippines" />
+  <meta name="twitter:description" content="Official visitor information for responsible nature, river, food, culture, and community experiences in Donsol." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/xdzxqvgu/image/upload/c_fill,g_auto,w_1200,h_630,q_auto/v1785813329/donsol-hero-poster_uid0rt.jpg" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "GovernmentOrganization",
+          "@id": "https://www.donsol.gov.ph/Tourism.html#tourism-office",
+          "name": "Donsol Tourism Office",
+          "url": "https://www.donsol.gov.ph/Tourism.html",
+          "logo": "https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_512/v1785813124/Tourism_logo_unpva8.png",
+          "email": "tourism@donsol.gov.ph",
+          "telephone": "+639173226109",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Dancalan",
+            "addressLocality": "Donsol",
+            "addressRegion": "Sorsogon",
+            "addressCountry": "PH"
+          },
+          "openingHours": "Mo-Su 08:00-17:00",
+          "sameAs": ["https://www.facebook.com/DonsolSorsogonTourism"]
+        },
+        {
+          "@type": "TouristDestination",
+          "@id": "https://www.donsol.gov.ph/Tourism.html#destination",
+          "name": "Donsol, Sorsogon",
+          "description": "A responsible nature and community tourism destination known for seasonal whale shark encounters, river experiences, coastal food, and Donsolano hospitality.",
+          "url": "https://www.donsol.gov.ph/Tourism.html",
+          "touristType": ["Nature travelers", "Wildlife travelers", "Families", "Community tourism visitors"]
+        }
+      ]
+    }
+  </script>
+
+  <meta name="project-version" content="v1.23.01 - Organized production asset directories" />
 
   <meta name="theme-color" content="#063d42" />
 
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Tourism_logo_unpva8.png" />
-  <link rel="stylesheet" href="tourism.css?v=1.21.04" />
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png" />
+  <link rel="stylesheet" href="assets/css/tourism.css?v=1.23.01" />
 
-  <script src="tourism.js?v=1.21.04" defer></script>
+  <script src="assets/js/tourism.js?v=1.23.01" defer></script>
 </head>
 
 <body>
@@ -47,7 +99,7 @@
             aria-label="Visit the official Municipality of Donsol website"
           >
             <img
-              src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Donsol_Seal_sze9oi.png"
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Donsol_Seal_sze9oi.png"
               alt="Municipality of Donsol official seal"
               class="brand-seal"
             />
@@ -59,7 +111,7 @@
             aria-label="Go to the Donsol Tourism home section"
           >
             <img
-              src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Tourism_logo_unpva8.png"
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png"
               alt="Donsol Tourism logo"
               class="brand-tourism-logo"
             />
@@ -95,6 +147,7 @@
         <li><a href="#specials">Pasalubong</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#visitor-guide">Visitor Guide</a></li>
+        <li class="nav-contact-mobile"><a href="#contact">Tourism Office</a></li>
       </ul>
 
       <a class="nav-cta" href="#contact">Contact Tourism Office</a>
@@ -111,30 +164,39 @@
     >
       <div class="hero-media" aria-hidden="true">
         <!--
-          Official local Donsol hero video.
-          Expected project path: https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4
-          Keep the fallback poster until a matching local poster image is available.
+          Externally hosted third-party Donsol media.
+          Publish only while its permission or license record is current.
+          Keep the external poster and video URLs versioned and under an approved media account.
         -->
         <video
           class="hero-video"
-          autoplay
           muted
           loop
           playsinline
-          preload="metadata"
-          poster="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813329/donsol-hero-poster_uid0rt.jpg"
+          preload="none"
+          poster="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785813329/donsol-hero-poster_uid0rt.jpg"
         >
           <source
-            src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4"
+            src="https://res.cloudinary.com/xdzxqvgu/video/upload/q_auto:eco,vc_auto,w_1600/v1785801964/1_Butanding_web_oyhlem.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
 
         <img
-          src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813329/donsol-hero-poster_uid0rt.jpg"
+          src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785813329/donsol-hero-poster_uid0rt.jpg"
+          srcset="
+            https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_480/v1785813329/donsol-hero-poster_uid0rt.jpg 480w,
+            https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_800/v1785813329/donsol-hero-poster_uid0rt.jpg 800w,
+            https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785813329/donsol-hero-poster_uid0rt.jpg 1200w,
+            https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785813329/donsol-hero-poster_uid0rt.jpg 1600w
+          "
+          sizes="100vw"
           alt=""
           class="hero-image hero-poster"
+          width="1600"
+          height="900"
+          fetchpriority="high"
         />
 
         <div class="hero-overlay"></div>
@@ -198,16 +260,6 @@
         </div>
       </div>
 
-      <a
-        class="hero-scroll-cue hero-video-scroll-cue"
-        href="#hero-introduction"
-        aria-label="Reveal the Donsol home introduction"
-        data-hero-reveal-trigger
-      >
-        <span>Scroll to discover</span>
-        <span aria-hidden="true">↓</span>
-      </a>
-
       <button
         class="hero-cinematic-replay"
         type="button"
@@ -232,9 +284,9 @@
 
         <div class="explore-grid" aria-label="Quick links to Donsol tourism sections">
           <article class="explore-card explore-card-large">
-            <a href="#whale-shark" aria-label="Explore Whale Shark Experience in Donsol">
+            <a href="whale-sharks.html" aria-label="Open the Donsol Whale Shark Experience guide" data-marketing-event="guide_view" data-guide-name="whale_sharks">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812961/Butanding_Interaction_wanltq.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Butanding_Interaction_wanltq.jpg"
                 alt="Whale shark swimming underwater in Donsol"
                 loading="lazy"
               />
@@ -249,10 +301,10 @@
           </article>
 
           <article class="explore-card">
-            <a href="#firefly" aria-label="Explore Firefly Watching in Donsol">
+            <a href="firefly-river.html" aria-label="Open the Donsol Firefly River Experience guide" data-marketing-event="guide_view" data-guide-name="firefly_river">
               <img
-                src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
-                alt="Fireflies glowing along a quiet river"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Kayaking_j0xrpw.png"
+                alt="Donsol river landscape where evening nature tours operate"
                 loading="lazy"
               />
 
@@ -266,9 +318,9 @@
           </article>
 
           <article class="explore-card">
-            <a href="#kayaking" aria-label="Explore Kayaking and River Cruising Activity in Donsol">
+            <a href="kayaking.html" aria-label="Open the Donsol Kayaking and River Cruising guide" data-marketing-event="guide_view" data-guide-name="kayaking">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812961/Kayaking_j0xrpw.png"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Kayaking_j0xrpw.png"
                 alt="Visitors enjoying kayaking and river cruising on calm water"
                 loading="lazy"
               />
@@ -285,7 +337,7 @@
           <article class="explore-card">
             <a href="#stay" aria-label="Explore Where to Stay in Donsol">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812960/Accomodation_aqtbdc.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812960/Accomodation_aqtbdc.jpg"
                 alt="Coastal resort accommodation"
                 loading="lazy"
               />
@@ -302,7 +354,7 @@
           <article class="explore-card">
             <a href="#food" aria-label="Explore Food and Pasalubong in Donsol">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812961/Pusit_pjswhh.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Pusit_pjswhh.jpg"
                 alt="Local food served on a table"
                 loading="lazy"
               />
@@ -319,7 +371,7 @@
           <article class="explore-card">
             <a href="#events" aria-label="Explore Events and Culture in Donsol">
               <img
-                src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812961/Cultural_hy4rax.jpg"
+                src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Cultural_hy4rax.jpg"
                 alt="Local community tourism activity"
                 loading="lazy"
               />
@@ -346,7 +398,7 @@
             rel="noopener noreferrer"
             aria-label="Visit the official Municipality of Donsol website"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Donsol_Seal_sze9oi.png" alt="Municipality of Donsol official seal" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Donsol_Seal_sze9oi.png" alt="Municipality of Donsol official seal" />
             <span>Municipality of Donsol</span>
           </a>
 
@@ -355,7 +407,7 @@
             href="#top"
             aria-label="Go to the Donsol Tourism home section"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Tourism_logo_unpva8.png" alt="Donsol Tourism logo" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png" alt="Donsol Tourism logo" />
             <span>Donsol Tourism</span>
           </a>
         </div>
@@ -368,7 +420,7 @@
             rel="noopener noreferrer"
             aria-label="Visit the Department of Tourism Philippines website"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/DOT_hu72aq.png" alt="Department of Tourism Philippines logo" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_320/v1785813124/DOT_hu72aq.png" alt="Department of Tourism Philippines logo" />
             <span>Department of Tourism</span>
           </a>
 
@@ -379,7 +431,7 @@
             rel="noopener noreferrer"
             aria-label="Visit the Love the Philippines tourism website"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813123/Love_the_Philippines_Logo_bnkqaq.jpg" alt="Love the Philippines tourism campaign logo" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_420/v1785813123/Love_the_Philippines_Logo_bnkqaq.jpg" alt="Love the Philippines tourism campaign logo" />
             <span>Love the Philippines</span>
           </a>
         </div>
@@ -447,7 +499,7 @@
                 </div>
               </dl>
 
-              <a class="text-link" href="#whale-shark">View whale shark details</a>
+              <a class="text-link" href="whale-sharks.html">Open the whale shark guide</a>
             </div>
           </article>
 
@@ -481,7 +533,7 @@
                 </div>
               </dl>
 
-              <a class="text-link" href="#firefly">View firefly details</a>
+              <a class="text-link" href="firefly-river.html">Open the firefly river guide</a>
             </div>
           </article>
 
@@ -515,7 +567,7 @@
                 </div>
               </dl>
 
-              <a class="text-link" href="#kayaking">View kayaking and river cruising details</a>
+              <a class="text-link" href="kayaking.html">Open the kayaking and river guide</a>
             </div>
           </article>
         </div>
@@ -538,6 +590,10 @@
           <p>
             Step into the moments that make Donsol unforgettable—from open-water encounters
             and glowing river nights to local food, community life, and peaceful adventures.
+          </p>
+          <p class="media-rights-note">
+            Photos and films are supplied by tourism partners and other third-party contributors.
+            Rights remain with their respective owners. <a href="media-credits.html">Media credits and usage information</a>.
           </p>
         </div>
 
@@ -562,7 +618,9 @@
                       muted
                       playsinline
                       preload="metadata"
-                      poster="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813329/donsol-hero-poster_uid0rt.jpg"
+                      aria-label="Promotional Donsol whale shark and destination video"
+                      aria-describedby="whale-video-summary"
+                      poster="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785813329/donsol-hero-poster_uid0rt.jpg"
                       data-media-active
                     >
                       <source
@@ -599,7 +657,7 @@
                 <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
-                  role="list"
+                  role="group"
                   aria-label="Choose Whale Shark media"
                   data-media-thumbnails
                 >
@@ -609,17 +667,17 @@
                   <button
                     class="media-gallery-thumbnail active"
                     type="button"
-                    role="listitem"
                     aria-label="Play Donsol Whale Shark experience video"
                     aria-pressed="true"
                     data-media-item
                     data-media-type="video"
                     data-media-src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785801964/1_Butanding_web_oyhlem.mp4"
-                    data-media-poster="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813329/donsol-hero-poster_uid0rt.jpg"
+                    data-media-poster="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785813329/donsol-hero-poster_uid0rt.jpg"
                     data-media-alt="Donsol tourism video featuring the destination and Whale Shark experience"
+                    data-media-description-id="whale-video-summary"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813329/donsol-hero-poster_uid0rt.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785813329/donsol-hero-poster_uid0rt.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -629,16 +687,15 @@
                    <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120215/Whale-Shark_16_lvg9fm.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120215/Whale-Shark_16_lvg9fm.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -647,16 +704,15 @@
                    <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120214/Whale-Shark_15_reuupp.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120214/Whale-Shark_15_reuupp.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120214/Whale-Shark_15_reuupp.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120214/Whale-Shark_15_reuupp.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -665,16 +721,15 @@
                    <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120192/Whale-Shark_3_patocu.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120192/Whale-Shark_3_patocu.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120192/Whale-Shark_3_patocu.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120192/Whale-Shark_3_patocu.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -683,16 +738,15 @@
                    <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120194/Whale-Shark_4_lh5sof.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120194/Whale-Shark_4_lh5sof.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120194/Whale-Shark_4_lh5sof.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120194/Whale-Shark_4_lh5sof.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -701,16 +755,15 @@
                    <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120196/Whale-Shark_5_mejvd7.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120196/Whale-Shark_5_mejvd7.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120196/Whale-Shark_5_mejvd7.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120196/Whale-Shark_5_mejvd7.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -719,16 +772,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120198/Whale-Shark_6_tstnn9.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120198/Whale-Shark_6_tstnn9.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120198/Whale-Shark_6_tstnn9.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120198/Whale-Shark_6_tstnn9.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -737,53 +789,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120200/Whale-Shark_7_a9tewr.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120200/Whale-Shark_7_a9tewr.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120200/Whale-Shark_7_a9tewr.jpg"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </button>
-
-
-                  <button
-                    class="media-gallery-thumbnail"
-                    type="button"
-                    role="listitem"
-                    aria-label="Show Whale Shark interaction photo"
-                    aria-pressed="false"
-                    data-media-item
-                    data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120201/Whale-Shark_8_pvytbk.jpg"
-                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
-                  >
-                    <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120201/Whale-Shark_8_pvytbk.jpg"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </button>
-
-                  <button
-                    class="media-gallery-thumbnail"
-                    type="button"
-                    role="listitem"
-                    aria-label="Show Whale Shark interaction photo"
-                    aria-pressed="false"
-                    data-media-item
-                    data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120203/Whale-Shark_9_xr3ags.jpg"
-                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
-                  >
-                    <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120203/Whale-Shark_9_xr3ags.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120200/Whale-Shark_7_a9tewr.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -793,16 +807,32 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120205/Whale-Shark_10_beajeg.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120201/Whale-Shark_8_pvytbk.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120205/Whale-Shark_10_beajeg.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120201/Whale-Shark_8_pvytbk.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120203/Whale-Shark_9_xr3ags.jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120203/Whale-Shark_9_xr3ags.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -812,16 +842,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120207/Whale-Shark_11_biibcp.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120205/Whale-Shark_10_beajeg.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120207/Whale-Shark_11_biibcp.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120205/Whale-Shark_10_beajeg.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -831,16 +860,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120208/Whale-Shark_12_gc7kmu.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120207/Whale-Shark_11_biibcp.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120208/Whale-Shark_12_gc7kmu.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120207/Whale-Shark_11_biibcp.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -850,16 +878,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120210/Whale-Shark_13_nb8czq.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120208/Whale-Shark_12_gc7kmu.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120210/Whale-Shark_13_nb8czq.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120208/Whale-Shark_12_gc7kmu.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -869,16 +896,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120212/Whale-Shark_14_msayz6.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120210/Whale-Shark_13_nb8czq.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120212/Whale-Shark_14_msayz6.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120210/Whale-Shark_13_nb8czq.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -888,16 +914,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120214/Whale-Shark_15_reuupp.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120212/Whale-Shark_14_msayz6.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120214/Whale-Shark_15_reuupp.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120212/Whale-Shark_14_msayz6.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -907,16 +932,33 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Whale Shark interaction photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120214/Whale-Shark_15_reuupp.jpg"
                     data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120214/Whale-Shark_15_reuupp.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </button>
+
+
+                  <button
+                    class="media-gallery-thumbnail"
+                    type="button"
+                    aria-label="Show Whale Shark interaction photo"
+                    aria-pressed="false"
+                    data-media-item
+                    data-media-type="image"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120215/Whale-Shark_16_lvg9fm.jpg"
+                    data-media-alt="Whale shark swimming underwater during a responsible interaction in Donsol"
+                  >
+                    <img
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120215/Whale-Shark_16_lvg9fm.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -937,7 +979,12 @@
                   See the wonder, anticipation, and respect that define a responsible
                   butanding encounter in the waters of Donsol.
                 </p>
-                <a class="text-link" href="#whale-shark">View activity details</a>
+                <a class="text-link" href="whale-sharks.html">Open the whale shark guide</a>
+                <p class="media-accessibility-summary" id="whale-video-summary">
+                  The promotional video presents Donsol destination and whale shark imagery.
+                  Essential planning and conservation guidance is available in the
+                  <a href="whale-sharks.html">text-based whale shark guide</a>.
+                </p>
               </div>
             </article>
 
@@ -957,8 +1004,8 @@
                 <div class="media-frame" data-media-gallery-stage>
                   <div class="media-gallery-output" data-media-gallery-output>
                     <img
-                      src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
-                      alt="Fireflies glowing near a quiet river"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785812961/Kayaking_j0xrpw.png"
+                      alt="Donsol river landscape where evening nature tours operate"
                       loading="lazy"
                       data-media-active
                     />
@@ -992,23 +1039,22 @@
                 <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
-                  role="list"
+                  role="group"
                   aria-label="Choose Firefly Watching media"
                   data-media-thumbnails
                 >
                   <button
                     class="media-gallery-thumbnail active"
                     type="button"
-                    role="listitem"
                     aria-label="Show Firefly Watching photo"
                     aria-pressed="true"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
-                    data-media-alt="Fireflies glowing near a quiet river"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785812961/Kayaking_j0xrpw.png"
+                    data-media-alt="Donsol river landscape where evening nature tours operate"
                   >
                     <img
-                      src="https://i.pinimg.com/736x/71/76/30/717630662783d2d9f8a775eda9396ef7.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_320/v1785812961/Kayaking_j0xrpw.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1043,7 +1089,7 @@
                 <div class="media-frame" data-media-gallery-stage>
                   <div class="media-gallery-output" data-media-gallery-output>
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120907/kayaking-01_p0hbak.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120907/kayaking-01_p0hbak.png"
                       alt="Visitors enjoying kayaking and river cruising in Donsol"
                       loading="lazy"
                       data-media-active
@@ -1076,23 +1122,22 @@
                 <!-- Four gallery photos plus two videos. Additional media items may be added without a hard limit. -->
                 <div
                   class="media-gallery-thumbnails"
-                  role="list"
+                  role="group"
                   aria-label="Choose Kayaking and River Cruising media"
                   data-media-thumbnails
                 >
                   <button
                     class="media-gallery-thumbnail active"
                     type="button"
-                    role="listitem"
                     aria-label="Show Kayaking and River Cruising photo one"
                     aria-pressed="true"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120907/kayaking-01_p0hbak.png"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120907/kayaking-01_p0hbak.png"
                     data-media-alt="Visitors enjoying kayaking and river cruising in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120907/kayaking-01_p0hbak.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120907/kayaking-01_p0hbak.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1101,16 +1146,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Kayaking and River Cruising photo two"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120909/kayaking-02_c9xhik.png"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120909/kayaking-02_c9xhik.png"
                     data-media-alt="Kayakers exploring calm waterways in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120909/kayaking-02_c9xhik.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120909/kayaking-02_c9xhik.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1119,16 +1163,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Kayaking and River Cruising photo three"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120937/kayaking-03_mf78wh.png"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120937/kayaking-03_mf78wh.png"
                     data-media-alt="Scenic kayaking and river cruising activity in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120937/kayaking-03_mf78wh.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120937/kayaking-03_mf78wh.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1137,16 +1180,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Kayaking and River Cruising photo four"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120939/kayaking-04_t092a3.png"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120939/kayaking-04_t092a3.png"
                     data-media-alt="Visitors enjoying a peaceful Donsol river activity"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120939/kayaking-04_t092a3.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120939/kayaking-04_t092a3.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1155,17 +1197,17 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Play Kayaking and River Cruising video one"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="video"
                     data-media-src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785814076/kayaking-video-01_wlpiut.mp4"
-                    data-media-poster="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120941/kayaking-video-01-poster_zbxep4.png"
+                    data-media-poster="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120941/kayaking-video-01-poster_zbxep4.png"
                     data-media-alt="Video preview of kayaking and river cruising in Donsol"
+                    data-media-description-id="kayaking-video-summary"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120941/kayaking-video-01-poster_zbxep4.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120941/kayaking-video-01-poster_zbxep4.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1175,18 +1217,18 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Play Kayaking and River Cruising video two"
                     aria-pressed="false"
                     
                     data-media-item
                     data-media-type="video"
                     data-media-src="https://res.cloudinary.com/xdzxqvgu/video/upload/v1785814081/kayaking-video-02_w4ppcm.mp4"
-                    data-media-poster="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120943/kayaking-video-02-poster_ztwcpf.png"
+                    data-media-poster="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120943/kayaking-video-02-poster_ztwcpf.png"
                     data-media-alt="Second video preview of kayaking and river cruising in Donsol"
+                    data-media-description-id="kayaking-video-summary"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785120943/kayaking-video-02-poster_ztwcpf.png"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785120943/kayaking-video-02-poster_ztwcpf.png"
                       alt=""
                       loading="lazy"
                     />
@@ -1202,7 +1244,12 @@
                   Follow calm waterways by paddle or boat and discover a peaceful adventure
                   made for slow travel, fresh air, and scenic moments.
                 </p>
-                <a class="text-link" href="#kayaking">View activity details</a>
+                <a class="text-link" href="kayaking.html">Open the kayaking and river guide</a>
+                <p class="media-accessibility-summary" id="kayaking-video-summary">
+                  The promotional clips show kayaking and river-cruising activity in Donsol.
+                  Essential planning and safety guidance is available in the
+                  <a href="kayaking.html">text-based kayaking guide</a>.
+                </p>
               </div>
             </article>
 
@@ -1222,7 +1269,7 @@
                 <div class="media-frame" data-media-gallery-stage>
                   <div class="media-gallery-output" data-media-gallery-output>
                     <img
-                      src="https://i.pinimg.com/1200x/31/0b/39/310b3944a11720e430320bf92f84aff9.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785121166/foods_1_ngodev.jpg"
                       alt="Local Donsolano food served on a table"
                       loading="lazy"
                       data-media-active
@@ -1255,23 +1302,22 @@
                 <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
-                  role="list"
+                  role="group"
                   aria-label="Choose Food and Local Life media"
                   data-media-thumbnails
                 >
                   <button
                     class="media-gallery-thumbnail active"
                     type="button"
-                    role="listitem"
                     aria-label="Show local food photo"
                     aria-pressed="true"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121166/foods_1_ngodev.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121166/foods_1_ngodev.jpg"
                     data-media-alt="Local Donsolano food served on a table"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121166/foods_1_ngodev.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121166/foods_1_ngodev.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1280,16 +1326,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121167/foods_2_br2qrs.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121167/foods_2_br2qrs.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121167/foods_2_br2qrs.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121167/foods_2_br2qrs.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1298,16 +1343,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121167/foods_3_jr5mpr.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121167/foods_3_jr5mpr.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121167/foods_3_jr5mpr.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121167/foods_3_jr5mpr.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1316,16 +1360,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_4_htlnz6.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_4_htlnz6.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_4_htlnz6.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_4_htlnz6.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1334,16 +1377,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121167/foods_5_lyilgg.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121167/foods_5_lyilgg.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121167/foods_5_lyilgg.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121167/foods_5_lyilgg.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1352,16 +1394,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_6_vruaij.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_6_vruaij.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_6_vruaij.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_6_vruaij.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1370,16 +1411,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_7_nu2dqv.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_7_nu2dqv.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_7_nu2dqv.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_7_nu2dqv.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1388,16 +1428,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show local seafood photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_8_xav2lh.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_8_xav2lh.jpg"
                     data-media-alt="Local seafood dish prepared in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785121169/foods_8_xav2lh.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785121169/foods_8_xav2lh.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -1432,8 +1471,8 @@
                 <div class="media-frame" data-media-gallery-stage>
                   <div class="media-gallery-output" data-media-gallery-output>
                     <img
-                      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85"
-                      alt="Local community tourism activity"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1600/v1785812961/Cultural_hy4rax.jpg"
+                      alt="Cultural and community event in Donsol"
                       loading="lazy"
                       data-media-active
                     />
@@ -1465,7 +1504,7 @@
                 <!-- Add any number of data-media-item buttons inside this list. -->
                 <div
                   class="media-gallery-thumbnails"
-                  role="list"
+                  role="group"
                   aria-label="Choose Events media"
                   data-media-thumbnails
                 >
@@ -1474,16 +1513,15 @@
                   <button
                     class="media-gallery-thumbnail"
                     type="button"
-                    role="listitem"
                     aria-label="Show Donsol cultural event photo"
                     aria-pressed="false"
                     data-media-item
                     data-media-type="image"
-                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812961/Cultural_hy4rax.jpg"
+                    data-media-src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Cultural_hy4rax.jpg"
                     data-media-alt="Cultural and community event in Donsol"
                   >
                     <img
-                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785812961/Cultural_hy4rax.jpg"
+                      src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_1200/v1785812961/Cultural_hy4rax.jpg"
                       alt=""
                       loading="lazy"
                     />
@@ -2970,8 +3008,8 @@
         <div class="food-cards">
           <article class="mini-card">
             <img
-              src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1200&q=85"
-              alt="Fresh seafood dish"
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_900/v1785812961/Pusit_pjswhh.jpg"
+              alt="Local seafood prepared in Donsol"
               loading="lazy"
             />
             <h3>Seafood Grills</h3>
@@ -2980,8 +3018,8 @@
 
           <article class="mini-card">
             <img
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
-              alt="Local restaurant table setting"
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_900/v1785121167/foods_3_jr5mpr.jpg"
+              alt="Local Donsolano dishes served for sharing"
               loading="lazy"
             />
             <h3>Local Restaurants</h3>
@@ -2990,8 +3028,8 @@
 
           <article class="mini-card">
             <img
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85"
-              alt="Cafe drinks and snacks"
+              src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_900/v1785121169/foods_8_xav2lh.jpg"
+              alt="Snack and merienda selection in Donsol"
               loading="lazy"
             />
             <h3>Cafes and Snacks</h3>
@@ -3540,44 +3578,67 @@
       <div class="container guide-grid">
         <div class="guide-content">
           <p class="eyebrow">Visitor guide</p>
-          <h2 id="guide-title">Help keep Donsol beautiful.</h2>
+          <h2 id="guide-title">Plan well and help keep Donsol beautiful.</h2>
           <p>
-            The best Donsol experiences are shared with care. Respect wildlife, protect natural
-            spaces, support local livelihoods, and follow the guidance of trained tourism personnel.
+            Use this checklist before you travel. Activity status, schedules, fees, transport,
+            weather, and local rules can change, so confirm time-sensitive details with the
+            Donsol Tourism Office.
           </p>
 
-          <a class="btn btn-primary" href="#contact">Ask the Tourism Office</a>
+          <p class="guide-review-note">
+            <strong>Website review:</strong> 24 August 2026 · Sightings and activity operation are never guaranteed.
+          </p>
+
+          <a class="btn btn-primary" href="travel-guide.html">Open the Full Travel Guide</a>
+          <a class="text-link" href="#contact">Ask the Tourism Office</a>
         </div>
 
         <div class="guide-cards">
           <article class="guide-card">
-            <h3>Respect the butanding</h3>
+            <h3>Start with official guidance</h3>
             <p>
-              Follow the briefing, listen to your guide, keep a respectful distance,
-              and never touch or chase marine wildlife.
+              Whale shark activity is seasonal and depends on nature and sea conditions. Register,
+              attend the official briefing, and follow trained tourism personnel and boat crew.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>Protect the firefly river</h3>
+            <h3>Confirm schedules and costs</h3>
             <p>
-              Keep noise low, avoid flash photography when instructed, and respect the river environment.
+              Ask for current registration times, fees, inclusions, activity availability, weather
+              advisories, and cancellation guidance before finalizing your itinerary.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>Support local communities</h3>
+            <h3>Getting to Donsol</h3>
             <p>
-              Buy from local sellers, ask permission before taking close-up photos of people,
-              and dispose of trash properly.
+              Donsol is reached by road from the Daraga–Legazpi area and other parts of Sorsogon.
+              Confirm current bus, van, and local transport schedules before departure.
             </p>
           </article>
 
           <article class="guide-card">
-            <h3>Plan with nature in mind</h3>
+            <h3>Access, health, and safety</h3>
             <p>
-              Confirm tour availability, weather conditions, rates, schedules, and updated local rules
-              before finalizing your visit.
+              Tell the Tourism Office in advance about mobility, health, dietary, or communication
+              needs. Bring personal medicine and call <a href="tel:911">911</a> for emergencies.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Respect wildlife and rivers</h3>
+            <p>
+              Never touch, chase, feed, block, or crowd wildlife. Keep noise low on river tours,
+              avoid flash when instructed, and follow all conservation rules.
+            </p>
+          </article>
+
+          <article class="guide-card">
+            <h3>Support Donsolano communities</h3>
+            <p>
+              Choose local guides and businesses, ask permission before photographing people,
+              reduce waste, and bring reusable water containers whenever practical.
             </p>
           </article>
         </div>
@@ -3778,7 +3839,7 @@
             rel="noopener noreferrer"
             aria-label="Visit the official Municipality of Donsol website"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Donsol_Seal_sze9oi.png" alt="Municipality of Donsol seal" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Donsol_Seal_sze9oi.png" alt="Municipality of Donsol seal" />
           </a>
 
           <a
@@ -3786,7 +3847,7 @@
             href="#top"
             aria-label="Go to the Donsol Tourism home section"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/Tourism_logo_unpva8.png" alt="Donsol Tourism logo" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png" alt="Donsol Tourism logo" />
           </a>
 
           <a
@@ -3796,7 +3857,7 @@
             rel="noopener noreferrer"
             aria-label="Visit the Department of Tourism Philippines website"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813124/DOT_hu72aq.png" alt="Department of Tourism Philippines logo" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_320/v1785813124/DOT_hu72aq.png" alt="Department of Tourism Philippines logo" />
           </a>
 
           <a
@@ -3806,7 +3867,7 @@
             rel="noopener noreferrer"
             aria-label="Visit the Love the Philippines tourism website"
           >
-            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/v1785813123/Love_the_Philippines_Logo_bnkqaq.jpg" alt="Love the Philippines tourism campaign logo" />
+            <img src="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_420/v1785813123/Love_the_Philippines_Logo_bnkqaq.jpg" alt="Love the Philippines tourism campaign logo" />
           </a>
         </div>
 
@@ -3820,11 +3881,11 @@
       <div class="footer-links">
         <h3>Explore</h3>
         <ul>
-          <li><a href="#attractions">Attractions</a></li>
+          <li><a href="whale-sharks.html">Whale Sharks</a></li>
+          <li><a href="firefly-river.html">Firefly River</a></li>
+          <li><a href="kayaking.html">Kayaking</a></li>
+          <li><a href="travel-guide.html">Travel Guide</a></li>
           <li><a href="#media-showcase">Media showcase</a></li>
-          <li><a href="#trip-planner">Trip planner</a></li>
-          <li><a href="#stay">Accommodations</a></li>
-          <li><a href="#food">Restaurants</a></li>
         </ul>
       </div>
 
@@ -3833,33 +3894,38 @@
         <ul>
           <li><a href="#specials">Pasalubong</a></li>
           <li><a href="#events">Events</a></li>
-          <li><a href="#visitor-guide">Visitor guide</a></li>
+          <li><a href="#stay">Accommodations</a></li>
+          <li><a href="#food">Restaurants</a></li>
           <li><a href="#contact">Tourism Office</a></li>
         </ul>
       </div>
 
       <div class="footer-newsletter">
-        <h3>Get travel updates</h3>
-        <p>Be first to hear about tourism updates, events, travel reminders, and local advisories.</p>
+        <h3>Official travel updates</h3>
+        <p>Check current event notices, travel reminders, and advisories before your visit.</p>
 
-        <form action="#" method="post" class="newsletter-form">
-          <label class="sr-only" for="newsletter-email">Email address</label>
-          <input
-            type="email"
-            id="newsletter-email"
-            name="newsletter-email"
-            placeholder="Email address"
-            required
-          />
-          <button type="submit">Subscribe</button>
-        </form>
+        <div class="footer-update-actions">
+          <a href="https://www.facebook.com/DonsolSorsogonTourism" target="_blank" rel="noopener noreferrer">
+            View Official Updates
+          </a>
+          <a href="mailto:tourism@donsol.gov.ph?subject=Donsol%20Travel%20Update%20Inquiry">
+            Ask the Tourism Office
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
         <p>&copy; 2026 Donsol Tourism. All rights reserved.</p>
-        <a href="#top">Back to top</a>
+        <nav class="footer-policy-links" aria-label="Public information policies">
+          <a href="privacy.html">Privacy Notice</a>
+          <a href="accessibility.html">Accessibility</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="media-credits.html">Media Credits</a>
+          <a href="site-map.html">Site Map</a>
+          <a href="#top">Back to top</a>
+        </nav>
       </div>
     </div>
   </footer>
@@ -4061,31 +4127,9 @@
 
       <p class="feedback-embed-note">
         Responses are submitted through Google Forms and recorded in the Donsol Tourism
-        Office's private response sheet.
+        Office's private response sheet. Review the <a href="privacy.html">Donsol Tourism Privacy Notice</a>
+        before sending personal information.
       </p>
-
-      <div class="feedback-photo-upload">
-        <div class="feedback-photo-upload-copy">
-          <strong>Need to include a supporting photo?</strong>
-          <span>Optional. Google Account sign-in is required for photo uploads.</span>
-        </div>
-
-        <a
-          class="feedback-photo-upload-button"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfCzm_CGM79tIjEFhKU_4KvlOtRSPrDn87JJ2BqA0hVMajHEg/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open the optional Donsol Tourism supporting photo upload form in a new tab"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path
-              d="M8.4 5.5 9.7 3.8h4.6l1.3 1.7H19a2 2 0 0 1 2 2v9.7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7.5a2 2 0 0 1 2-2h3.4Zm3.6 3a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2Zm0 1.8a2.3 2.3 0 1 1 0 4.6 2.3 2.3 0 0 1 0-4.6Z"
-              fill="currentColor"
-            />
-          </svg>
-          Upload a Supporting Photo
-        </a>
-      </div>
 
       <p class="feedback-embed-fallback">
         Having trouble loading the form?
