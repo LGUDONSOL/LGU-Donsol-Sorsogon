@@ -1,4 +1,4 @@
-/* Donsol Tourism destination landing pages · v1.0.01 · 24 August 2026 */
+/* Donsol Tourism destination landing pages · v1.0.02 · 28 September 2026 */
 
 .destination-page {
   min-height: 100vh;
@@ -166,6 +166,19 @@
   background: var(--color-white);
   border-right: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
+}
+
+.destination-facts .destination-timing-featured {
+  background: var(--color-deep-ocean);
+  border-color: var(--color-deep-ocean);
+}
+
+.destination-facts .destination-timing-featured dt {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.destination-facts .destination-timing-featured dd {
+  color: var(--color-sand);
 }
 
 .destination-facts div:first-child {

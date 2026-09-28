@@ -44,6 +44,14 @@ One person may hold more than one role, but time-sensitive tourism claims and pr
 - Confirm that every campaign photograph and video has current public-information permission.
 - Prepare an update and removal plan if a featured activity changes or becomes unavailable.
 
+### Whale shark seasonal checkpoints
+
+- By October, reconfirm the coming season's operating dates, registration process, fees, safety rules, and visitor capacity with the responsible local office before announcing that activities are open.
+- From November to early June, review current whale shark activity and any weather, sea, safety, or conservation advisory at least weekly; never turn recent sighting reports into a promise of future sightings.
+- Near the beginning and end of the season, keep the website's confirmation warning prominent because activity and sightings can be less predictable.
+- After the season, retain the off-season warning and promote year-round river, kayaking, food, culture, and community experiences instead of implying that whale shark interaction is available.
+- Apply approved changes consistently to the homepage, whale shark guide, travel guide, sitemap dates, social posts, and campaign materials.
+
 ## Publishing workflow
 
 1. Draft content using confirmed information and identify every time-sensitive statement.

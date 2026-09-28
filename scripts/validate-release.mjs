@@ -138,6 +138,22 @@ for (const file of htmlFiles) {
 
 const mainPage = read("Tourism.html");
 
+for (const file of ["Tourism.html", "whale-sharks.html", "travel-guide.html"]) {
+  const content = read(file);
+
+  if (!/November(?:-|\s+)to(?:-|\s+)early June/i.test(content)) {
+    problems.push(`${file}: missing the usual November-to-early-June whale shark season`);
+  }
+
+  if (!/February(?:-|\s+)to(?:-|\s+)May/i.test(content)) {
+    problems.push(`${file}: missing the February-to-May peak planning window`);
+  }
+
+  if (!/sightings? (?:are|is|remain) never guaranteed/i.test(content)) {
+    problems.push(`${file}: missing the whale shark sighting disclaimer`);
+  }
+}
+
 for (const summaryId of ["whale-video-summary", "kayaking-video-summary"]) {
   if (!mainPage.includes(`id="${summaryId}"`)) {
     problems.push(`Tourism.html: missing media summary #${summaryId}`);

@@ -1,8 +1,8 @@
 /*
-  Project Version: v1.23.01
-  Update: Organized production asset directories
-  Description: Updates the production font reference for the assets/css and assets/fonts directory structure.
-  Date: 2026-08-24
+  Project Version: v1.24.02
+  Update: Experience timing highlights
+  Description: Adds clear, matching highlights for the timing of nature and river activities.
+  Date: 2026-09-28
 */
 
 :root {
@@ -363,6 +363,20 @@ body.nav-open .site-header {
   color: var(--color-sand);
   font-size: 0.85rem;
   font-weight: 850;
+}
+
+.announcement-bar strong {
+  color: var(--color-sand);
+}
+
+.announcement-bar .season-inline-date {
+  display: inline-block;
+  padding: 0.08em 0.48em;
+  color: var(--color-deep-ocean);
+  background: var(--color-sand);
+  border-radius: 999px;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .navbar {
@@ -1986,6 +2000,111 @@ body.hero-reveal-ready.hero-context-visible .hero-video-first .hero-overlay {
 
 /* Explore Donsol quick-choice section */
 
+.whale-season-callout {
+  position: relative;
+  padding-block: clamp(1.5rem, 3.2vw, 2.6rem);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(142, 219, 209, 0.5), transparent 24rem),
+    linear-gradient(112deg, #f4d59b 0%, #fff2d8 58%, #f2fbf8 100%);
+  border-bottom: 1px solid rgba(4, 55, 61, 0.1);
+}
+
+.whale-season-callout-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) auto auto;
+  align-items: center;
+  gap: clamp(1rem, 2.4vw, 2rem);
+}
+
+.whale-season-callout-copy .eyebrow {
+  margin-bottom: 0.45rem;
+  color: var(--color-ocean);
+}
+
+.whale-season-callout-copy h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.08;
+}
+
+.whale-season-callout-copy > p:last-child {
+  max-width: 62ch;
+  margin: 0;
+  color: #38575a;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.whale-season-periods {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(125px, 1fr));
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.whale-season-periods div {
+  min-height: 76px;
+  padding: 0.85rem 0.95rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(4, 55, 61, 0.12);
+  border-radius: var(--radius-sm);
+}
+
+.whale-season-periods .whale-season-period-featured {
+  background: var(--color-deep-ocean);
+  border-color: var(--color-deep-ocean);
+  box-shadow: 0 10px 24px rgba(4, 55, 61, 0.16);
+}
+
+.whale-season-periods .whale-season-period-featured dt {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.whale-season-periods .whale-season-period-featured dd {
+  color: var(--color-sand);
+}
+
+.whale-season-periods dt {
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.whale-season-periods dd {
+  margin: 0.25rem 0 0;
+  color: var(--color-deep-ocean);
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.whale-season-link {
+  gap: 0.45rem;
+  min-width: 205px;
+  text-align: center;
+}
+
+@media (max-width: 1080px) {
+  .whale-season-callout-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .whale-season-callout-copy {
+    grid-column: 1 / -1;
+  }
+
+  .whale-season-periods {
+    grid-column: 1;
+  }
+
+  .whale-season-link {
+    grid-column: 2;
+    justify-self: stretch;
+  }
+}
+
 .explore-section {
   position: relative;
   overflow: hidden;
@@ -2101,6 +2220,21 @@ body.hero-reveal-ready.hero-context-visible .hero-video-first .hero-overlay {
   color: var(--color-deep-ocean);
   background: rgba(244, 213, 155, 0.94);
   border-color: rgba(244, 213, 155, 0.72);
+}
+
+.experience-timing-badge {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.55rem;
+  padding: 0.38rem 0.68rem;
+  color: var(--color-deep-ocean);
+  background: rgba(244, 213, 155, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.25;
 }
 
 .explore-card h3 {
@@ -2252,10 +2386,19 @@ a.official-mark:focus-visible {
   align-items: start;
 }
 
-.intro-grid p:last-child {
+.intro-grid > div:nth-child(2) > p:first-child {
   margin-bottom: 0;
   color: #41595d;
   font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+}
+
+.attractions-guide-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.2rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 /* Signature experiences */
@@ -3083,6 +3226,20 @@ a.official-mark:focus-visible {
     var(--color-soft-bg);
   border: 1px solid rgba(16, 35, 38, 0.09);
   border-radius: var(--radius-md);
+}
+
+.activity-meta-grid .activity-meta-highlight {
+  background: var(--color-deep-ocean);
+  border-color: var(--color-deep-ocean);
+  box-shadow: 0 10px 24px rgba(4, 55, 61, 0.14);
+}
+
+.activity-meta-grid .activity-meta-highlight dt {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.activity-meta-grid .activity-meta-highlight dd {
+  color: var(--color-sand);
 }
 
 .activity-meta-grid dt {
@@ -5128,7 +5285,34 @@ body.photo-viewer-open {
   }
 
   .announcement-bar {
-    display: none;
+    flex-direction: column;
+    gap: 0.18rem;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .announcement-bar p,
+  .announcement-bar a {
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+
+  .whale-season-callout-inner {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .whale-season-callout-copy,
+  .whale-season-periods,
+  .whale-season-link {
+    grid-column: auto;
+  }
+
+  .whale-season-periods {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .whale-season-link {
+    width: 100%;
   }
 
   html {
