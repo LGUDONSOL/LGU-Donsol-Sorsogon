@@ -1,8 +1,8 @@
 /*
-  Project Version: v1.24.02
-  Update: Experience timing highlights
-  Description: Adds clear, matching highlights for the timing of nature and river activities.
-  Date: 2026-09-28
+  Project Version: v1.24.04
+  Update: Mobile cinematic header refinement
+  Description: Hides the mobile announcement bar during cinematic playback while keeping navigation accessible.
+  Date: 2026-11-04
 */
 
 :root {
@@ -5294,6 +5294,15 @@ body.photo-viewer-open {
   .announcement-bar a {
     font-size: 0.76rem;
     line-height: 1.35;
+  }
+
+  body.hero-reveal-ready:not(.hero-context-visible) .announcement-bar {
+    display: none;
+  }
+
+  body.hero-reveal-ready:not(.hero-context-visible) .nav-menu {
+    top: 90px;
+    max-height: calc(100vh - 110px);
   }
 
   .whale-season-callout-inner {
