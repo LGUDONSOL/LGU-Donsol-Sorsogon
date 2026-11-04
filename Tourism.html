@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.24.05
-    Update: Automatic cinematic homepage opening
-    Description: Opens directly to the Donsol cinematic experience with the header hidden until visitors explore.
+    Project Version: v1.24.06
+    Update: Scroll-triggered mobile announcement dismissal
+    Description: Lets mobile visitors close the news and season strip after they scroll past the homepage opening.
     Date: 2026-11-04
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
@@ -69,21 +69,21 @@
     }
   </script>
 
-  <meta name="project-version" content="v1.24.05 - Automatic cinematic homepage opening" />
+  <meta name="project-version" content="v1.24.06 - Scroll-triggered mobile announcement dismissal" />
 
   <meta name="theme-color" content="#063d42" />
 
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png" />
-  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.05" />
+  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.06" />
 
-  <script src="assets/js/tourism.js?v=1.23.02" defer></script>
+  <script src="assets/js/tourism.js?v=1.23.03" defer></script>
 </head>
 
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header" data-site-header>
-    <div class="announcement-bar">
+    <div class="announcement-bar" data-announcement-bar>
       <p>
         <strong>News:</strong> Whale shark sighting reported
         <span class="season-inline-date">October 28, 2026</span> ·
@@ -91,6 +91,15 @@
       </p>
       <a href="https://www.facebook.com/share/v/19ckGpAUy2/" target="_blank" rel="noopener noreferrer" aria-label="View the whale shark sighting update dated October 28, 2026 on Facebook (opens in a new tab)">See sighting update ↗</a>
       <a href="whale-sharks.html">Check the season and plan</a>
+      <button
+        class="announcement-close"
+        type="button"
+        aria-label="Close the news and whale shark season banner"
+        data-announcement-close
+        hidden
+      >
+        <span aria-hidden="true">×</span>
+      </button>
     </div>
 
     <nav class="navbar" aria-label="Primary navigation">
