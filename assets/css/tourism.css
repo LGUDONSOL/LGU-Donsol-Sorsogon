@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.24.04
-  Update: Mobile cinematic header refinement
-  Description: Hides the mobile announcement bar during cinematic playback while keeping navigation accessible.
+  Project Version: v1.24.05
+  Update: Automatic cinematic homepage opening
+  Description: Starts the homepage in cinematic mode, hides the header, and supports muted video playback across screen sizes.
   Date: 2026-11-04
 */
 
@@ -334,6 +334,16 @@ body.nav-open .site-header {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+body.hero-reveal-ready:not(.hero-context-visible):not(.nav-open) .site-header:not(:focus-within) {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-105%);
+}
+
+body.hero-reveal-ready:not(.hero-context-visible) .announcement-bar {
+  display: none;
 }
 
 .site-header.is-floating {
@@ -5132,6 +5142,11 @@ body.photo-viewer-open {
     box-shadow: var(--shadow-card);
   }
 
+  body.hero-reveal-ready:not(.hero-context-visible) .nav-menu {
+    top: 90px;
+    max-height: calc(100vh - 110px);
+  }
+
   .nav-menu.is-open {
     display: flex;
   }
@@ -5294,15 +5309,6 @@ body.photo-viewer-open {
   .announcement-bar a {
     font-size: 0.76rem;
     line-height: 1.35;
-  }
-
-  body.hero-reveal-ready:not(.hero-context-visible) .announcement-bar {
-    display: none;
-  }
-
-  body.hero-reveal-ready:not(.hero-context-visible) .nav-menu {
-    top: 90px;
-    max-height: calc(100vh - 110px);
   }
 
   .whale-season-callout-inner {

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.24.04
-    Update: Mobile cinematic header refinement
-    Description: Keeps the mobile cinematic opening clear while preserving access to the navigation.
+    Project Version: v1.24.05
+    Update: Automatic cinematic homepage opening
+    Description: Opens directly to the Donsol cinematic experience with the header hidden until visitors explore.
     Date: 2026-11-04
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
@@ -69,14 +69,14 @@
     }
   </script>
 
-  <meta name="project-version" content="v1.24.04 - Mobile cinematic header refinement" />
+  <meta name="project-version" content="v1.24.05 - Automatic cinematic homepage opening" />
 
   <meta name="theme-color" content="#063d42" />
 
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png" />
-  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.04" />
+  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.05" />
 
-  <script src="assets/js/tourism.js?v=1.23.01" defer></script>
+  <script src="assets/js/tourism.js?v=1.23.02" defer></script>
 </head>
 
 <body>
@@ -264,6 +264,16 @@
           </div>
         </div>
       </div>
+
+      <a
+        class="hero-scroll-cue hero-video-scroll-cue"
+        href="#hero-introduction"
+        aria-label="Reveal the Donsol home introduction"
+        data-hero-reveal-trigger
+      >
+        <span>Scroll to discover</span>
+        <span aria-hidden="true">↓</span>
+      </a>
 
       <button
         class="hero-cinematic-replay"

@@ -1,8 +1,8 @@
 /*
-  Project Version: v1.23.01
-  Update: Organized production asset directories
-  Description: Preserves responsive external media and accessible video behavior from the public assets/js directory.
-  Date: 2026-08-24
+  Project Version: v1.23.02
+  Update: Automatic cinematic homepage opening
+  Description: Starts the landing-page cinematic presentation automatically when motion settings allow.
+  Date: 2026-11-04
 */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -137,12 +137,16 @@ function initHeroContextReveal() {
   const revealOffset = 64;
 
   let touchStartY = 0;
-  let contextHasRevealed = true;
+  let contextHasRevealed =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    window.scrollY > revealOffset ||
+    Boolean(window.location.hash && window.location.hash !== "#top");
   let isReturningToVideoMode = false;
   let returnTimer = null;
   let replayUpdateFrame = null;
 
-  document.body.classList.add("hero-reveal-ready", "hero-context-visible");
+  document.body.classList.add("hero-reveal-ready");
+  document.body.classList.toggle("hero-context-visible", contextHasRevealed);
   updateReplayAvailability();
 
   function getViewportHeight() {
@@ -784,11 +788,13 @@ function initHeroVideoFallback() {
   });
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const isWideViewport = window.matchMedia("(min-width: 769px)");
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const startsInCinematicMode =
+    document.body.classList.contains("hero-reveal-ready") &&
+    !document.body.classList.contains("hero-context-visible");
   const shouldDeferToPoster =
     prefersReducedMotion.matches ||
-    !isWideViewport.matches ||
+    !startsInCinematicMode ||
     Boolean(connection?.saveData);
 
   if (shouldDeferToPoster) {
