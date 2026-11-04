@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.23.03
-  Update: Mobile announcement dismissal control
-  Description: Reveals an accessible banner close button after visitors scroll past the homepage opening.
+  Project Version: v1.23.04
+  Update: Upper-right mobile announcement dismissal
+  Description: Reveals an accessible upper-right banner close button after visitors scroll past the homepage opening.
   Date: 2026-11-04
 */
 
@@ -411,11 +411,14 @@ function initAnnouncementDismiss() {
       !document.body.classList.contains("hero-context-visible");
     const isDismissed = document.body.classList.contains("announcement-dismissed");
 
-    closeButton.hidden =
-      !mobileBreakpoint.matches ||
-      window.scrollY < revealScrollThreshold ||
-      isCinematicMode ||
-      isDismissed;
+    const shouldShowCloseButton =
+      mobileBreakpoint.matches &&
+      window.scrollY >= revealScrollThreshold &&
+      !isCinematicMode &&
+      !isDismissed;
+
+    closeButton.hidden = !shouldShowCloseButton;
+    document.body.classList.toggle("announcement-close-visible", shouldShowCloseButton);
   }
 
   closeButton.addEventListener("click", () => {

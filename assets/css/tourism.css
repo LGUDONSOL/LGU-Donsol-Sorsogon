@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.24.06
-  Update: Scroll-triggered mobile announcement dismissal
-  Description: Adds a mobile close control for the news and season strip after visitors scroll past the opening.
+  Project Version: v1.24.07
+  Update: Upper-right mobile announcement dismissal
+  Description: Places the scroll-triggered mobile close control in the announcement banner's upper-right corner.
   Date: 2026-11-04
 */
 
@@ -355,6 +355,7 @@ body.announcement-dismissed .announcement-bar {
 }
 
 .announcement-bar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,8 +381,11 @@ body.announcement-dismissed .announcement-bar {
 }
 
 .announcement-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.5rem;
+  z-index: 1;
   display: inline-flex;
-  align-self: flex-end;
   align-items: center;
   justify-content: center;
   width: 34px;
@@ -403,6 +407,12 @@ body.announcement-dismissed .announcement-bar {
 .announcement-close:focus-visible {
   outline: 3px solid var(--color-sand);
   outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  body.announcement-close-visible .announcement-bar {
+    padding-right: 3rem;
+  }
 }
 
 .announcement-bar strong {
