@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.23.02
-  Update: Automatic cinematic homepage opening
-  Description: Starts the landing-page cinematic presentation automatically when motion settings allow.
+  Project Version: v1.23.03
+  Update: Mobile announcement dismissal control
+  Description: Reveals an accessible banner close button after visitors scroll past the homepage opening.
   Date: 2026-11-04
 */
 
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initResponsiveExternalImages();
   initHeroContextReveal();
   initHeaderReveal();
+  initAnnouncementDismiss();
   initScrollTopButton();
   initWhatsNewPanel();
   initFeedbackModal();
@@ -391,6 +392,45 @@ function initHeaderReveal() {
   }
 
   document.addEventListener("heroContextRevealChange", updateHeaderState);
+}
+
+/* Mobile announcement dismissal */
+
+function initAnnouncementDismiss() {
+  const announcementBar = document.querySelector("[data-announcement-bar]");
+  const closeButton = announcementBar?.querySelector("[data-announcement-close]");
+
+  if (!announcementBar || !closeButton) return;
+
+  const revealScrollThreshold = 180;
+  const mobileBreakpoint = window.matchMedia("(max-width: 900px)");
+
+  function updateCloseButton() {
+    const isCinematicMode =
+      document.body.classList.contains("hero-reveal-ready") &&
+      !document.body.classList.contains("hero-context-visible");
+    const isDismissed = document.body.classList.contains("announcement-dismissed");
+
+    closeButton.hidden =
+      !mobileBreakpoint.matches ||
+      window.scrollY < revealScrollThreshold ||
+      isCinematicMode ||
+      isDismissed;
+  }
+
+  closeButton.addEventListener("click", () => {
+    document.body.classList.add("announcement-dismissed");
+    updateCloseButton();
+
+    document.querySelector("[data-nav-toggle]")?.focus();
+  });
+
+  window.addEventListener("scroll", updateCloseButton, { passive: true });
+  window.addEventListener("resize", updateCloseButton);
+  window.addEventListener("orientationchange", updateCloseButton);
+  document.addEventListener("heroContextRevealChange", updateCloseButton);
+
+  updateCloseButton();
 }
 
 /* Scroll to top button */

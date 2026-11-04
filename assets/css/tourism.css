@@ -1,7 +1,7 @@
 /*
-  Project Version: v1.24.05
-  Update: Automatic cinematic homepage opening
-  Description: Starts the homepage in cinematic mode, hides the header, and supports muted video playback across screen sizes.
+  Project Version: v1.24.06
+  Update: Scroll-triggered mobile announcement dismissal
+  Description: Adds a mobile close control for the news and season strip after visitors scroll past the opening.
   Date: 2026-11-04
 */
 
@@ -346,6 +346,10 @@ body.hero-reveal-ready:not(.hero-context-visible) .announcement-bar {
   display: none;
 }
 
+body.announcement-dismissed .announcement-bar {
+  display: none;
+}
+
 .site-header.is-floating {
   filter: drop-shadow(0 16px 35px rgba(4, 55, 61, 0.16));
 }
@@ -373,6 +377,32 @@ body.hero-reveal-ready:not(.hero-context-visible) .announcement-bar {
   color: var(--color-sand);
   font-size: 0.85rem;
   font-weight: 850;
+}
+
+.announcement-close {
+  display: inline-flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  color: var(--color-sand);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.announcement-close[hidden] {
+  display: none;
+}
+
+.announcement-close:focus-visible {
+  outline: 3px solid var(--color-sand);
+  outline-offset: 3px;
 }
 
 .announcement-bar strong {
