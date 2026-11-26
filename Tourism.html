@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--
-    Project Version: v1.24.07
-    Update: Upper-right mobile announcement dismissal
-    Description: Moves the mobile announcement close control to the upper-right without covering its text.
-    Date: 2026-11-04
+    Project Version: v1.24.08
+    Update: Whale shark sightings calendar
+    Description: Adds a shared office sighting log, latest-sighting summary, and interactive date calendar.
+    Date: 2026-11-26
   -->
   <title>Donsol Tourism | Whale Sharks, Fireflies & River Adventures</title>
 
@@ -69,14 +69,15 @@
     }
   </script>
 
-  <meta name="project-version" content="v1.24.07 - Upper-right mobile announcement dismissal" />
+  <meta name="project-version" content="v1.24.08 - Whale shark sightings calendar" />
 
   <meta name="theme-color" content="#063d42" />
 
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_256/v1785813124/Tourism_logo_unpva8.png" />
-  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.07" />
+  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.08" />
 
   <script src="assets/js/tourism.js?v=1.23.04" defer></script>
+  <script src="assets/js/whale-sightings.js?v=1.0.00" defer></script>
 </head>
 
 <body>
@@ -85,11 +86,12 @@
   <header class="site-header" data-site-header>
     <div class="announcement-bar" data-announcement-bar>
       <p>
-        <strong>News:</strong> Whale shark sighting reported
-        <span class="season-inline-date">October 28, 2026</span> ·
+        <strong>Latest recorded sighting:</strong>
+        <span data-latest-sighting-date>November 25, 2026</span> ·
+        <span data-latest-sighting-count>1 sighting recorded</span> ·
         <strong>Season:</strong> November to early June · Peak planning: February to May · Sightings aren’t guaranteed
       </p>
-      <a href="https://www.facebook.com/share/v/19ckGpAUy2/" target="_blank" rel="noopener noreferrer" aria-label="View the whale shark sighting update dated October 28, 2026 on Facebook (opens in a new tab)">See sighting update ↗</a>
+      <a href="whale-sharks.html#sighting-calendar">View sightings calendar ↗</a>
       <a href="whale-sharks.html">Check the season and plan</a>
       <button
         class="announcement-close"
@@ -307,6 +309,19 @@
           <div><dt>Peak planning</dt><dd>February – May</dd></div>
         </dl>
         <a class="btn btn-primary whale-season-link" href="whale-sharks.html">See season and visitor guidance <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="latest-sighting-section" aria-labelledby="latest-sighting-title">
+      <div class="container latest-sighting-card">
+        <div class="latest-sighting-copy">
+          <p class="eyebrow">Donsol Tourism office log</p>
+          <h2 id="latest-sighting-title">Latest recorded whale shark sighting</h2>
+          <p class="latest-sighting-date" data-latest-sighting-date>November 25, 2026</p>
+          <p class="latest-sighting-count" data-latest-sighting-count>1 sighting recorded</p>
+          <p class="latest-sighting-note">This is a record of past sightings, not a prediction of future encounters.</p>
+        </div>
+        <a class="btn btn-primary" href="whale-sharks.html#sighting-calendar">View the sightings calendar <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -3812,18 +3827,25 @@
       </div>
 
       <div class="whats-new-content">
-        <span class="tag">Whale Shark Activity Update</span>
+        <span class="tag">Latest whale shark sighting log</span>
         <p id="whats-new-description">
-          A whale shark sighting was reported on October 28, 2026. Open the Facebook post for the video and its full context.
+          Latest recorded sighting: <span data-latest-sighting-date>November 25, 2026</span> · <span data-latest-sighting-count>1 sighting recorded</span>. Open the calendar to see all dates in the office log.
         </p>
 
         <a
           class="btn btn-primary"
+          href="whale-sharks.html#sighting-calendar"
+        >
+          View sightings calendar ↗
+        </a>
+        <p class="whats-new-history-note">Earlier activity video, October 28, 2026:</p>
+        <a
+          class="text-link"
           href="https://www.facebook.com/share/v/19ckGpAUy2/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          View the update on Facebook ↗
+          Open the Facebook video update ↗
         </a>
         <a
           class="text-link"

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Responsible Whale Shark Interaction | Donsol Tourism</title>
-  <meta name="description" content="Plan a responsible Donsol whale shark visit during the usual November-to-early-June season, with peak planning guidance, registration reminders, and Tourism Office assistance." />
+  <meta name="description" content="Plan a responsible Donsol whale shark visit, review recent Tourism Office sighting records, and use the November-to-early-June season and visitor guidance." />
   <link rel="canonical" href="https://www.donsol.gov.ph/whale-sharks.html" />
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
   <link rel="dns-prefetch" href="https://res.cloudinary.com" />
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_PH" />
   <meta property="og:title" content="Responsible Whale Shark Interaction in Donsol" />
-  <meta property="og:description" content="Plan for Donsol's usual November-to-early-June whale shark season and meet the butanding through a responsible, guide-led experience." />
+  <meta property="og:description" content="Plan for Donsol's usual November-to-early-June whale shark season, see recent office sighting records, and learn about the responsible, guide-led experience." />
   <meta property="og:url" content="https://www.donsol.gov.ph/whale-sharks.html" />
   <meta property="og:image" content="https://res.cloudinary.com/xdzxqvgu/image/upload/c_fill,g_auto,w_1200,h_630,q_auto/v1785120215/Whale-Shark_16_lvg9fm.jpg" />
   <meta property="og:image:alt" content="Whale shark swimming underwater during a responsible interaction in Donsol" />
@@ -21,8 +21,9 @@
   <meta name="twitter:description" content="Official season and visitor guidance for a respectful butanding experience in Donsol, Sorsogon." />
   <meta name="twitter:image" content="https://res.cloudinary.com/xdzxqvgu/image/upload/c_fill,g_auto,w_1200,h_630,q_auto/v1785120215/Whale-Shark_16_lvg9fm.jpg" />
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/xdzxqvgu/image/upload/f_auto,q_auto,w_128/v1785813124/Tourism_logo_unpva8.png" />
-  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.03" />
+  <link rel="stylesheet" href="assets/css/tourism.css?v=1.24.08" />
   <link rel="stylesheet" href="assets/css/destination.css?v=1.0.02" />
+  <script src="assets/js/whale-sightings.js?v=1.0.00" defer></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,6 +89,56 @@
       <div><dt>Important</dt><dd>Sightings are never guaranteed</dd></div>
     </dl>
 
+    <section class="sighting-calendar-section" id="sighting-calendar" aria-labelledby="sighting-calendar-title">
+      <div class="container">
+        <div class="sighting-calendar-heading">
+        <p class="destination-kicker">Office sighting records</p>
+          <h2 id="sighting-calendar-title">Whale shark sightings calendar</h2>
+          <p>See the dates visitors reported sightings and recorded by Donsol Tourism.</p>
+        </div>
+
+        <div class="sighting-calendar-layout">
+          <aside class="sighting-latest-card" aria-labelledby="sighting-latest-title">
+            <p class="sighting-card-kicker">Most recent entry</p>
+            <h3 id="sighting-latest-title" data-latest-sighting-date>November 25, 2026</h3>
+            <p class="sighting-latest-count" data-latest-sighting-count>1 sighting recorded</p>
+            <p class="sighting-latest-note">A record of past activity, not a forecast.</p>
+          </aside>
+
+          <div class="sighting-calendar-panel" data-sighting-calendar>
+            <div class="sighting-calendar-toolbar">
+              <button class="sighting-month-button" type="button" aria-label="Show previous month" data-sighting-month-previous>‹</button>
+              <h3 data-sighting-month-label>November 2026</h3>
+              <button class="sighting-month-button" type="button" aria-label="Show next month" data-sighting-month-next>›</button>
+            </div>
+            <p class="sighting-calendar-status" data-sighting-month-status aria-live="polite">2 dates with recorded sightings.</p>
+
+            <table class="sighting-calendar-table" aria-describedby="sighting-calendar-note sighting-calendar-detail">
+              <caption class="sr-only" data-sighting-calendar-caption>November 2026 whale shark sighting records</caption>
+              <thead>
+                <tr>
+                  <th scope="col" abbr="Sunday">Sun</th>
+                  <th scope="col" abbr="Monday">Mon</th>
+                  <th scope="col" abbr="Tuesday">Tue</th>
+                  <th scope="col" abbr="Wednesday">Wed</th>
+                  <th scope="col" abbr="Thursday">Thu</th>
+                  <th scope="col" abbr="Friday">Fri</th>
+                  <th scope="col" abbr="Saturday">Sat</th>
+                </tr>
+              </thead>
+              <tbody data-sighting-calendar-grid>
+                <tr><td colspan="7">See the record summary below if the interactive calendar does not load.</td></tr>
+              </tbody>
+            </table>
+
+            <p class="sighting-calendar-detail" id="sighting-calendar-detail" data-sighting-calendar-detail aria-live="polite">November 25, 2026: 1 sighting recorded.</p>
+            <noscript><p class="sighting-calendar-note">November 2026 records: 1 sighting on November 20 and 1 sighting on November 25.</p></noscript>
+            <p class="sighting-calendar-note" id="sighting-calendar-note">Hover over or select a whale shark mark to see the number of sightings recorded on that date. Unmarked dates have no entry in this digital log; the calendar records past sightings, not future activity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="destination-main" id="plan">
       <div class="destination-content">
         <section class="destination-section">
@@ -95,7 +146,7 @@
           <h2>Plan around the whale shark season.</h2>
           <p>The usual Donsol whale shark interaction season runs from <strong>November to early June</strong>. Sightings are generally more frequent during the <strong>February-to-May peak planning window</strong>; November to January is the earlier part of the season, while June is the tail end.</p>
           <p class="destination-note"><strong>Travel warning:</strong> outside the usual season, do not plan a trip around a whale shark interaction unless the Donsol Tourism Office confirms that the activity is currently operating.</p>
-          <p class="destination-note"><strong>Whale Shark Activity Update:</strong> <a href="https://www.facebook.com/share/v/19ckGpAUy2/" target="_blank" rel="noopener noreferrer">View the Facebook update ↗</a> (opens in a new tab).</p>
+          <p class="destination-note"><strong>Earlier activity video (October 28, 2026):</strong> <a href="https://www.facebook.com/share/v/19ckGpAUy2/" target="_blank" rel="noopener noreferrer">View the Facebook update ↗</a> (opens in a new tab). For the latest office log, use the sightings calendar above.</p>
         </section>
 
         <section class="destination-section">
