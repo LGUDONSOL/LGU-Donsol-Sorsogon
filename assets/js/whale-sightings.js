@@ -1,5 +1,5 @@
 /*
-  Project Version: v1.0.00
+  Project Version: v1.0.01
   Update: Office whale shark sightings calendar
   Description: Renders the recorded sightings summary and accessible monthly calendar.
   Data note: Add verified office log entries to SIGHTING_RECORDS below. The sightings value counts recorded sighting reports, not unique whale sharks.
@@ -9,7 +9,8 @@
 (() => {
   const SIGHTING_RECORDS = [
     { date: "2026-11-20", sightings: 1 },
-    { date: "2026-11-25", sightings: 1 }
+    { date: "2026-11-25", sightings: 1 },
+    { date: "2026-11-26", sightings: 1 }
   ];
 
   const dateFormatter = new Intl.DateTimeFormat("en-PH", {
